@@ -33,24 +33,24 @@ def erstelle_briefing(anzahl_artikel: int, seiten_url: str) -> tuple[str, str]:
     html = f"""<!DOCTYPE html>
 <html lang="de">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#f5f5f5;font-family:Arial,Helvetica,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f5f5;">
-<tr><td align="center" style="padding:20px 10px;">
-<table width="520" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;">
-    <tr><td style="background:linear-gradient(135deg,#1a237e,#283593);padding:24px;">
-        <h1 style="margin:0;color:#ffffff;font-size:22px;">Tages-Briefing</h1>
-        <div style="color:#b0bec5;font-size:13px;margin-top:4px;">{datum}</div>
+<body style="margin:0;padding:0;background:#f8f8f7;font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f8f8f7;">
+<tr><td align="center" style="padding:32px 10px;">
+<table width="500" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:4px;border:1px solid #e8e6e3;">
+    <tr><td style="padding:32px 32px 24px;border-bottom:1px solid #e8e6e3;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#8a8580;margin-bottom:8px;">Tages-Briefing</div>
+        <h1 style="margin:0;color:#1a1a1a;font-size:20px;font-weight:600;">{datum}</h1>
     </td></tr>
-    <tr><td style="padding:32px 24px;text-align:center;">
-        <p style="font-size:15px;color:#333;margin:0 0 24px 0;line-height:1.5;">
-            {anzahl_artikel} relevante Artikel aus WSJ, Handelsblatt, WiWo und Barron's warten auf dich.
+    <tr><td style="padding:32px;text-align:center;">
+        <p style="font-size:15px;color:#4a4a4a;margin:0 0 28px 0;line-height:1.6;">
+            {anzahl_artikel} relevante Artikel aus WSJ, Handelsblatt, WiWo und Barron's.
         </p>
-        <a href="{seiten_url}" style="display:inline-block;background:#1a237e;color:#ffffff;font-size:16px;font-weight:600;padding:14px 32px;border-radius:6px;text-decoration:none;">
+        <a href="{seiten_url}" style="display:inline-block;background:#2c2c2c;color:#ffffff;font-size:14px;font-weight:500;padding:12px 28px;border-radius:4px;text-decoration:none;letter-spacing:0.3px;">
             Briefing lesen &rarr;
         </a>
     </td></tr>
-    <tr><td style="padding:16px 24px;background:#f5f5f5;text-align:center;">
-        <div style="font-size:11px;color:#999;">Automatisch erstellt &middot; Zeitschriften-Briefing</div>
+    <tr><td style="padding:16px 32px;border-top:1px solid #e8e6e3;text-align:center;">
+        <div style="font-size:11px;color:#b0aba5;">Zeitschriften-Briefing</div>
     </td></tr>
 </table>
 </td></tr>

@@ -79,11 +79,11 @@ def _generiere_html(artikel: list[BewerteterArtikel],
     """HTML-Zusammenfassungsseite generieren — Übersicht oben, Zusammenfassungen unten."""
 
     thema_farben = {
-        "Börse": "#1a73e8",
-        "Internationale Politik": "#d93025",
-        "Finanzen": "#188038",
-        "Künstliche Intelligenz": "#9334e6",
-        "Sonstiges": "#5f6368",
+        "Börse": "#5c6b73",
+        "Internationale Politik": "#7a6855",
+        "Finanzen": "#4a6259",
+        "Künstliche Intelligenz": "#6b5c73",
+        "Sonstiges": "#78756f",
     }
 
     # Nach Thema gruppieren
@@ -94,30 +94,27 @@ def _generiere_html(artikel: list[BewerteterArtikel],
     # --- Teil 1: Übersicht mit klickbaren Überschriften ---
     uebersicht_html = ""
     for thema, liste in gruppen.items():
-        farbe = thema_farben.get(thema, "#5f6368")
+        farbe = thema_farben.get(thema, "#78756f")
         uebersicht_html += f"""
-    <div style="border-left:4px solid {farbe}; padding-left:12px; margin-top:24px;">
-        <h2 style="margin:0;color:{farbe};font-size:18px;">{thema}</h2>
-    </div>
-    <ul style="margin:8px 0 0 0; padding-left:20px; list-style:none;">"""
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:{farbe}; font-weight:600;">{thema}</span>
+    </div>"""
 
         for ba in liste:
             a = ba.artikel
             aid = _artikel_id(a)
-            relevanz_marker = " &#9733;" if ba.relevanz == "hoch" else ""
+            relevanz_marker = '<span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>' if ba.relevanz == "hoch" else ""
             datum_str = a.datum.strftime("%d.%m. %H:%M")
             uebersicht_html += f"""
-        <li style="margin:6px 0; line-height:1.4;">
-            <a href="#{aid}" style="font-size:15px; color:#1a1a1a; text-decoration:none; font-weight:600;">{a.titel}</a>{relevanz_marker}
-            <span style="font-size:11px; color:#888; margin-left:6px;">{a.quelle} &middot; {datum_str}</span>
-        </li>"""
-
-        uebersicht_html += "\n    </ul>"
+    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
+        <a href="#{aid}" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">{a.titel}</a>{relevanz_marker}
+        <div style="font-size:11px; color:#a09a93; margin-top:2px;">{a.quelle} &middot; {datum_str}</div>
+    </div>"""
 
     # --- Teil 2: Ausführliche Zusammenfassungen ---
     details_html = ""
     for thema, liste in gruppen.items():
-        farbe = thema_farben.get(thema, "#5f6368")
+        farbe = thema_farben.get(thema, "#78756f")
 
         for ba in liste:
             a = ba.artikel
@@ -126,15 +123,15 @@ def _generiere_html(artikel: list[BewerteterArtikel],
             datum_str = a.datum.strftime("%d.%m.%Y %H:%M")
 
             details_html += f"""
-    <div id="{aid}" class="artikel" style="margin:24px 0; padding:20px; background:#fff; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-        <div style="font-size:11px; color:#888; margin-bottom:4px;">{a.quelle} &middot; {datum_str}</div>
-        <h3 style="margin:0 0 12px 0; font-size:17px; color:#1a1a1a; border-bottom:2px solid {farbe}; padding-bottom:8px;">{a.titel}</h3>
-        <p style="margin:0 0 16px 0; font-size:14px; color:#333; line-height:1.7;">{zf}</p>
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-            <a href="{a.link}" style="font-size:13px; color:{farbe}; text-decoration:none; font-weight:600;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#999; text-decoration:none;">&uarr; Zur Übersicht</a>
+    <article id="{aid}" class="artikel" style="margin:16px 0; padding:24px; background:#fff; border-radius:6px;">
+        <div style="font-size:11px; color:#a09a93; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">{a.quelle} &middot; {datum_str}</div>
+        <h3 style="margin:0 0 16px 0; font-size:17px; color:#1a1a1a; font-weight:600; line-height:1.3;">{a.titel}</h3>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#3d3d3d; line-height:1.75;">{zf}</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #edecea;">
+            <a href="{a.link}" style="font-size:12px; color:{farbe}; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#b0aba5; text-decoration:none;">&uarr; Übersicht</a>
         </div>
-    </div>"""
+    </article>"""
 
     return f"""<!DOCTYPE html>
 <html lang="de">
@@ -143,16 +140,16 @@ def _generiere_html(artikel: list[BewerteterArtikel],
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Briefing — {datum}</title>
     <style>
-        body {{ margin:0; padding:0; background:#f0f2f5; font-family:Arial,Helvetica,sans-serif; }}
-        .container {{ max-width:700px; margin:0 auto; padding:20px 16px; }}
-        .header {{ background:linear-gradient(135deg,#1a237e,#283593); color:#fff; padding:24px; border-radius:8px; margin-bottom:8px; }}
-        .header h1 {{ margin:0; font-size:22px; }}
-        .header .datum {{ color:#b0bec5; font-size:13px; margin-top:4px; }}
-        .uebersicht {{ background:#fff; border-radius:8px; padding:16px 20px; margin-bottom:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }}
-        .trennlinie {{ border:0; border-top:2px solid #e0e0e0; margin:32px 0; }}
-        .footer {{ text-align:center; padding:24px; font-size:11px; color:#999; }}
-        a:hover {{ text-decoration:underline !important; }}
-        .artikel:target {{ outline:3px solid #1a73e8; outline-offset:4px; }}
+        body {{ margin:0; padding:0; background:#eae8e4; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#1a1a1a; }}
+        .container {{ max-width:680px; margin:0 auto; padding:0 16px 24px; }}
+        .header {{ background:#2c2c2c; color:#fff; padding:28px 28px 24px; border-radius:0 0 6px 6px; margin-bottom:16px; }}
+        .header h1 {{ margin:0; font-size:22px; font-weight:600; color:#fff; letter-spacing:-0.3px; }}
+        .header .datum {{ color:#9a9590; font-size:13px; margin-top:6px; }}
+        .uebersicht {{ background:#fff; border-radius:6px; padding:20px 24px; margin-bottom:16px; }}
+        .trennlinie {{ border:0; border-top:1px solid #d5d0cb; margin:24px 0; }}
+        .footer {{ text-align:center; padding:28px; font-size:11px; color:#a09a93; letter-spacing:0.3px; }}
+        a:hover {{ opacity:0.7; }}
+        .artikel:target {{ box-shadow:0 0 0 2px #b8a07a; }}
     </style>
 </head>
 <body>
@@ -166,7 +163,7 @@ def _generiere_html(artikel: list[BewerteterArtikel],
     </div>
     <hr class="trennlinie">
     {details_html}
-    <div class="footer">Automatisch erstellt &middot; Zeitschriften-Briefing</div>
+    <div class="footer">Zeitschriften-Briefing</div>
 </div>
 </body>
 </html>"""
