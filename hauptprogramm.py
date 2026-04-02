@@ -84,33 +84,28 @@ def hauptprogramm(nur_lokal: bool = False) -> int:
     print(f"  {len(bewertete)} relevante Artikel.")
 
     # 3. Zusammenfassungsseite erstellen
-    print("\n[3/5] Erstelle Zusammenfassungsseite...")
+    print("\n[3/4] Erstelle Zusammenfassungsseite...")
     try:
-        seiten_datei, link_map = erstelle_zusammenfassungsseite(
+        seiten_datei, seiten_url = erstelle_zusammenfassungsseite(
             bewertete, github_pages_url=GITHUB_PAGES_URL
         )
     except Exception as e:
-        print(f"FEHLER bei Zusammenfassungsseite ({e}), Links zeigen auf Originalartikel.")
-        link_map = {}
-
-    # 4. Briefing-E-Mail erstellen
-    print("\n[4/5] Erstelle Briefing-E-Mail...")
-    try:
-        html, plaintext = erstelle_briefing(bewertete, link_map=link_map)
-    except Exception as e:
-        print(f"FEHLER beim Erstellen des Briefings: {e}")
+        print(f"FEHLER bei Zusammenfassungsseite: {e}")
         return 1
 
-    # 5. Versenden oder lokal speichern
+    print(f"  Seite: {seiten_url}")
+
+    # 4. Briefing-E-Mail erstellen und versenden
+    print("\n[4/4] Erstelle und versende Briefing-E-Mail...")
+    html, plaintext = erstelle_briefing(len(bewertete), seiten_url)
+
     versendet = False
     if nur_lokal:
-        print("\n[5/5] Speichere Briefing lokal...")
         html_datei = PROJEKT_PFAD / "letztes_briefing.html"
         html_datei.write_text(html, encoding="utf-8")
-        print(f"  Gespeichert: {html_datei}")
+        print(f"  Mail-Vorschau gespeichert: {html_datei}")
         versendet = True
     else:
-        print("\n[5/5] Versende Briefing per E-Mail...")
         versendet = sende_briefing(html, plaintext)
 
     # Verlauf speichern

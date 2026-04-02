@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 from dotenv import load_dotenv
 
-from config import THEMEN, THEMEN_KEYWORDS, CLAUDE_MODELL, ENV_PFAD
+from config import THEMEN, THEMEN_KEYWORDS, GEMINI_MODELL, ENV_PFAD
 from feed_sammler import Artikel
 
 load_dotenv(ENV_PFAD)
@@ -50,10 +50,10 @@ def _keyword_filter(artikel_liste: list[Artikel]) -> list[BewerteterArtikel]:
 
 
 def _ki_filter(artikel_liste: list[Artikel]) -> list[BewerteterArtikel]:
-    """Artikel per Claude API nach Relevanz bewerten."""
-    import anthropic
+    """Artikel per Gemini API nach Relevanz bewerten."""
+    from google import genai
 
-    client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
     # Artikelliste für den Prompt aufbereiten
     artikel_texte = []
@@ -79,14 +79,10 @@ Antworte ausschließlich als JSON-Array, z.B.:
 Artikel:
 {chr(10).join(artikel_texte)}"""
 
-    antwort = client.messages.create(
-        model=CLAUDE_MODELL,
-        max_tokens=2000,
-        messages=[{"role": "user", "content": prompt}],
-    )
+    antwort = client.models.generate_content(model=GEMINI_MODELL, contents=prompt)
 
     # JSON aus der Antwort extrahieren
-    antwort_text = antwort.content[0].text.strip()
+    antwort_text = antwort.text.strip()
     # Falls die Antwort in Markdown-Codeblock verpackt ist
     if antwort_text.startswith("```"):
         zeilen = antwort_text.split("\n")
@@ -122,7 +118,7 @@ def filtere_artikel(artikel_liste: list[Artikel]) -> list[BewerteterArtikel]:
     if not artikel_liste:
         return []
 
-    api_key = os.getenv("ANTHROPIC_API_KEY")
+    api_key = os.getenv("GEMINI_API_KEY")
 
     if api_key:
         try:

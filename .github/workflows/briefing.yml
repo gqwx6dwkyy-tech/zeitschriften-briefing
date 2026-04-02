@@ -30,7 +30,7 @@ jobs:
         env:
           MAIL_ABSENDER: ${{ secrets.MAIL_ABSENDER }}
           MAIL_PASSWORT: ${{ secrets.MAIL_PASSWORT }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_PAGES_URL: https://gqwx6dwkyy-tech.github.io/zeitschriften-briefing
         run: python hauptprogramm.py
 

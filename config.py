@@ -70,5 +70,5 @@ SMTP_PORT = 587
 MAX_ARTIKEL_PRO_BRIEFING = 30
 ARTIKEL_MAX_ALTER_STUNDEN = 24
 
-# --- Claude API ---
-CLAUDE_MODELL = "claude-sonnet-4-6-20250514"
+# --- Gemini API (kostenlos) ---
+GEMINI_MODELL = "gemini-2.5-flash"
