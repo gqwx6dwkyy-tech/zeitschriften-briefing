@@ -1,0 +1,6 @@
+.env
+verlauf/
+__pycache__/
+*.pyc
+letztes_briefing.html
+test_briefing.html
