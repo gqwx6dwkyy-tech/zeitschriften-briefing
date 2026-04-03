@@ -28,7 +28,7 @@ FEEDS = {
 }
 
 # --- Themen ---
-THEMEN = ["Börse", "Künstliche Intelligenz", "Internationale Politik", "Finanzen"]
+THEMEN = ["Börse", "Künstliche Intelligenz", "Internationale Politik"]
 
 THEMEN_KEYWORDS = {
     "Börse": [
@@ -43,13 +43,6 @@ THEMEN_KEYWORDS = {
         "gipfel", "diplomat", "außenpolitik", "embargo",
         "geopolit", "sanction", "trade war", "tariff", "election",
         "summit", "diplomacy", "foreign policy",
-    ],
-    "Finanzen": [
-        "zins", "inflation", "ezb", "fed", "notenbank", "anleihe", "rendite",
-        "geldpolitik", "rezession", "bip", "konjunktur", "währung", "dollar",
-        "euro", "kredit", "schulden", "haushalt",
-        "interest rate", "bond", "yield", "monetary policy", "recession",
-        "gdp", "currency", "debt", "fiscal", "central bank",
     ],
     "Künstliche Intelligenz": [
         "künstliche intelligenz", "ki ", "maschinelles lernen", "deep learning",

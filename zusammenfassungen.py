@@ -81,7 +81,6 @@ def _generiere_html(artikel: list[BewerteterArtikel],
     thema_farben = {
         "Börse": "#1a6b6a",
         "Internationale Politik": "#7a6855",
-        "Finanzen": "#4a6259",
         "Künstliche Intelligenz": "#6b5c73",
         "Sonstiges": "#7f8c8d",
     }
