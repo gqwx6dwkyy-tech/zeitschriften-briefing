@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leseliste — Zeitschriften-Briefing</title>
+    <style>
+        body { margin:0; padding:0; background:#f5f0e8; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#2c3e50; }
+        .container { max-width:680px; margin:0 auto; padding:0 16px 24px; }
+        .header { background:#1a6b6a; color:#fff; padding:28px 28px 24px; border-radius:0 0 6px 6px; margin-bottom:16px; }
+        .header h1 { margin:0; font-size:22px; font-weight:600; color:#fff; letter-spacing:-0.3px; }
+        .header .sub { color:#b8d8d6; font-size:13px; margin-top:6px; }
+        .header .nav-links { margin-top:10px; }
+        .header .nav-links a { color:#b8d8d6; font-size:12px; text-decoration:none; margin-right:16px; }
+        .header .nav-links a:hover { color:#fff; }
+        .leer { padding:40px 24px; text-align:center; color:#7f8c8d; font-size:14px; background:#faf7f2; border-radius:6px; border:1px solid #e8dcc8; }
+        .artikel { margin:16px 0; padding:24px; background:#faf7f2; border-radius:6px; border:1px solid #e8dcc8; }
+        .artikel h3 { margin:0 0 12px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3; }
+        .artikel .meta { font-size:11px; color:#7f8c8d; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
+        .artikel p { margin:0 0 16px 0; font-size:14px; color:#2c3e50; line-height:1.75; }
+        .artikel .footer-row { display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #e8dcc8; }
+        .artikel .footer-row a { font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; }
+        .btn-entfernen { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:12px; padding:4px 10px; color:#c0392b; transition:all 0.15s; }
+        .btn-entfernen:hover { background:#c0392b; color:#fff; border-color:#c0392b; }
+        .btn-clipboard { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:12px; padding:4px 10px; color:#1a6b6a; transition:all 0.15s; margin-right:6px; }
+        .btn-clipboard:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .toast { position:fixed; bottom:24px; right:24px; background:#1a6b6a; color:#fff; padding:12px 20px; border-radius:6px; font-size:13px; opacity:0; transition:opacity 0.3s; pointer-events:none; z-index:100; }
+        .toast.sichtbar { opacity:1; }
+        .footer { text-align:center; padding:28px; font-size:11px; color:#7f8c8d; letter-spacing:0.3px; }
+        .aktionen { display:flex; gap:8px; margin-bottom:16px; }
+        .btn-alle { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:12px; padding:8px 14px; color:#2c3e50; transition:all 0.15s; }
+        .btn-alle:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Leseliste</h1>
+        <div class="sub">Gemerkte Artikel aus dem Tages-Briefing</div>
+        <div class="nav-links">
+            <a href="index.html">&larr; Archiv</a>
+        </div>
+    </div>
+    <div class="aktionen" id="aktionen" style="display:none;">
+        <button class="btn-alle" onclick="alleKopieren()">Alle in Zwischenablage</button>
+        <button class="btn-alle" onclick="alleLoeschen()">Alle entfernen</button>
+    </div>
+    <div id="inhalt">
+        <div class="leer">Lade Leseliste...</div>
+    </div>
+    <div class="footer">Zeitschriften-Briefing</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="github-sync.js"></script>
+<script>
+(function() {
+    const container = document.getElementById('inhalt');
+    const aktionen = document.getElementById('aktionen');
+    let _daten = null;
+
+    function showToast(msg, fehler) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.style.background = fehler ? '#c0392b' : '#1a6b6a';
+        t.classList.add('sichtbar');
+        setTimeout(() => t.classList.remove('sichtbar'), 2500);
+    }
+
+    function render() {
+        if (!_daten) return;
+        const items = _daten.leseliste || [];
+        if (!items.length) {
+            container.innerHTML = '<div class="leer">Keine Artikel in der Leseliste. Verwende den &#10149;-Button im Tages-Briefing, um Artikel hierher zu speichern.</div>';
+            aktionen.style.display = 'none';
+            return;
+        }
+        aktionen.style.display = 'flex';
+        container.innerHTML = items.map((item, idx) => `
+            <div class="artikel">
+                <div class="meta">${item.quelle} &middot; ${item.datum}</div>
+                <h3>${item.titel}</h3>
+                <p>${item.zusammenfassung}</p>
+                <div class="footer-row">
+                    <a href="${item.link}" target="_blank">Originalartikel &rarr;</a>
+                    <div>
+                        <button class="btn-clipboard" onclick="kopieren(${idx})" title="In Zwischenablage">Kopieren</button>
+                        <button class="btn-entfernen" onclick="entfernen(${idx})" title="Entfernen">&times;</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.entfernen = async function(idx) {
+        const items = _daten.leseliste || [];
+        items.splice(idx, 1);
+        _daten.leseliste = items;
+        render();
+        try {
+            await GH_SYNC.speichern(_daten);
+        } catch (e) {
+            showToast('Sync-Fehler: ' + e.message, true);
+        }
+    };
+
+    window.kopieren = function(idx) {
+        const items = _daten.leseliste || [];
+        const item = items[idx];
+        if (!item) return;
+        const text = item.titel + '\n' + item.quelle + ' — ' + item.datum + '\n\n' + item.zusammenfassung + '\n\nQuelle: ' + item.link;
+        navigator.clipboard.writeText(text).then(() => showToast('In Zwischenablage kopiert'));
+    };
+
+    window.alleKopieren = function() {
+        const items = _daten.leseliste || [];
+        const text = items.map(item =>
+            item.titel + '\n' + item.quelle + ' — ' + item.datum + '\n\n' + item.zusammenfassung + '\n\nQuelle: ' + item.link
+        ).join('\n\n---\n\n');
+        navigator.clipboard.writeText(text).then(() => showToast(items.length + ' Artikel kopiert'));
+    };
+
+    window.alleLoeschen = async function() {
+        if (confirm('Alle Artikel aus der Leseliste entfernen?')) {
+            _daten.leseliste = [];
+            render();
+            try {
+                await GH_SYNC.speichern(_daten);
+            } catch (e) {
+                showToast('Sync-Fehler: ' + e.message, true);
+            }
+        }
+    };
+
+    // Init — Daten von GitHub laden
+    GH_SYNC.laden()
+        .then(daten => {
+            _daten = daten;
+            render();
+        })
+        .catch(e => {
+            showToast('Laden fehlgeschlagen: ' + e.message, true);
+            _daten = { spaeter_lesen: [], leseliste: [] };
+            render();
+        });
+})();
+</script>
+</body>
+</html>

@@ -28,7 +28,7 @@ FEEDS = {
 }
 
 # --- Themen ---
-THEMEN = ["Börse", "Internationale Politik", "Finanzen", "Künstliche Intelligenz"]
+THEMEN = ["Börse", "Künstliche Intelligenz", "Internationale Politik", "Finanzen"]
 
 THEMEN_KEYWORDS = {
     "Börse": [
