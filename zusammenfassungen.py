@@ -113,9 +113,12 @@ def _generiere_html(artikel: list[BewerteterArtikel],
             relevanz_marker = '<span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>' if ba.relevanz == "hoch" else ""
             datum_str = a.datum.strftime("%d.%m. %H:%M")
             uebersicht_html += f"""
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#{aid}" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">{a.titel}</a>{relevanz_marker}
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">{a.quelle} &middot; {datum_str}</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#{aid}" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">{a.titel}</a>{relevanz_marker}
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">{a.quelle} &middot; {datum_str}</div>
+        </div>
+        <button onclick="inHubKopieren('{aid}')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>"""
 
     # --- Teil 2: Ausführliche Zusammenfassungen ---
@@ -179,6 +182,8 @@ def _generiere_html(artikel: list[BewerteterArtikel],
         .btn-lesen:hover {{ background:#1a6b6a; color:#fff; border-color:#1a6b6a; }}
         .btn-hub:hover {{ background:#1a6b6a; color:#fff; border-color:#1a6b6a; }}
         .btn-lesen.aktiv {{ background:#1a6b6a; color:#fff; border-color:#1a6b6a; }}
+        .btn-hub-klein {{ border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:13px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; flex-shrink:0; margin-left:8px; }}
+        .btn-hub-klein:hover {{ background:#1a6b6a; color:#fff; border-color:#1a6b6a; }}
         .leseliste {{ background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:2px solid #1a6b6a; display:none; }}
         .leseliste h2 {{ margin:0 0 12px 0; font-size:15px; color:#1a6b6a; font-weight:600; }}
         .leseliste-item {{ padding:8px 0; border-bottom:1px solid #e8dcc8; display:flex; justify-content:space-between; align-items:center; }}

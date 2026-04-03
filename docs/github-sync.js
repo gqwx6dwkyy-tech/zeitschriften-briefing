@@ -80,7 +80,7 @@ const GH_SYNC = (function() {
         const token = await sicherToken();
         if (!token) return { spaeter_lesen: [], leseliste: [] };
 
-        const resp = await fetch(`https://api.github.com/repos/${REPO}/contents/${DATEI}`, {
+        const resp = await fetch(`https://api.github.com/repos/${REPO}/contents/${DATEI}?ref=master`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Accept': 'application/vnd.github.v3+json'
@@ -120,7 +120,7 @@ const GH_SYNC = (function() {
             const body = {
                 message: 'Leseliste aktualisiert',
                 content: btoa(unescape(encodeURIComponent(JSON.stringify(daten, null, 2)))),
-                branch: 'main'
+                branch: 'master'
             };
             if (_sha) body.sha = _sha;
 
