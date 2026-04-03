@@ -24,6 +24,8 @@
         .btn-lesen:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
         .btn-hub:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
         .btn-lesen.aktiv { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-hub-klein { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:13px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; flex-shrink:0; margin-left:8px; }
+        .btn-hub-klein:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
         .leseliste { background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:2px solid #1a6b6a; display:none; }
         .leseliste h2 { margin:0 0 12px 0; font-size:15px; color:#1a6b6a; font-weight:600; }
         .leseliste-item { padding:8px 0; border-bottom:1px solid #e8dcc8; display:flex; justify-content:space-between; align-items:center; }
@@ -38,7 +40,7 @@
 <div class="container">
     <div class="header" id="top">
         <h1>Tages-Briefing</h1>
-        <div class="datum">Freitag, 03. April 2026 &middot; 76 Artikel</div>
+        <div class="datum">Freitag, 03. April 2026 &middot; 81 Artikel</div>
         <div class="nav-links"><a href="../leseliste.html">Leseliste &rarr;</a></div>
     </div>
 
@@ -52,318 +54,581 @@
     <div style="margin-top:28px; margin-bottom:10px;">
         <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#1a6b6a; font-weight:600;">Börse</span>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#e816394e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Bond Yields Rise After Strong March Jobs Report</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 16:08</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#e816394e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Bond Yields Rise After Strong March Jobs Report</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 16:08</div>
+        </div>
+        <button onclick="inHubKopieren('e816394e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#406b3791" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 15:46</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#406b3791" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 15:46</div>
+        </div>
+        <button onclick="inHubKopieren('406b3791')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#10dcab6c" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Auto & Transport Roundup: Market Talk</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:38</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#10dcab6c" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Auto & Transport Roundup: Market Talk</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:38</div>
+        </div>
+        <button onclick="inHubKopieren('10dcab6c')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#9d52eafb" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Energy & Utilities Roundup: Market Talk</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:33</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#9d52eafb" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Energy & Utilities Roundup: Market Talk</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:33</div>
+        </div>
+        <button onclick="inHubKopieren('9d52eafb')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#0a894941" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tech, Media & Telecom Roundup: Market Talk</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#0a894941" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tech, Media & Telecom Roundup: Market Talk</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:30</div>
+        </div>
+        <button onclick="inHubKopieren('0a894941')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#a9b3b1ea" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">U.S. Fighter Jet Shot Down in Iran. How Oil Might React. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 14:56</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#a9b3b1ea" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">U.S. Fighter Jet Shot Down in Iran. How Oil Might React. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 14:56</div>
+        </div>
+        <button onclick="inHubKopieren('a9b3b1ea')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#f51dc5ce" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">This Oil Shock Is So Big It Is Fueling a Turnaround in Energy Stocks</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#f51dc5ce" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">This Oil Shock Is So Big It Is Fueling a Turnaround in Energy Stocks</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:00</div>
+        </div>
+        <button onclick="inHubKopieren('f51dc5ce')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#1c8b2002" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nakiki SE: Das seltsame Zweitleben von Windeln.de</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:37</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1c8b2002" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nakiki SE: Das seltsame Zweitleben von Windeln.de</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:37</div>
+        </div>
+        <button onclick="inHubKopieren('1c8b2002')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#456643c7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Buy Lennar Stock. Its Foundation Is Stronger Than It Looks. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 11:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#456643c7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Buy Lennar Stock. Its Foundation Is Stronger Than It Looks. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 03.04. 11:00</div>
+        </div>
+        <button onclick="inHubKopieren('456643c7')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#8c7d7012" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Riedls Dax-Radar: Am Ölmarkt entscheidet sich das Schicksal deutscher Aktien</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:03</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#8c7d7012" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Riedls Dax-Radar: Am Ölmarkt entscheidet sich das Schicksal deutscher Aktien</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:03</div>
+        </div>
+        <button onclick="inHubKopieren('8c7d7012')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#22e27a8e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nikkei, Topix, CSI 300: ﻿Japans Börsen legen zu – schwacher Dienstleistungssektor drückt Aktien in China</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 07:39</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#22e27a8e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nikkei, Topix, CSI 300: ﻿Japans Börsen legen zu – schwacher Dienstleistungssektor drückt Aktien in China</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 07:39</div>
+        </div>
+        <button onclick="inHubKopieren('22e27a8e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#0c20aa07" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Brenntag-Aktie: Chemie ist nicht gleich Chemie</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:10</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#2fd3bd8a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 05:34</div>
+        </div>
+        <button onclick="inHubKopieren('2fd3bd8a')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#74b06c5e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tesla Deliveries Rise. Why the Stock Is Falling. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 02.04. 20:35</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#0c20aa07" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Brenntag-Aktie: Chemie ist nicht gleich Chemie</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:10</div>
+        </div>
+        <button onclick="inHubKopieren('0c20aa07')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#b3d233c6" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Health Care Roundup: Market Talk</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:27</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#74b06c5e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tesla Deliveries Rise. Why the Stock Is Falling. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 02.04. 20:35</div>
+        </div>
+        <button onclick="inHubKopieren('74b06c5e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#0e4dc282" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 02.04. 20:17</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b3d233c6" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Health Care Roundup: Market Talk</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:27</div>
+        </div>
+        <button onclick="inHubKopieren('b3d233c6')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#c1a0110d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Investors Waver After Trump Speech on Iran, Ending Two-Day Surge in Stocks</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#0e4dc282" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either. - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 02.04. 20:17</div>
+        </div>
+        <button onclick="inHubKopieren('0e4dc282')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#c1a0110d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Investors Waver After Trump Speech on Iran, Ending Two-Day Surge in Stocks</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+        </div>
+        <button onclick="inHubKopieren('c1a0110d')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
     <div style="margin-top:28px; margin-bottom:10px;">
         <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#6b5c73; font-weight:600;">Künstliche Intelligenz</span>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#8f93e3e1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | The ‘AI Detector’ as Defamation Machine</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 16:56</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#8f93e3e1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | The ‘AI Detector’ as Defamation Machine</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 16:56</div>
+        </div>
+        <button onclick="inHubKopieren('8f93e3e1')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#7505df8d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Susanne Tattersall: „KI macht die Immobilienwirtschaft hoffentlich kostengünstiger“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 14:03</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#7505df8d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Susanne Tattersall: „KI macht die Immobilienwirtschaft hoffentlich kostengünstiger“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 14:03</div>
+        </div>
+        <button onclick="inHubKopieren('7505df8d')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#6c79e06d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | Speed Bumps on the Road to Self-Driving Cars</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:45</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#6c79e06d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | Speed Bumps on the Road to Self-Driving Cars</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:45</div>
+        </div>
+        <button onclick="inHubKopieren('6c79e06d')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#b64e6a72" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">ServiceNow CEO Builds New Business Model Around AI</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 11:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b64e6a72" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">ServiceNow CEO Builds New Business Model Around AI</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 11:00</div>
+        </div>
+        <button onclick="inHubKopieren('b64e6a72')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#cbbc2421" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">KI in der Finanzberatung: Schickt die KI die Bankberater zum „alten Eisen“?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:13</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#cbbc2421" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">KI in der Finanzberatung: Schickt die KI die Bankberater zum „alten Eisen“?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:13</div>
+        </div>
+        <button onclick="inHubKopieren('cbbc2421')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#fa2c1a34" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Under the Skin of America’s Humanoid Robots: Chinese Technology</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 02:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#fa2c1a34" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Under the Skin of America’s Humanoid Robots: Chinese Technology</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 02:00</div>
+        </div>
+        <button onclick="inHubKopieren('fa2c1a34')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#0a5a6a41" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Why OpenAI Decided to Buy ‘TBPN,’ Tech’s Hottest News Show</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:45</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#0a5a6a41" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Why OpenAI Decided to Buy ‘TBPN,’ Tech’s Hottest News Show</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:45</div>
+        </div>
+        <button onclick="inHubKopieren('0a5a6a41')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#3a1b8e2b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | AI Is a Threat to Everything the American People Hold Dear</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#3a1b8e2b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | AI Is a Threat to Everything the American People Hold Dear</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+        </div>
+        <button onclick="inHubKopieren('3a1b8e2b')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
     <div style="margin-top:28px; margin-bottom:10px;">
         <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#7a6855; font-weight:600;">Internationale Politik</span>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#3b32c2f2" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Joked About Macron’s Wife. He Wasn’t Amused.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 17:07</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#3b32c2f2" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Joked About Macron’s Wife. He Wasn’t Amused.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 17:07</div>
+        </div>
+        <button onclick="inHubKopieren('3b32c2f2')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#1c58172f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Iran-Krieg +++: USA bestätigen Abschuss von zweitem US-Kampfjet über Iran – Besatzungsmitglied offenbar gerettet</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:47</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#af809b5e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 15:08</div>
+        </div>
+        <button onclick="inHubKopieren('af809b5e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#a633a86e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: „Spart jeden Tropfen Sprit“: Südkorea bereitet sich auf Notstandsmanagement von Rohstoffen vor</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:07</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1c58172f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Iran-Krieg +++: USA bestätigen Abschuss von zweitem US-Kampfjet über Iran – Besatzungsmitglied offenbar gerettet</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:47</div>
+        </div>
+        <button onclick="inHubKopieren('1c58172f')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#894f4e08" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ US-Zollpoltik +++: Maschinenbau kritisiert neue US-Zollregeln – keine Vorbereitungszeit</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 12:20</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#2d83e0be" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Säuberungswelle: China ermittelt gegen Politbüro-Mitglied Ma wegen Korruption</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:14</div>
+        </div>
+        <button onclick="inHubKopieren('2d83e0be')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#604d10c5" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">US-Zölle: Trump verhängt neue Zölle auf Arzneien und ändert Metall-Abgaben</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 11:12</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#a633a86e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: „Spart jeden Tropfen Sprit“: Südkorea bereitet sich auf Notstandsmanagement von Rohstoffen vor</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:07</div>
+        </div>
+        <button onclick="inHubKopieren('a633a86e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#d28cbe59" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nato: Rutte reist nach Washington – Diese Druckmittel hat Trump</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 10:14</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#82732f32" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:56</div>
+        </div>
+        <button onclick="inHubKopieren('82732f32')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#1301756e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Mehr Schiffe passieren laut Bericht Straße von Hormus</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:35</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#894f4e08" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ US-Zollpoltik +++: Maschinenbau kritisiert neue US-Zollregeln – keine Vorbereitungszeit</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 12:20</div>
+        </div>
+        <button onclick="inHubKopieren('894f4e08')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#65fd942c" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">U.S. Repatriates Chinese Drug Fugitive in a Sign of Stabilizing Ties</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:43</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#85fc6a53" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Russland blockt Telegram: Russen misstrauen dem Staats-Messenger MAX</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 11:22</div>
+        </div>
+        <button onclick="inHubKopieren('85fc6a53')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#27acc92b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Ukraine-Krieg +++: Lage an der Front laut Selenskyj die Beste seit zehn Monaten</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 08:38</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#604d10c5" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">US-Zölle: Trump verhängt neue Zölle auf Arzneien und ändert Metall-Abgaben</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 11:12</div>
+        </div>
+        <button onclick="inHubKopieren('604d10c5')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#35e8db45" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Cuba to Free 2,010 Prisoners Amid Talks With The U.S.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 04:13</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#d0e04dce" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:50</div>
+        </div>
+        <button onclick="inHubKopieren('d0e04dce')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#99cb5679" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Bundespolitik +++: Wadephul besorgt über Trumps Nato-Austrittsdrohung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 01:19</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b4986218" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Telegram: „Dass ein Messenger eine so zentrale Rolle in einem Krieg spielt, klingt absurd“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:23</div>
+        </div>
+        <button onclick="inHubKopieren('b4986218')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#e66b038a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">USA: Hegseth drängt Generalstabschef des US-Heeres zum Rücktritt</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 00:23</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#d28cbe59" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Nato: Rutte reist nach Washington – Diese Druckmittel hat Trump</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 10:14</div>
+        </div>
+        <button onclick="inHubKopieren('d28cbe59')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#9a53ae3b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Control Over Strait of Hormuz Will Determine Who Wins the War</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 00:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#21ea6079" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Xi Ousts Politburo Member in Deepening Purge of China’s Top Ranks</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 10:14</div>
+        </div>
+        <button onclick="inHubKopieren('21ea6079')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#7525597a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran Beefs Up Defenses, Recruits Children as It Prepares for Ground War</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1301756e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Mehr Schiffe passieren laut Bericht Straße von Hormus</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:35</div>
+        </div>
+        <button onclick="inHubKopieren('1301756e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#ae8648e7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Administration Unveils Up to 100% Tariff on Branded Drugs</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:34</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#65fd942c" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">U.S. Repatriates Chinese Drug Fugitive in a Sign of Stabilizing Ties</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:43</div>
+        </div>
+        <button onclick="inHubKopieren('65fd942c')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#c0beff23" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Fires His Attorney General</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:04</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#27acc92b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Ukraine-Krieg +++: Lage an der Front laut Selenskyj die Beste seit zehn Monaten</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 08:38</div>
+        </div>
+        <button onclick="inHubKopieren('27acc92b')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#be830ead" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Myanmar: Myanmars Parlament wählt Juntachef Min Aung Hlaing</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 07:00</div>
+        </div>
+        <button onclick="inHubKopieren('be830ead')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#35e8db45" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Cuba to Free 2,010 Prisoners Amid Talks With The U.S.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 04:13</div>
+        </div>
+        <button onclick="inHubKopieren('35e8db45')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#99cb5679" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Bundespolitik +++: Wadephul besorgt über Trumps Nato-Austrittsdrohung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 01:19</div>
+        </div>
+        <button onclick="inHubKopieren('99cb5679')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#e66b038a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">USA: Hegseth drängt Generalstabschef des US-Heeres zum Rücktritt</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 00:23</div>
+        </div>
+        <button onclick="inHubKopieren('e66b038a')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#9a53ae3b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Control Over Strait of Hormuz Will Determine Who Wins the War</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 00:00</div>
+        </div>
+        <button onclick="inHubKopieren('9a53ae3b')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#7525597a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran Beefs Up Defenses, Recruits Children as It Prepares for Ground War</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:30</div>
+        </div>
+        <button onclick="inHubKopieren('7525597a')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#102beee7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 21:31</div>
+        </div>
+        <button onclick="inHubKopieren('102beee7')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#ae8648e7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Administration Unveils Up to 100% Tariff on Branded Drugs</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:34</div>
+        </div>
+        <button onclick="inHubKopieren('ae8648e7')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#0901212a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | Why Britain Can’t Afford a Navy</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:27</div>
+        </div>
+        <button onclick="inHubKopieren('0901212a')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#c0beff23" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Fires His Attorney General</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:04</div>
+        </div>
+        <button onclick="inHubKopieren('c0beff23')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
     <div style="margin-top:28px; margin-bottom:10px;">
         <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#4a6259; font-weight:600;">Finanzen</span>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#b26d1524" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Financial Services Roundup: Market Talk</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:36</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b26d1524" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Financial Services Roundup: Market Talk</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:36</div>
+        </div>
+        <button onclick="inHubKopieren('b26d1524')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#ac74cbfc" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Best Business Debt Consolidation Loans in April 2026</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:36</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#ac74cbfc" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Best Business Debt Consolidation Loans in April 2026</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 15:36</div>
+        </div>
+        <button onclick="inHubKopieren('ac74cbfc')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#af809b5e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 15:08</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#54b3ef12" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Immobilien: So schützen sich Bauherren vor steigenden Preisen durch den Iran-Krieg</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:57</div>
+        </div>
+        <button onclick="inHubKopieren('54b3ef12')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#54b3ef12" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Immobilien: So schützen sich Bauherren vor steigenden Preisen durch den Iran-Krieg</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:57</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#2ee14407" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise Deutschland: Diesel-Preis erreicht neues Rekordhoch</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 13:47</div>
+        </div>
+        <button onclick="inHubKopieren('2ee14407')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#2ee14407" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise Deutschland: Diesel-Preis erreicht neues Rekordhoch</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 13:47</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#945cadc4" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | The Blue State Exodus Enriches Red States</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:45</div>
+        </div>
+        <button onclick="inHubKopieren('945cadc4')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#945cadc4" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | The Blue State Exodus Enriches Red States</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 13:45</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#16cb57ab" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Konjunktur: Trotz Iran-Krieg: US-Arbeitslosenquote sinkt auf 4,3 Prozent</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:30</div>
+        </div>
+        <button onclick="inHubKopieren('16cb57ab')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#16cb57ab" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Konjunktur: Trotz Iran-Krieg: US-Arbeitslosenquote sinkt auf 4,3 Prozent</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 13:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#7b539ad1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Konjunktur in den USA: US-Arbeitsmarkt erholt sich</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:18</div>
+        </div>
+        <button onclick="inHubKopieren('7b539ad1')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#82732f32" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:56</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#2a01536f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Dollar Strengthens After March Jobs Data</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 12:10</div>
+        </div>
+        <button onclick="inHubKopieren('2a01536f')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#7b539ad1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Konjunktur in den USA: US-Arbeitsmarkt erholt sich</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:18</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#114e9341" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Geldanlage: Die Suche nach dem Depot der Zukunft</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:10</div>
+        </div>
+        <button onclick="inHubKopieren('114e9341')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#2a01536f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Dollar Strengthens After March Jobs Data</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 12:10</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1313f5a0" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">6 of the Best Financial Advisor Companies: Well-Known Fiduciary Investment Firms to Consider</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 12:08</div>
+        </div>
+        <button onclick="inHubKopieren('1313f5a0')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#114e9341" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Geldanlage: Die Suche nach dem Depot der Zukunft</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:10</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#fe151d12" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Erbschaft: Wie bereiten wir uns auf die Erbschaftsteuer-Reform vor?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:07</div>
+        </div>
+        <button onclick="inHubKopieren('fe151d12')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#1313f5a0" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">6 of the Best Financial Advisor Companies: Well-Known Fiduciary Investment Firms to Consider</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 12:08</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#481526f2" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Ehe und Steuern: Familienministerin offen für Ehegattensplitting-Reform</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 11:41</div>
+        </div>
+        <button onclick="inHubKopieren('481526f2')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#fe151d12" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Erbschaft: Wie bereiten wir uns auf die Erbschaftsteuer-Reform vor?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 12:07</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#304bc213" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Rüstungswirtschaft: Jedes sechste deutsche Unternehmen sucht bereits seine Chance in der Rüstung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:30</div>
+        </div>
+        <button onclick="inHubKopieren('304bc213')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#481526f2" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Ehe und Steuern: Familienministerin offen für Ehegattensplitting-Reform</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 11:41</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#915d95ee" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Zahnärzte-Versorgung: „Anlagepraxis war nicht geeignet, um sichere Renten zu garantieren“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:29</div>
+        </div>
+        <button onclick="inHubKopieren('915d95ee')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#41a2890d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Immobilien: Bis zu 18 Millionen – Das sind die fünf exklusivsten Orte für Ferienhäuser</a>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 11:00</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#abfd6018" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Why Filling Up Your Easter Basket Is So Expensive, Despite Much-Lower Cocoa Prices</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 10:18</div>
+        </div>
+        <button onclick="inHubKopieren('abfd6018')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#d0e04dce" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:50</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#d8b65884" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Steuererklärung 2025: Diese Abgabefristen gelten für Ihre Steuererklärung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:16</div>
+        </div>
+        <button onclick="inHubKopieren('d8b65884')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#304bc213" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Rüstungswirtschaft: Jedes sechste deutsche Unternehmen sucht bereits seine Chance in der Rüstung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#53f7380e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Gehaltsumwandlung: Achtung, Fahrrad-Leasing kann Ihre Rente senken!</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:03</div>
+        </div>
+        <button onclick="inHubKopieren('53f7380e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#915d95ee" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Zahnärzte-Versorgung: „Anlagepraxis war nicht geeignet, um sichere Renten zu garantieren“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:29</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#38183148" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Wachstum: Iran-Knick in der Konjunktur</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:06</div>
+        </div>
+        <button onclick="inHubKopieren('38183148')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#abfd6018" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Why Filling Up Your Easter Basket Is So Expensive, Despite Much-Lower Cocoa Prices</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 10:18</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#83cd0353" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">A Guide to the Gulf’s Trillions of Dollars of Sovereign Wealth</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+        </div>
+        <button onclick="inHubKopieren('83cd0353')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#d8b65884" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Steuererklärung 2025: Diese Abgabefristen gelten für Ihre Steuererklärung</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:16</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#38515edc" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">What’s a Private-Credit Fund Worth When the Money Is Locked Up?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+        </div>
+        <button onclick="inHubKopieren('38515edc')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#53f7380e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Gehaltsumwandlung: Achtung, Fahrrad-Leasing kann Ihre Rente senken!</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 10:03</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#5df3822f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Fuel Surcharges Hit Small Businesses as ‘Tariffs 2.0’</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+        </div>
+        <button onclick="inHubKopieren('5df3822f')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#38183148" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Wachstum: Iran-Knick in der Konjunktur</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 09:06</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#a8b0b5a5" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Ehegattensplitting: Den Staat geht es nichts an, wie Ehepaare ihr Leben organisieren</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 07:10</div>
+        </div>
+        <button onclick="inHubKopieren('a8b0b5a5')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#83cd0353" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">A Guide to the Gulf’s Trillions of Dollars of Sovereign Wealth</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#d5519bf3" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise: Wirtschaftsweise Grimm nennt Tempolimit „kluges Signal“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 06:38</div>
+        </div>
+        <button onclick="inHubKopieren('d5519bf3')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#38515edc" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">What’s a Private-Credit Fund Worth When the Money Is Locked Up?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#8451f022" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise Deutschland: Wirtschaftsweise Grimm nennt Tempolimit ein „kluges Signal“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 06:37</div>
+        </div>
+        <button onclick="inHubKopieren('8451f022')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#5df3822f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Fuel Surcharges Hit Small Businesses as ‘Tariffs 2.0’</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 08:30</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#676c7384" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Goldpreis: Erhält das Finanzamt eine Mitteilung über meinen Goldverkauf?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:54</div>
+        </div>
+        <button onclick="inHubKopieren('676c7384')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#a8b0b5a5" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Ehegattensplitting: Den Staat geht es nichts an, wie Ehepaare ihr Leben organisieren</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 07:10</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#885ced69" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">How Insulated Is the U.S. Economy From the Iran War?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:00</div>
+        </div>
+        <button onclick="inHubKopieren('885ced69')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#d5519bf3" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise: Wirtschaftsweise Grimm nennt Tempolimit „kluges Signal“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 06:38</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#f8efc095" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">The Wealthy Investors That Powered Private Credit Are Rushing for the Exits</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 22:30</div>
+        </div>
+        <button onclick="inHubKopieren('f8efc095')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#8451f022" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Spritpreise Deutschland: Wirtschaftsweise Grimm nennt Tempolimit ein „kluges Signal“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 06:37</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#37ce650d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Amazon to Apply 3.5% Fuel Surcharge to Third-Party Sellers</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:36</div>
+        </div>
+        <button onclick="inHubKopieren('37ce650d')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#676c7384" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Goldpreis: Erhält das Finanzamt eine Mitteilung über meinen Goldverkauf?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 03.04. 05:54</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#537f6485" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | Trump May Turn Your 401(k) Into an Old-Fashioned Pension</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:35</div>
+        </div>
+        <button onclick="inHubKopieren('537f6485')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#2fd3bd8a" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 05:34</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#885ced69" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">How Insulated Is the U.S. Economy From the Iran War?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 23:00</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#f8efc095" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">The Wealthy Investors That Powered Private Credit Are Rushing for the Exits</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 22:30</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#102beee7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 21:31</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#37ce650d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Amazon to Apply 3.5% Fuel Surcharge to Third-Party Sellers</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:36</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#537f6485" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | Trump May Turn Your 401(k) Into an Old-Fashioned Pension</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:35</div>
-    </div>
-    <div style="padding:9px 0; border-bottom:1px solid #edecea;">
-        <a href="#132bebb9" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | A German Official Talks Like Jimmy Carter—and That’s Good</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
-        <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#132bebb9" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Opinion | A German Official Talks Like Jimmy Carter—and That’s Good</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 02.04. 20:01</div>
+        </div>
+        <button onclick="inHubKopieren('132bebb9')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
     </div>
     </div>
     <hr class="trennlinie">
@@ -385,7 +650,7 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="406b3791" class="artikel" data-id="406b3791" data-titel="Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMiyANBVV95cUxQNy1ybjNrV1RfcjN1VzdtcDRXZHBmTlB4OEtsQy1abEc0VnZoTVJKUlVLUzJXWDV2V0hfSmM3a1YxdmZDUUVvSlJvMTRYbERuR3RMb2puSVhpWURHa2xMRFRjZ0E2emZOZXdwYldCbzNPNW9ETm4yNVhmX2FDTWw5S3JvY28ycFhTc1VCWEU5bU5jamhBOFdyRHZlX00wN3YxMVlQN01TMU1QeTFlNmlmWjhxN3RLaUljYnMxWnNVcy1SZFA2TVRFQkpSbEF0ZS02NFdnRGJENnhNYUJ4Qkk3bWZRdzVwZzFsSDlkNDFOLVJwTV8yWWhMeDdKN3F2bzJjQXRoR0dTanA1ZGhTZzllWHhHMldBTWFVbWJscmhmVzF1cE5IazRydnliZUk1UUVHcHpYdkJLdGtObzczV0YtV29KOEIxd3J1RGVSdlNKT3J4XzZqc0R1LWZYc0p6NHJtenpzc3I3OEN1UTd3a3RBX0h4aklLNXZZY0hPSGRBRS1sTlZiNWFTTDR2SUZ6YTRGd3FEVHhLRjVrVTJDNlBrdVRkdW9nV3JyTFIwVkdYOEd6ZzBRV0NZV0t4ZlNiUEpucmUxSTNLS2c?oc=5" data-zusammenfassung="Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 15:46">
+    <article id="406b3791" class="artikel" data-id="406b3791" data-titel="Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMiyANBVV95cUxNUlFvVVhXdUl4VTJtYjR2bF9rUmJIWHExdzl5ZVp0LXFhY3Nvd2VUdHBNcHJucDZESGhrRUVaSmlDbGtxcXYwa20xVGdhXzFSWXR3Vm9UVE9rQ041TUxLYzZQUUw5b3ZzdVVtUm5nNUw2VHNPSWhkV3RGQ3Z3Q3BEb1ZsSjRKTThBM2NEd1JGb1B4cUE4b2k0dGwxR09iVzhYbUNNWDdlS1U3MWJDdDlWXzRjd2l4a0dxNDY1OHk3cGU0VzI5LVNVSnVsNGFESnprZmUwNll2dkduNDE0WW1mWVhVZE56enRQdS0weGxoUVRta2VTVkMzTVdPVkxfenFuRFc5dUgwRTREc3lFYlFfaTNrZmVCZUp3NkVtcy1MZ1h2dFNxcnRyY3FwNng3WUFDX3AtcmdBU1lkV2xYOEJvTkFHdEIweWtvQVVGTmVFR0pqUVZiVTJLNU1HYmlscUdXSkc1MFFzbWJqWFBFMzdnU2hsaE0tQ0RDSm5JUjVqUHcyVEhDQkdIRzhMQlFWTlc3dzljNmhIdm5xY1N6YUVRd3p2SzY5NncxUjdwOVYxN09lOHNXYXZRUTJvbmlqbWlYRGwtbDNTNi0?oc=5" data-zusammenfassung="Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 15:46">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
                 <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 03.04.2026 15:46</div>
@@ -398,7 +663,7 @@
         </div>
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Is the Stock Market Open Today? Here Are the Trading Hours Ahead of Good Friday.&nbsp;&nbsp;Barron's</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://news.google.com/rss/articles/CBMiyANBVV95cUxQNy1ybjNrV1RfcjN1VzdtcDRXZHBmTlB4OEtsQy1abEc0VnZoTVJKUlVLUzJXWDV2V0hfSmM3a1YxdmZDUUVvSlJvMTRYbERuR3RMb2puSVhpWURHa2xMRFRjZ0E2emZOZXdwYldCbzNPNW9ETm4yNVhmX2FDTWw5S3JvY28ycFhTc1VCWEU5bU5jamhBOFdyRHZlX00wN3YxMVlQN01TMU1QeTFlNmlmWjhxN3RLaUljYnMxWnNVcy1SZFA2TVRFQkpSbEF0ZS02NFdnRGJENnhNYUJ4Qkk3bWZRdzVwZzFsSDlkNDFOLVJwTV8yWWhMeDdKN3F2bzJjQXRoR0dTanA1ZGhTZzllWHhHMldBTWFVbWJscmhmVzF1cE5IazRydnliZUk1UUVHcHpYdkJLdGtObzczV0YtV29KOEIxd3J1RGVSdlNKT3J4XzZqc0R1LWZYc0p6NHJtenpzc3I3OEN1UTd3a3RBX0h4aklLNXZZY0hPSGRBRS1sTlZiNWFTTDR2SUZ6YTRGd3FEVHhLRjVrVTJDNlBrdVRkdW9nV3JyTFIwVkdYOEd6ZzBRV0NZV0t4ZlNiUEpucmUxSTNLS2c?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="https://news.google.com/rss/articles/CBMiyANBVV95cUxNUlFvVVhXdUl4VTJtYjR2bF9rUmJIWHExdzl5ZVp0LXFhY3Nvd2VUdHBNcHJucDZESGhrRUVaSmlDbGtxcXYwa20xVGdhXzFSWXR3Vm9UVE9rQ041TUxLYzZQUUw5b3ZzdVVtUm5nNUw2VHNPSWhkV3RGQ3Z3Q3BEb1ZsSjRKTThBM2NEd1JGb1B4cUE4b2k0dGwxR09iVzhYbUNNWDdlS1U3MWJDdDlWXzRjd2l4a0dxNDY1OHk3cGU0VzI5LVNVSnVsNGFESnprZmUwNll2dkduNDE0WW1mWVhVZE56enRQdS0weGxoUVRta2VTVkMzTVdPVkxfenFuRFc5dUgwRTREc3lFYlFfaTNrZmVCZUp3NkVtcy1MZ1h2dFNxcnRyY3FwNng3WUFDX3AtcmdBU1lkV2xYOEJvTkFHdEIweWtvQVVGTmVFR0pqUVZiVTJLNU1HYmlscUdXSkc1MFFzbWJqWFBFMzdnU2hsaE0tQ0RDSm5JUjVqUHcyVEhDQkdIRzhMQlFWTlc3dzljNmhIdm5xY1N6YUVRd3p2SzY5NncxUjdwOVYxN09lOHNXYXZRUTJvbmlqbWlYRGwtbDNTNi0?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -453,7 +718,7 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="a9b3b1ea" class="artikel" data-id="a9b3b1ea" data-titel="U.S. Fighter Jet Shot Down in Iran. How Oil Might React. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMigANBVV95cUxNTVBOQmxyTkR5XzZ6YjR3X2xYQzdKYjVLa3JuYWRiQ2ItX21Wa3lZNXl3bzVRNlh3aWtXdlBhZDVib2EzM2x5R0F3R2xQZUl1VjdyRmphNWxYOEVYcXpLT2tSRGtreXZ2R3VfNFhuOG4wN0t4MzRibFVaZTliTGRBeEZhU2Q4dG5hMTlqcnN5SjlWWDJYZ3JRNW5lZEt6d3F2MjhscHo5WklldGI2QlRTWFZOalAycHBCVEZnRWtqYkV1U2hnLU1BZXUxRTRJdDlNcE1SZXZCOXZ4a1dWVlFWaHh1WVItdUVNTkFJMzFUZk1lSHZCbDd6NHhyTzNpUFRzM0Rrd1dIN3RXZC1kZzRnQTI4QVlpeHc4MFJHTEs0a1BVRzI2OTRGcXhrZy1NUzR6MUp4TlhvU3JqQ19IVVBrdDIzWVhaX0Y4MHpQdTdsekQtaDZBX3R2YlQ3QWNrSE4tbDAxaVZxT0RNc0oxWXgtT05CdXgtbjhRTW15bUdOemo?oc=5" data-zusammenfassung="U.S. Fighter Jet Shot Down in Iran. How Oil Might React.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 14:56">
+    <article id="a9b3b1ea" class="artikel" data-id="a9b3b1ea" data-titel="U.S. Fighter Jet Shot Down in Iran. How Oil Might React. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMigANBVV95cUxOaEJxYlN5TjhwbFFNX2ZzRTZZMnhDaXdsMk0wVVI3WWlScmxhU0Y1M1g2SC1IbmRQZkdpY0c3VE5VbmZySHRvU3FNYnRMMm5neTZpaGFCUFVhUlJ4M0c1N1hibHhfZTczV1lKMXZhblZrNXZHYXNzS0lTS0luN2hZYXdkY2xDcE1qRWQ1QXlxZzVrdFMtTk9CMV82bkhyM0k3MkhWU1pIUFRwcEpPa2IzWWhyMWFxS1NpeW1VMElBbzVNRWhpVV8tb3RGNnpDQ2VGUEhzX1RtNnFrd3lGcVFOaDlaRHRBRDgxMEpEdUFvREVVU0ROMGtkb3ZHUEtzZHNsZFNXR0dRcUlnOHdhYkJidGVlaHJWZHhfMm53UG83d2pWR1JNcFdzVzl3a1R1cVNTMkI0Tkc2dXdOQXVsdkYwUXRJeW9mci1fZjAxdlpmaDV0VEhTM2tTbnpJM3ZnV05lbUNIOE42ZlBSQ01KWkhCOF9BZGJoMWZEeWM2TjNNemg?oc=5" data-zusammenfassung="U.S. Fighter Jet Shot Down in Iran. How Oil Might React.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 14:56">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
                 <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 03.04.2026 14:56</div>
@@ -466,7 +731,7 @@
         </div>
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">U.S. Fighter Jet Shot Down in Iran. How Oil Might React.&nbsp;&nbsp;Barron's</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://news.google.com/rss/articles/CBMigANBVV95cUxNTVBOQmxyTkR5XzZ6YjR3X2xYQzdKYjVLa3JuYWRiQ2ItX21Wa3lZNXl3bzVRNlh3aWtXdlBhZDVib2EzM2x5R0F3R2xQZUl1VjdyRmphNWxYOEVYcXpLT2tSRGtreXZ2R3VfNFhuOG4wN0t4MzRibFVaZTliTGRBeEZhU2Q4dG5hMTlqcnN5SjlWWDJYZ3JRNW5lZEt6d3F2MjhscHo5WklldGI2QlRTWFZOalAycHBCVEZnRWtqYkV1U2hnLU1BZXUxRTRJdDlNcE1SZXZCOXZ4a1dWVlFWaHh1WVItdUVNTkFJMzFUZk1lSHZCbDd6NHhyTzNpUFRzM0Rrd1dIN3RXZC1kZzRnQTI4QVlpeHc4MFJHTEs0a1BVRzI2OTRGcXhrZy1NUzR6MUp4TlhvU3JqQ19IVVBrdDIzWVhaX0Y4MHpQdTdsekQtaDZBX3R2YlQ3QWNrSE4tbDAxaVZxT0RNc0oxWXgtT05CdXgtbjhRTW15bUdOemo?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="https://news.google.com/rss/articles/CBMigANBVV95cUxOaEJxYlN5TjhwbFFNX2ZzRTZZMnhDaXdsMk0wVVI3WWlScmxhU0Y1M1g2SC1IbmRQZkdpY0c3VE5VbmZySHRvU3FNYnRMMm5neTZpaGFCUFVhUlJ4M0c1N1hibHhfZTczV1lKMXZhblZrNXZHYXNzS0lTS0luN2hZYXdkY2xDcE1qRWQ1QXlxZzVrdFMtTk9CMV82bkhyM0k3MkhWU1pIUFRwcEpPa2IzWWhyMWFxS1NpeW1VMElBbzVNRWhpVV8tb3RGNnpDQ2VGUEhzX1RtNnFrd3lGcVFOaDlaRHRBRDgxMEpEdUFvREVVU0ROMGtkb3ZHUEtzZHNsZFNXR0dRcUlnOHdhYkJidGVlaHJWZHhfMm53UG83d2pWR1JNcFdzVzl3a1R1cVNTMkI0Tkc2dXdOQXVsdkYwUXRJeW9mci1fZjAxdlpmaDV0VEhTM2tTbnpJM3ZnV05lbUNIOE42ZlBSQ01KWkhCOF9BZGJoMWZEeWM2TjNNemg?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -504,7 +769,7 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="456643c7" class="artikel" data-id="456643c7" data-titel="Buy Lennar Stock. Its Foundation Is Stronger Than It Looks. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi_gJBVV95cUxOdmlFTWJfOVRVbmJHNFBJbG5QdE8yb1pVbUx0OExDQkhaRTZHeUNaSVJIVG1LQXZtd1NNbXNtYUoxa096X0hyYUtYa0VvYW5rd0hfR0l2MFY0R0l1UmJBUV9NSlA4S2dQZ0hBT1FZa2IwRl9rTEdkMnY2dE9tcG11dzJLd18yd3dveXpVX2luUVA1YUlGTWllN1RyNVQtd0o2UW9OSkZMaEtwSWliRlFLR0lWczZ2dVdmQ001aVVic0FycGxjZ3VSR3VkZVRrVmctM1BhY01KUzdxTk1TZWM1QjBsYVh6eUtOTnQ4T3BlZFNXMmpPTUZiMDhXV3pyR1NCUldWMmNPbjV3Ym1mVFJuUU5XYVRmb01wMDAza1pNaGoxMmEySXlYYkxleWl3LXRYbEcxbURVdnFuMzhTWkxuNkdKa2JiOC1PMnpiSUh1dmJTV0J4Tzk1b1l1YV9jWUZianNBdXNHOXNGMzJNemNXMG5ILXI5Zy1DdC15aTZ3?oc=5" data-zusammenfassung="Buy Lennar Stock. Its Foundation Is Stronger Than It Looks.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 11:00">
+    <article id="456643c7" class="artikel" data-id="456643c7" data-titel="Buy Lennar Stock. Its Foundation Is Stronger Than It Looks. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi_gJBVV95cUxOLUllaXNqVHdRNmRkeEJDdzFhQTltdU56QkpwcGpwOFZNZVY0OWxkdnZPYzRYa2drV2YwdEdQbDY2NXVhbUlBeTFGUG5jX0paSzZSYlVqWlppbDRHNFh4c204T3Vfa1ZGVTNFbnMzczdkMmlkSUJGdUp6eUV5Sjh3eTNkc2p5YkdWSVhrWHNzOXoxalNSZm1OdHJ4blZJVGRINTFUdUVUcHprcExwSmJSWk16YW5WMHVJWFZZMjhLTGRqSDBieDlnZWJJSkx5eVl0YzJCbXR4NjJfbmFjRkNWcXdBRXo1bG5JbzdGUi1UNzVqS3RfY1dCSWdtQW9yRWdncHhnTzdfUzNDTjJhckF3aGk2R2FpV0pVcDI5NEp4RkVDN01PeTZpcGtfeXRwMWpvdHNKdFpoNFpHN2ZoOW5EOTdPdHphYlVJeXVZVzJLZkNDYXdpVnI5bFdwNG91eVFjREFuWDZRMmlDUC1pZjhaeTZUSmpvRGRwbW5JZW1B?oc=5" data-zusammenfassung="Buy Lennar Stock. Its Foundation Is Stronger Than It Looks.&amp;nbsp;&amp;nbsp;Barron's" data-datum="03.04.2026 11:00">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
                 <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 03.04.2026 11:00</div>
@@ -517,7 +782,7 @@
         </div>
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Buy Lennar Stock. Its Foundation Is Stronger Than It Looks.&nbsp;&nbsp;Barron's</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://news.google.com/rss/articles/CBMi_gJBVV95cUxOdmlFTWJfOVRVbmJHNFBJbG5QdE8yb1pVbUx0OExDQkhaRTZHeUNaSVJIVG1LQXZtd1NNbXNtYUoxa096X0hyYUtYa0VvYW5rd0hfR0l2MFY0R0l1UmJBUV9NSlA4S2dQZ0hBT1FZa2IwRl9rTEdkMnY2dE9tcG11dzJLd18yd3dveXpVX2luUVA1YUlGTWllN1RyNVQtd0o2UW9OSkZMaEtwSWliRlFLR0lWczZ2dVdmQ001aVVic0FycGxjZ3VSR3VkZVRrVmctM1BhY01KUzdxTk1TZWM1QjBsYVh6eUtOTnQ4T3BlZFNXMmpPTUZiMDhXV3pyR1NCUldWMmNPbjV3Ym1mVFJuUU5XYVRmb01wMDAza1pNaGoxMmEySXlYYkxleWl3LXRYbEcxbURVdnFuMzhTWkxuNkdKa2JiOC1PMnpiSUh1dmJTV0J4Tzk1b1l1YV9jWUZianNBdXNHOXNGMzJNemNXMG5ILXI5Zy1DdC15aTZ3?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="https://news.google.com/rss/articles/CBMi_gJBVV95cUxOLUllaXNqVHdRNmRkeEJDdzFhQTltdU56QkpwcGpwOFZNZVY0OWxkdnZPYzRYa2drV2YwdEdQbDY2NXVhbUlBeTFGUG5jX0paSzZSYlVqWlppbDRHNFh4c204T3Vfa1ZGVTNFbnMzczdkMmlkSUJGdUp6eUV5Sjh3eTNkc2p5YkdWSVhrWHNzOXoxalNSZm1OdHJ4blZJVGRINTFUdUVUcHprcExwSmJSWk16YW5WMHVJWFZZMjhLTGRqSDBieDlnZWJJSkx5eVl0YzJCbXR4NjJfbmFjRkNWcXdBRXo1bG5JbzdGUi1UNzVqS3RfY1dCSWdtQW9yRWdncHhnTzdfUzNDTjJhckF3aGk2R2FpV0pVcDI5NEp4RkVDN01PeTZpcGtfeXRwMWpvdHNKdFpoNFpHN2ZoOW5EOTdPdHphYlVJeXVZVzJLZkNDYXdpVnI5bFdwNG91eVFjREFuWDZRMmlDUC1pZjhaeTZUSmpvRGRwbW5JZW1B?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -555,6 +820,23 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
+    <article id="2fd3bd8a" class="artikel" data-id="2fd3bd8a" data-titel="Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/finanzen/anlagestrategie/jens-ehrhardt-es-kann-eine-groessere-oelkrise-drohen-als-jemals-zuvor/100213038.html" data-zusammenfassung="Der prominente Fondsmanager warnt davor, die Folgen des Irankriegs zu unterschätzen. Hoffnung macht ihm eine Branche, die vor Kurzem noch skeptisch betrachtet wurde." data-datum="03.04.2026 05:34">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 05:34</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('2fd3bd8a')" class="btn-lesen" id="btn-lesen-2fd3bd8a" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('2fd3bd8a')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der prominente Fondsmanager warnt davor, die Folgen des Irankriegs zu unterschätzen. Hoffnung macht ihm eine Branche, die vor Kurzem noch skeptisch betrachtet wurde.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/finanzen/anlagestrategie/jens-ehrhardt-es-kann-eine-groessere-oelkrise-drohen-als-jemals-zuvor/100213038.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
     <article id="0c20aa07" class="artikel" data-id="0c20aa07" data-titel="Brenntag-Aktie: Chemie ist nicht gleich Chemie" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/finanzen/boerse/brenntag-deutsche-bank-stuft-aktie-hoch-wachstumshoffnungen-steigen/100213442.html" data-zusammenfassung="Der Essener Chemikalienhändler kommt bisher besser durch die Krise als gedacht. Bei einem starken Konjunktureinbruch wäre das aber nur ein schwacher Trost." data-datum="03.04.2026 05:10">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -572,7 +854,7 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="74b06c5e" class="artikel" data-id="74b06c5e" data-titel="Tesla Deliveries Rise. Why the Stock Is Falling. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMigANBVV95cUxNMTNSa0FlcmtYeXZYWFJJUFZBVVBoYlZOd3d0cW5BMTc5WklFQkdlNTROYXZOYVhWRWd2VWE0UXYwYVl3R3pRQ3BxekM5SlA5bWFZejl6YjFDTTdYUU0wTmtReXpKMzZjRGoxbE4tMmt0cHFKTjYwX3VEZktZNjcxRXFaY3Bzd1UwQU9Ec1V5WE1Yb09raTBycTEyWEFXVElkdk9SS0VFOVhlcG1SYjI2YWhiWkJOY1RLNTlvYTNiU2diZXlJVWdkdlNWd2JHa0gtWml0eDNQN3FQTW5zcUJFQnVhaFlHQ2F3V0lFWVRCNlplMmtueWNtR1VRajUxb2w4d2J1aTc2WUpvLXg0X3gtNEdmTUx5QTJKcEs2WTlOWXdZUGRETFZzZ2xTOE1IcmlRaXgydUxyQTB0SGZya2tQRWVkQXpRdDVTZ3RDaGhKVndhbnNlWndwSXVoYThZSHJ3c2xrVDZPT2R0M2ZzQ2hfOVhhS00wNVktSnFPMmptVFE?oc=5" data-zusammenfassung="Tesla Deliveries Rise. Why the Stock Is Falling.&amp;nbsp;&amp;nbsp;Barron's" data-datum="02.04.2026 20:35">
+    <article id="74b06c5e" class="artikel" data-id="74b06c5e" data-titel="Tesla Deliveries Rise. Why the Stock Is Falling. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMigANBVV95cUxPcnE5azVCV1ZVcExpZ3pTaUU1Z3Q3OWd5RjR1Z2pSbVQ2cDV1cWdzYVdGNzRpbzdVNG9hN0NLcFNqajZlbXNCRm5OV1JrUEM5X3Y0cEdCZUZOU0dwc1dDTVpUbVhNSFJBYkU4ODdBd1lWakN2dDcwMDVYcm1yNkI0Wm56Z25IdWtfN0dJQ19XdkI2ZmtnNFh1YmdYN3U5UGZHSzJmTWsyY3RqanJTQWxGV0Q4Q0ZGRTh4ZjRYZTBRSUtzV3VnQW1OUDJOX2Uyb1FZWTVKUG5GbF9RdUlMRWNBaTllZW9KeVplQkEzX2dUSW5XZy1YaUpuQ0ZHRnlfcjRNSUI0NVpBdGpnX3Nkd0hyQUhuQ3k5TkFQazZSRkZLd3AyTDY5TlRuVkdDaEs3WXg5T2Vadm01T3BCb3FhOVA4T0pVOUFOQTNQdm5RUDZzUXR0T2NkQmZzcEZ5dzVybEladHBoVTJYTXBTVk1JN1NJYXVWM0ZKdF8tVFY3N0lKVlE?oc=5" data-zusammenfassung="Tesla Deliveries Rise. Why the Stock Is Falling.&amp;nbsp;&amp;nbsp;Barron's" data-datum="02.04.2026 20:35">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
                 <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 02.04.2026 20:35</div>
@@ -585,7 +867,7 @@
         </div>
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Tesla Deliveries Rise. Why the Stock Is Falling.&nbsp;&nbsp;Barron's</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://news.google.com/rss/articles/CBMigANBVV95cUxNMTNSa0FlcmtYeXZYWFJJUFZBVVBoYlZOd3d0cW5BMTc5WklFQkdlNTROYXZOYVhWRWd2VWE0UXYwYVl3R3pRQ3BxekM5SlA5bWFZejl6YjFDTTdYUU0wTmtReXpKMzZjRGoxbE4tMmt0cHFKTjYwX3VEZktZNjcxRXFaY3Bzd1UwQU9Ec1V5WE1Yb09raTBycTEyWEFXVElkdk9SS0VFOVhlcG1SYjI2YWhiWkJOY1RLNTlvYTNiU2diZXlJVWdkdlNWd2JHa0gtWml0eDNQN3FQTW5zcUJFQnVhaFlHQ2F3V0lFWVRCNlplMmtueWNtR1VRajUxb2w4d2J1aTc2WUpvLXg0X3gtNEdmTUx5QTJKcEs2WTlOWXdZUGRETFZzZ2xTOE1IcmlRaXgydUxyQTB0SGZya2tQRWVkQXpRdDVTZ3RDaGhKVndhbnNlWndwSXVoYThZSHJ3c2xrVDZPT2R0M2ZzQ2hfOVhhS00wNVktSnFPMmptVFE?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="https://news.google.com/rss/articles/CBMigANBVV95cUxPcnE5azVCV1ZVcExpZ3pTaUU1Z3Q3OWd5RjR1Z2pSbVQ2cDV1cWdzYVdGNzRpbzdVNG9hN0NLcFNqajZlbXNCRm5OV1JrUEM5X3Y0cEdCZUZOU0dwc1dDTVpUbVhNSFJBYkU4ODdBd1lWakN2dDcwMDVYcm1yNkI0Wm56Z25IdWtfN0dJQ19XdkI2ZmtnNFh1YmdYN3U5UGZHSzJmTWsyY3RqanJTQWxGV0Q4Q0ZGRTh4ZjRYZTBRSUtzV3VnQW1OUDJOX2Uyb1FZWTVKUG5GbF9RdUlMRWNBaTllZW9KeVplQkEzX2dUSW5XZy1YaUpuQ0ZHRnlfcjRNSUI0NVpBdGpnX3Nkd0hyQUhuQ3k5TkFQazZSRkZLd3AyTDY5TlRuVkdDaEs3WXg5T2Vadm01T3BCb3FhOVA4T0pVOUFOQTNQdm5RUDZzUXR0T2NkQmZzcEZ5dzVybEladHBoVTJYTXBTVk1JN1NJYXVWM0ZKdF8tVFY3N0lKVlE?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -606,7 +888,7 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="0e4dc282" class="artikel" data-id="0e4dc282" data-titel="This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi9wJBVV95cUxOVnEwdW9UZ1NMY1J3ajRLNzJMSDhNQnhmdG4tSERZdUJwZHZpQUlOcHdzSDFHZHBXQWt3bTlUZ25OZHhOSEJpOGJzVVRjUXhkYzJQT3JHbDZzaUh4Y29xMFAzTlMzd2ZWajdRUm5DWGlfVG5BLWdxTHdTLUNqV2RfNThQUEQ4T1ZoaTAxbDZPZlhieHdWRUFFX2Qzb1JRSHI4aFhJcEZ4QmZ6MVZsOE5Zam5mVlp6NUR1U0I3ZzJ2MjBrbkNpemhGS3AxUEJZSVVXbll1eWJLZktFcU9JT0d4b3RqZF92SGQyVU5iYnNiX0E4UmRyY3VHOHVxaFFFTGRiX3ZiLThVdlUxX0lUUjlUWkNRbV9kNEw5cHZIcDlnLW9KQjdiaGVGT25PUnhKYlppZW5qUEp4RHJTaFRIVEpNQkpZdUNPZXR4bjhyM3JnTGFMR1o0SE9CcHUybnlVRzByZU9UbzVhVFNUdDdpOFJBZklmUTI4Rlk?oc=5" data-zusammenfassung="This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either.&amp;nbsp;&amp;nbsp;Barron's" data-datum="02.04.2026 20:17">
+    <article id="0e4dc282" class="artikel" data-id="0e4dc282" data-titel="This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either. - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi9wJBVV95cUxOTU9QNWt4akc5Wk81dFRjRHdfdE93YnhiT1F5RU13Z19NTE1wTnlVYko0elVzNUJOcnRmbjdnRUpqOXBscXdQYk84UUliQWI3eU5fMG5NWXA2ZXRDLTRCbnFYZWZGQ2NuZlphMWpBWVpTLW1vZG5hX08telhmM3ozSWR4cU5mTU5Jb1ZWU0JoY2RlV3dMN3lFRjhMUmFvbXRTeWpxa1V5OWNWd1FaVENOOFRCSlljakxCMlYyOVYybDRFaFFaY2hOaVgySDlRSlNjUW5mbHFVSmNlbjRReXZYbEhaRVRtN04zdndzMUJ6aXZQQWVSYUV4RWE3cDAxVkJUai1YdkpfSzYzSFIxdTQxc3ZtLUpOM2V6ZnhQclhsZEx4SjJYUTdBT0Fwd1VMTFE4VWFLM0hjX0dqeUlDOEc4MzRuZHBYREs3NFJ6emNoYUxUOHl6SHQ0RzJXVTFHLTJNU0JLbnY1dHBHQVh6cUswbzBkOHZJaGc?oc=5" data-zusammenfassung="This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either.&amp;nbsp;&amp;nbsp;Barron's" data-datum="02.04.2026 20:17">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
                 <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 02.04.2026 20:17</div>
@@ -619,7 +901,7 @@
         </div>
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">This Oil Surge Won’t Last. The Stock Market’s Bargains Won’t Either.&nbsp;&nbsp;Barron's</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://news.google.com/rss/articles/CBMi9wJBVV95cUxOVnEwdW9UZ1NMY1J3ajRLNzJMSDhNQnhmdG4tSERZdUJwZHZpQUlOcHdzSDFHZHBXQWt3bTlUZ25OZHhOSEJpOGJzVVRjUXhkYzJQT3JHbDZzaUh4Y29xMFAzTlMzd2ZWajdRUm5DWGlfVG5BLWdxTHdTLUNqV2RfNThQUEQ4T1ZoaTAxbDZPZlhieHdWRUFFX2Qzb1JRSHI4aFhJcEZ4QmZ6MVZsOE5Zam5mVlp6NUR1U0I3ZzJ2MjBrbkNpemhGS3AxUEJZSVVXbll1eWJLZktFcU9JT0d4b3RqZF92SGQyVU5iYnNiX0E4UmRyY3VHOHVxaFFFTGRiX3ZiLThVdlUxX0lUUjlUWkNRbV9kNEw5cHZIcDlnLW9KQjdiaGVGT25PUnhKYlppZW5qUEp4RHJTaFRIVEpNQkpZdUNPZXR4bjhyM3JnTGFMR1o0SE9CcHUybnlVRzByZU9UbzVhVFNUdDdpOFJBZklmUTI4Rlk?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="https://news.google.com/rss/articles/CBMi9wJBVV95cUxOTU9QNWt4akc5Wk81dFRjRHdfdE93YnhiT1F5RU13Z19NTE1wTnlVYko0elVzNUJOcnRmbjdnRUpqOXBscXdQYk84UUliQWI3eU5fMG5NWXA2ZXRDLTRCbnFYZWZGQ2NuZlphMWpBWVpTLW1vZG5hX08telhmM3ozSWR4cU5mTU5Jb1ZWU0JoY2RlV3dMN3lFRjhMUmFvbXRTeWpxa1V5OWNWd1FaVENOOFRCSlljakxCMlYyOVYybDRFaFFaY2hOaVgySDlRSlNjUW5mbHFVSmNlbjRReXZYbEhaRVRtN04zdndzMUJ6aXZQQWVSYUV4RWE3cDAxVkJUai1YdkpfSzYzSFIxdTQxc3ZtLUpOM2V6ZnhQclhsZEx4SjJYUTdBT0Fwd1VMTFE4VWFLM0hjX0dqeUlDOEc4MzRuZHBYREs3NFJ6emNoYUxUOHl6SHQ0RzJXVTFHLTJNU0JLbnY1dHBHQVh6cUswbzBkOHZJaGc?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -793,6 +1075,23 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
+    <article id="af809b5e" class="artikel" data-id="af809b5e" data-titel="US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/us-haushalt-15-billionen-dollar-trump-beantragt-rekord-etat-fuer-verteidigung/100214349.html" data-zusammenfassung="Der US-Kongress soll für das kommende Haushaltsjahr rund 1,5 Billionen Dollar bewilligen. Mit dem Geld will Trump ein Prestigeprojekt umsetzen. Amerikaner müssten mit Einschnitten rechnen." data-datum="03.04.2026 15:08">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 15:08</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('af809b5e')" class="btn-lesen" id="btn-lesen-af809b5e" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('af809b5e')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der US-Kongress soll für das kommende Haushaltsjahr rund 1,5 Billionen Dollar bewilligen. Mit dem Geld will Trump ein Prestigeprojekt umsetzen. Amerikaner müssten mit Einschnitten rechnen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/us-haushalt-15-billionen-dollar-trump-beantragt-rekord-etat-fuer-verteidigung/100214349.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
     <article id="1c58172f" class="artikel" data-id="1c58172f" data-titel="+++ Iran-Krieg +++: USA bestätigen Abschuss von zweitem US-Kampfjet über Iran – Besatzungsmitglied offenbar gerettet" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/iran-krieg-usa-bestaetigen-abschuss-von-zweitem-us-kampfjet-ueber-iran/100136895.html" data-zusammenfassung="USA rufen Bürger zur Ausreise aus dem Libanon auf +++ Meloni überraschend zu Besuch in Golfregion +++ Iranisches Militär: Zweiter US-Kampfjet abgeschossen +++ Der Newsblog." data-datum="03.04.2026 13:47">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -807,6 +1106,23 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">USA rufen Bürger zur Ausreise aus dem Libanon auf +++ Meloni überraschend zu Besuch in Golfregion +++ Iranisches Militär: Zweiter US-Kampfjet abgeschossen +++ Der Newsblog.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.handelsblatt.com/politik/international/iran-krieg-usa-bestaetigen-abschuss-von-zweitem-us-kampfjet-ueber-iran/100136895.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="2d83e0be" class="artikel" data-id="2d83e0be" data-titel="Säuberungswelle: China ermittelt gegen Politbüro-Mitglied Ma wegen Korruption" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/saeuberungswelle-china-ermittelt-gegen-politbuero-mitglied-ma-wegen-korruption/100214329.html" data-zusammenfassung="Die Ermittlungen gegen den ehemaligen Parteisekretär der Provinz Xinjiang markieren die größte Säuberungswelle in der Staatsführung seit 1976." data-datum="03.04.2026 13:14">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 13:14</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Säuberungswelle: China ermittelt gegen Politbüro-Mitglied Ma wegen Korruption</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('2d83e0be')" class="btn-lesen" id="btn-lesen-2d83e0be" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('2d83e0be')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die Ermittlungen gegen den ehemaligen Parteisekretär der Provinz Xinjiang markieren die größte Säuberungswelle in der Staatsführung seit 1976.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/saeuberungswelle-china-ermittelt-gegen-politbuero-mitglied-ma-wegen-korruption/100214329.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -827,6 +1143,23 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
+    <article id="82732f32" class="artikel" data-id="82732f32" data-titel="Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/ausland/iran-krieg-energiekrise-pakistan-reagiert-mit-kostenlosem-nahverkehr/100214336.html" data-zusammenfassung="Asien ist besonders von Energielieferungen vom Golf abhängig. In Pakistan reagiert die Regierung und macht in manchen Städten den öffentlichen Nahverkehr kostenlos." data-datum="03.04.2026 12:56">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 12:56</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('82732f32')" class="btn-lesen" id="btn-lesen-82732f32" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('82732f32')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Asien ist besonders von Energielieferungen vom Golf abhängig. In Pakistan reagiert die Regierung und macht in manchen Städten den öffentlichen Nahverkehr kostenlos.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/ausland/iran-krieg-energiekrise-pakistan-reagiert-mit-kostenlosem-nahverkehr/100214336.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
     <article id="894f4e08" class="artikel" data-id="894f4e08" data-titel="+++ US-Zollpoltik +++: Maschinenbau kritisiert neue US-Zollregeln – keine Vorbereitungszeit" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/us-zoelle-maschinenbau-enttaeuscht-ueber-neue-us-zollregeln/30026990.html" data-zusammenfassung="USA planen Neuordnung von Stahl- und Aluminiumzöllen +++ Schweiz: Handelsgespräche mit USA nicht mehr im März möglich +++ Trump droht: „Kuba ist als Nächstes dran“ +++ Der Newsblog." data-datum="03.04.2026 12:20">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -841,6 +1174,23 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">USA planen Neuordnung von Stahl- und Aluminiumzöllen +++ Schweiz: Handelsgespräche mit USA nicht mehr im März möglich +++ Trump droht: „Kuba ist als Nächstes dran“ +++ Der Newsblog.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.handelsblatt.com/politik/international/us-zoelle-maschinenbau-enttaeuscht-ueber-neue-us-zollregeln/30026990.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="85fc6a53" class="artikel" data-id="85fc6a53" data-titel="Russland blockt Telegram: Russen misstrauen dem Staats-Messenger MAX" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/ausland/russland-blockiert-telegram-russen-misstrauen-staats-messenger-max/100214307.html" data-zusammenfassung="Der Kreml schränkt Messengerdienste wie WhatsApp und Telegram stark ein. Eine Umfrage zeigt: Die staatliche Alternative MAX wird skeptisch gesehen." data-datum="03.04.2026 11:22">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 11:22</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Russland blockt Telegram: Russen misstrauen dem Staats-Messenger MAX</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('85fc6a53')" class="btn-lesen" id="btn-lesen-85fc6a53" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('85fc6a53')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Kreml schränkt Messengerdienste wie WhatsApp und Telegram stark ein. Eine Umfrage zeigt: Die staatliche Alternative MAX wird skeptisch gesehen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/ausland/russland-blockiert-telegram-russen-misstrauen-staats-messenger-max/100214307.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -861,6 +1211,40 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
+    <article id="d0e04dce" class="artikel" data-id="d0e04dce" data-titel="Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/europa/iran-krieg-italien-schlaegt-lockerung-der-eu-schuldenregeln-vor/100214315.html" data-zusammenfassung="Mit einem Dekret über 500 Millionen Euro will Italien die Folgen des Iran-Kriegs bei den Energiepreisen mildern. Der Wirtschaftsminister fordert auch eine Lockerung der Schuldenbremse." data-datum="03.04.2026 10:50">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 10:50</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('d0e04dce')" class="btn-lesen" id="btn-lesen-d0e04dce" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('d0e04dce')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Mit einem Dekret über 500 Millionen Euro will Italien die Folgen des Iran-Kriegs bei den Energiepreisen mildern. Der Wirtschaftsminister fordert auch eine Lockerung der Schuldenbremse.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/europa/iran-krieg-italien-schlaegt-lockerung-der-eu-schuldenregeln-vor/100214315.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="b4986218" class="artikel" data-id="b4986218" data-titel="Telegram: „Dass ein Messenger eine so zentrale Rolle in einem Krieg spielt, klingt absurd“" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/ausland/telegram-in-russland-die-russische-internetkontrolle-ist-haerter-als-die-chinesische/100213099.html" data-zusammenfassung="Telegram könnte in Russland bald vollständig blockiert werden. Der russische IT-Experte Sarkis Darbinyan erklärt, wie der Kreml den Dienst ausbremst." data-datum="03.04.2026 10:23">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 10:23</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Telegram: „Dass ein Messenger eine so zentrale Rolle in einem Krieg spielt, klingt absurd“</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('b4986218')" class="btn-lesen" id="btn-lesen-b4986218" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('b4986218')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Telegram könnte in Russland bald vollständig blockiert werden. Der russische IT-Experte Sarkis Darbinyan erklärt, wie der Kreml den Dienst ausbremst.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/ausland/telegram-in-russland-die-russische-internetkontrolle-ist-haerter-als-die-chinesische/100213099.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
     <article id="d28cbe59" class="artikel" data-id="d28cbe59" data-titel="Nato: Rutte reist nach Washington – Diese Druckmittel hat Trump" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/nato-rutte-reist-nach-washington-diese-druckmittel-hat-trump/100213980.html" data-zusammenfassung="Über den Streit um den Iran-Krieg drohen die USA einmal mehr, das Bündnis zu verlassen. Der Nato-Generalsekretär trifft nun Trump, zu dem er guten Kontakt pflegt. Doch hilft das noch?" data-datum="03.04.2026 10:14">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -875,6 +1259,23 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Über den Streit um den Iran-Krieg drohen die USA einmal mehr, das Bündnis zu verlassen. Der Nato-Generalsekretär trifft nun Trump, zu dem er guten Kontakt pflegt. Doch hilft das noch?</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.handelsblatt.com/politik/international/nato-rutte-reist-nach-washington-diese-druckmittel-hat-trump/100213980.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="21ea6079" class="artikel" data-id="21ea6079" data-titel="Xi Ousts Politburo Member in Deepening Purge of China’s Top Ranks" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/china/xi-ousts-politburo-member-in-deepening-purge-of-chinas-top-ranks-2c7e24d1" data-zusammenfassung="A former party chief of the Xinjiang region became the third member of the elite body to be removed in recent months." data-datum="03.04.2026 10:14">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 03.04.2026 10:14</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Xi Ousts Politburo Member in Deepening Purge of China’s Top Ranks</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('21ea6079')" class="btn-lesen" id="btn-lesen-21ea6079" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('21ea6079')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">A former party chief of the Xinjiang region became the third member of the elite body to be removed in recent months.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/china/xi-ousts-politburo-member-in-deepening-purge-of-chinas-top-ranks-2c7e24d1" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -926,6 +1327,23 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Russische Ölraffinerie stellt Betrieb nach Angriff teilweise ein +++ Russlands Öl- und Gaseinnahmen brechen im März um 43 Prozent ein +++ Der Newsblog.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.handelsblatt.com/politik/international/ukraine-lage-an-der-front-laut-selenskyj-die-beste-seit-zehn-monaten/27982126.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="be830ead" class="artikel" data-id="be830ead" data-titel="Myanmar: Myanmars Parlament wählt Juntachef Min Aung Hlaing" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/myanmar-myanmars-parlament-waehlt-juntachef-min-aung-hlaing/100214283.html" data-zusammenfassung="Der Aufstieg des bisherigen Armeechefs zum Präsidenten folgt auf umstrittene Wahlen im Dezember und Januar. Das Land wird bereits seit fünf Jahren vom Militär gewaltsam regiert." data-datum="03.04.2026 07:00">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 07:00</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Myanmar: Myanmars Parlament wählt Juntachef Min Aung Hlaing</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('be830ead')" class="btn-lesen" id="btn-lesen-be830ead" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('be830ead')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Aufstieg des bisherigen Armeechefs zum Präsidenten folgt auf umstrittene Wahlen im Dezember und Januar. Das Land wird bereits seit fünf Jahren vom Militär gewaltsam regiert.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/myanmar-myanmars-parlament-waehlt-juntachef-min-aung-hlaing/100214283.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -1014,6 +1432,23 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
+    <article id="102beee7" class="artikel" data-id="102beee7" data-titel="Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse." data-quelle="Wall Street Journal" data-link="https://www.wsj.com/business/tariffs-strained-u-s-aluminum-supplies-now-the-iran-war-is-making-it-worse-9d2071a2?mod=rss_markets_main" data-zusammenfassung="The recent attacks in the Persian Gulf could further constrain supplies of industrial metals." data-datum="02.04.2026 21:31">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 02.04.2026 21:31</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse.</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('102beee7')" class="btn-lesen" id="btn-lesen-102beee7" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('102beee7')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">The recent attacks in the Persian Gulf could further constrain supplies of industrial metals.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/business/tariffs-strained-u-s-aluminum-supplies-now-the-iran-war-is-making-it-worse-9d2071a2?mod=rss_markets_main" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
     <article id="ae8648e7" class="artikel" data-id="ae8648e7" data-titel="Trump Administration Unveils Up to 100% Tariff on Branded Drugs" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/politics/policy/trump-pharmaceutical-tariffs-b7667ad6?mod=pls_whats_news_us_business_f" data-zusammenfassung="Drugmakers or countries that strike pricing deals or make manufacturing investment commitments in the U.S. can secure much lower levies, or none at all." data-datum="02.04.2026 20:34">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -1028,6 +1463,23 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Drugmakers or countries that strike pricing deals or make manufacturing investment commitments in the U.S. can secure much lower levies, or none at all.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.wsj.com/politics/policy/trump-pharmaceutical-tariffs-b7667ad6?mod=pls_whats_news_us_business_f" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="0901212a" class="artikel" data-id="0901212a" data-titel="Opinion | Why Britain Can’t Afford a Navy" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/opinion/nigel-farage-triple-lock-reform-uk-welfare-benefits-d53dc7e6" data-zusammenfassung="With military readiness in doubt, a ‘reformer’ promises more welfare." data-datum="02.04.2026 20:27">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 02.04.2026 20:27</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Opinion | Why Britain Can’t Afford a Navy</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('0901212a')" class="btn-lesen" id="btn-lesen-0901212a" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('0901212a')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">With military readiness in doubt, a ‘reformer’ promises more welfare.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/opinion/nigel-farage-triple-lock-reform-uk-welfare-benefits-d53dc7e6" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -1079,23 +1531,6 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Business debt consolidation can improve your cash flow and repackage your obligations to potentially save you money.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.wsj.com/buyside/personal-finance/business-loans/business-debt-consolidation-loans?mod=pls_whats_news_us_business_f" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
-    <article id="af809b5e" class="artikel" data-id="af809b5e" data-titel="US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/us-haushalt-15-billionen-dollar-trump-beantragt-rekord-etat-fuer-verteidigung/100214349.html" data-zusammenfassung="Der US-Kongress soll für das kommende Haushaltsjahr rund 1,5 Billionen Dollar bewilligen. Mit dem Geld will Trump ein Prestigeprojekt umsetzen. Amerikaner müssten mit Einschnitten rechnen." data-datum="03.04.2026 15:08">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 15:08</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">US-Haushalt: „Wiederbelebung des Kampfgeistes“ – Trump bittet US-Kongress um Rekord-Etat für Verteidigung</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('af809b5e')" class="btn-lesen" id="btn-lesen-af809b5e" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('af809b5e')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der US-Kongress soll für das kommende Haushaltsjahr rund 1,5 Billionen Dollar bewilligen. Mit dem Geld will Trump ein Prestigeprojekt umsetzen. Amerikaner müssten mit Einschnitten rechnen.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.handelsblatt.com/politik/international/us-haushalt-15-billionen-dollar-trump-beantragt-rekord-etat-fuer-verteidigung/100214349.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -1164,23 +1599,6 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Fast dreimal so viele neue Jobs wie erwartet sind im März am US-Arbeitsmarkt entstanden. Marktteilnehmer rechnen wegen der Lage in Nahost damit, dass die Fed ihre Geldpolitik anpasst.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.handelsblatt.com/politik/konjunktur/konjunktur-us-arbeitslosenquote-sinkt-trotz-iran-krieg-auf-43-prozent/100214326.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
-    <article id="82732f32" class="artikel" data-id="82732f32" data-titel="Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/ausland/iran-krieg-energiekrise-pakistan-reagiert-mit-kostenlosem-nahverkehr/100214336.html" data-zusammenfassung="Asien ist besonders von Energielieferungen vom Golf abhängig. In Pakistan reagiert die Regierung und macht in manchen Städten den öffentlichen Nahverkehr kostenlos." data-datum="03.04.2026 12:56">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 12:56</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Pakistan reagiert mit kostenlosem Nahverkehr auf Energiekrise</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('82732f32')" class="btn-lesen" id="btn-lesen-82732f32" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('82732f32')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Asien ist besonders von Energielieferungen vom Golf abhängig. In Pakistan reagiert die Regierung und macht in manchen Städten den öffentlichen Nahverkehr kostenlos.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.wiwo.de/politik/ausland/iran-krieg-energiekrise-pakistan-reagiert-mit-kostenlosem-nahverkehr/100214336.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -1283,40 +1701,6 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">SPD-Chef Lars Klingbeil will über das Steuerrecht Anreize setzen, dass sich Erwerbsarbeit für beide Ehepartner mehr lohnt. Seine CDU-Kollegin Karin Prien befürwortet die Debatte.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.wiwo.de/politik/deutschland/ehegattensplitting-familienministerin-karin-prien-offen-fuer-reform/100214148.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
-    <article id="41a2890d" class="artikel" data-id="41a2890d" data-titel="Immobilien: Bis zu 18 Millionen – Das sind die fünf exklusivsten Orte für Ferienhäuser" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/finanzen/immobilien/immobilien-wo-ferienimmobilien-in-deutschland-jetzt-hoechstpreise-bringen/100210934.html" data-zusammenfassung="Ein dem Handelsblatt vorab vorliegender Marktreport zeigt, wo Ferienimmobilien besonders begehrt sind. Es gibt große Unterschiede zwischen Haus- und Wohnungskauf – aber auch günstige Orte." data-datum="03.04.2026 11:00">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 11:00</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Immobilien: Bis zu 18 Millionen – Das sind die fünf exklusivsten Orte für Ferienhäuser</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('41a2890d')" class="btn-lesen" id="btn-lesen-41a2890d" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('41a2890d')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Ein dem Handelsblatt vorab vorliegender Marktreport zeigt, wo Ferienimmobilien besonders begehrt sind. Es gibt große Unterschiede zwischen Haus- und Wohnungskauf – aber auch günstige Orte.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.handelsblatt.com/finanzen/immobilien/immobilien-wo-ferienimmobilien-in-deutschland-jetzt-hoechstpreise-bringen/100210934.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
-    <article id="d0e04dce" class="artikel" data-id="d0e04dce" data-titel="Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/europa/iran-krieg-italien-schlaegt-lockerung-der-eu-schuldenregeln-vor/100214315.html" data-zusammenfassung="Mit einem Dekret über 500 Millionen Euro will Italien die Folgen des Iran-Kriegs bei den Energiepreisen mildern. Der Wirtschaftsminister fordert auch eine Lockerung der Schuldenbremse." data-datum="03.04.2026 10:50">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 03.04.2026 10:50</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Italien schlägt Lockerung der EU-Schuldenregeln vor</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('d0e04dce')" class="btn-lesen" id="btn-lesen-d0e04dce" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('d0e04dce')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Mit einem Dekret über 500 Millionen Euro will Italien die Folgen des Iran-Kriegs bei den Energiepreisen mildern. Der Wirtschaftsminister fordert auch eine Lockerung der Schuldenbremse.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.wiwo.de/politik/europa/iran-krieg-italien-schlaegt-lockerung-der-eu-schuldenregeln-vor/100214315.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
@@ -1541,23 +1925,6 @@
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
-    <article id="2fd3bd8a" class="artikel" data-id="2fd3bd8a" data-titel="Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/finanzen/anlagestrategie/jens-ehrhardt-es-kann-eine-groessere-oelkrise-drohen-als-jemals-zuvor/100213038.html" data-zusammenfassung="Der prominente Fondsmanager warnt davor, die Folgen des Irankriegs zu unterschätzen. Hoffnung macht ihm eine Branche, die vor Kurzem noch skeptisch betrachtet wurde." data-datum="03.04.2026 05:34">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 05:34</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Jens Ehrhardt: „Wir haben schon heute eine Öl- und Gaskrise, die anders ist als vorangegangene Krisen“</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('2fd3bd8a')" class="btn-lesen" id="btn-lesen-2fd3bd8a" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('2fd3bd8a')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der prominente Fondsmanager warnt davor, die Folgen des Irankriegs zu unterschätzen. Hoffnung macht ihm eine Branche, die vor Kurzem noch skeptisch betrachtet wurde.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.handelsblatt.com/finanzen/anlagestrategie/jens-ehrhardt-es-kann-eine-groessere-oelkrise-drohen-als-jemals-zuvor/100213038.html" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
     <article id="885ced69" class="artikel" data-id="885ced69" data-titel="How Insulated Is the U.S. Economy From the Iran War?" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/finance/commodities-futures/how-insulated-is-the-u-s-economy-from-the-iran-war-6d80da2c?mod=rss_markets_main" data-zusammenfassung="Consumers are feeling pain at the pump, but the U.S. is faring better than other parts of the world. How long can the economy hold out?" data-datum="02.04.2026 23:00">
         <div style="display:flex; justify-content:space-between; align-items:flex-start;">
             <div style="flex:1;">
@@ -1589,23 +1956,6 @@
         <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Investors asked to pull nearly $14 billion from a group of private-credit funds in the first quarter.</p>
         <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
             <a href="https://www.wsj.com/finance/investing/the-wealthy-investors-that-powered-private-credit-are-rushing-for-the-exits-7a3db81e?mod=rss_markets_main" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
-            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
-        </div>
-    </article>
-    <article id="102beee7" class="artikel" data-id="102beee7" data-titel="Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse." data-quelle="Wall Street Journal" data-link="https://www.wsj.com/business/tariffs-strained-u-s-aluminum-supplies-now-the-iran-war-is-making-it-worse-9d2071a2?mod=rss_markets_main" data-zusammenfassung="The recent attacks in the Persian Gulf could further constrain supplies of industrial metals." data-datum="02.04.2026 21:31">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-            <div style="flex:1;">
-                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 02.04.2026 21:31</div>
-                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Tariffs Strained U.S. Aluminum Supplies. Now the Iran War Is Making It Worse.</h3>
-            </div>
-            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
-                <button onclick="toggleLesen('102beee7')" class="btn-lesen" id="btn-lesen-102beee7" title="Später lesen">&#9733;</button>
-                <button onclick="inHubKopieren('102beee7')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
-            </div>
-        </div>
-        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">The recent attacks in the Persian Gulf could further constrain supplies of industrial metals.</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
-            <a href="https://www.wsj.com/business/tariffs-strained-u-s-aluminum-supplies-now-the-iran-war-is-making-it-worse-9d2071a2?mod=rss_markets_main" style="font-size:12px; color:#4a6259; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
             <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
         </div>
     </article>
