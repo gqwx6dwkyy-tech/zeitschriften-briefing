@@ -31,23 +31,58 @@ def _artikel_id(artikel) -> str:
     return hashlib.md5(artikel.titel.encode("utf-8")).hexdigest()[:8]
 
 
+def _parse_json_antwort(antwort_text: str) -> dict:
+    """JSON aus einer KI-Antwort extrahieren — robust gegen Formatierungsfehler."""
+    text = antwort_text.strip()
+    # Markdown-Codeblock entfernen
+    if text.startswith("```"):
+        zeilen = text.split("\n")
+        text = "\n".join(zeilen[1:-1])
+    # Direkt parsen
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+    # JSON-Block aus dem Text extrahieren
+    import re
+    match = re.search(r'\{[\s\S]*\}', text)
+    if match:
+        try:
+            return json.loads(match.group())
+        except json.JSONDecodeError:
+            pass
+    # Zeilenumbrüche in Strings reparieren (häufiger Fehler)
+    bereinigt = re.sub(r'(?<!\\)\n', ' ', text)
+    match = re.search(r'\{[\s\S]*\}', bereinigt)
+    if match:
+        return json.loads(match.group())
+    raise json.JSONDecodeError("Kein gültiges JSON gefunden", text, 0)
+
+
 def _ki_zusammenfassungen(artikel: list[BewerteterArtikel]) -> dict[str, str]:
     """Per Gemini API ausführliche deutsche Zusammenfassungen generieren."""
     from google import genai
 
     client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-    artikel_texte = []
-    ids = []
-    for ba in artikel:
-        a = ba.artikel
-        aid = _artikel_id(a)
-        ids.append(aid)
-        artikel_texte.append(
-            f'[{aid}] {a.quelle}: {a.titel}\n{a.zusammenfassung[:500]}'
-        )
+    # In Batches aufteilen (max. 10 Artikel pro Aufruf für zuverlässiges JSON)
+    BATCH_GROESSE = 10
+    alle_zusammenfassungen: dict[str, str] = {}
 
-    prompt = f"""Erstelle für jeden der folgenden Nachrichtenartikel eine ausführliche,
+    for i in range(0, len(artikel), BATCH_GROESSE):
+        batch = artikel[i:i + BATCH_GROESSE]
+
+        artikel_texte = []
+        ids = []
+        for ba in batch:
+            a = ba.artikel
+            aid = _artikel_id(a)
+            ids.append(aid)
+            artikel_texte.append(
+                f'[{aid}] {a.quelle}: {a.titel}\n{a.zusammenfassung[:500]}'
+            )
+
+        prompt = f"""Erstelle für jeden der folgenden Nachrichtenartikel eine ausführliche,
 gut verständliche Zusammenfassung auf Deutsch. Die Zusammenfassung soll:
 - Mindestens 8-12 Sätze umfassen und alle relevanten Punkte des Artikels abdecken
 - Die Kernaussage, wichtigsten Fakten, Zahlen und Hintergründe erfassen
@@ -57,20 +92,22 @@ gut verständliche Zusammenfassung auf Deutsch. Die Zusammenfassung soll:
 - So geschrieben sein, dass man den Originalartikel nicht mehr lesen muss,
   um die wesentlichen Informationen zu kennen
 
-Antworte als JSON-Object mit der Artikel-ID als Key und der Zusammenfassung als Value:
+Antworte ausschließlich als gültiges JSON-Object mit der Artikel-ID als Key und der Zusammenfassung als Value.
+Keine Zeilenumbrüche innerhalb der Zusammenfassungen. Beispiel:
 {{"{ids[0]}": "Zusammenfassung...", ...}}
 
 Artikel:
 {chr(10).join(artikel_texte)}"""
 
-    antwort = client.models.generate_content(model=GEMINI_MODELL, contents=prompt)
+        try:
+            antwort = client.models.generate_content(model=GEMINI_MODELL, contents=prompt)
+            ergebnis = _parse_json_antwort(antwort.text)
+            alle_zusammenfassungen.update(ergebnis)
+            print(f"  Batch {i // BATCH_GROESSE + 1}: {len(ergebnis)} Zusammenfassungen erstellt.")
+        except Exception as e:
+            print(f"  Batch {i // BATCH_GROESSE + 1} fehlgeschlagen: {e}")
 
-    antwort_text = antwort.text.strip()
-    if antwort_text.startswith("```"):
-        zeilen = antwort_text.split("\n")
-        antwort_text = "\n".join(zeilen[1:-1])
-
-    return json.loads(antwort_text)
+    return alle_zusammenfassungen
 
 
 def _generiere_html(artikel: list[BewerteterArtikel],
