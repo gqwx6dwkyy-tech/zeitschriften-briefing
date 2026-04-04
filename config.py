@@ -64,4 +64,4 @@ MAX_ARTIKEL_PRO_BRIEFING = 30
 ARTIKEL_MAX_ALTER_STUNDEN = 24
 
 # --- Gemini API (kostenlos) ---
-GEMINI_MODELL = "gemini-2.5-flash"
+GEMINI_MODELL = "gemini-2.0-flash-lite"
