@@ -1,19 +1,15 @@
 {
-  "spaeter_lesen": [
-    {
-      "id": "f51dc5ce",
-      "titel": "This Oil Shock Is So Big It Is Fueling a Turnaround in Energy Stocks",
-      "quelle": "Wall Street Journal",
-      "link": "https://www.wsj.com/business/energy-oil/this-oil-shock-is-so-big-it-is-fueling-a-turnaround-in-energy-stocks-a9fbe198?mod=rss_markets_main"
-    },
-    {
-      "id": "1c8b2002",
-      "titel": "Nakiki SE: Das seltsame Zweitleben von Windeln.de",
-      "quelle": "Wirtschaftswoche",
-      "link": "https://www.wiwo.de/finanzen/boerse/nakiki-se-das-seltsame-zweitleben-von-windeln.de/100213358.html"
-    }
-  ],
+  "spaeter_lesen": [],
   "leseliste": [
+    {
+      "id": "c7c0b6ba",
+      "titel": "The WSJ Dollar Index Falls 0.15% This Week to 96.90",
+      "quelle": "Wall Street Journal",
+      "link": "https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-eye-middle-east-developments-d8f98279?mod=rss_markets_main",
+      "zusammenfassung": "The WSJ Dollar Index rose 0.1% — up for two consecutive trading days.",
+      "datum": "03.04.2026 21:22",
+      "gespeichert": "2026-04-04T18:16:14.454Z"
+    },
     {
       "id": "e816394e",
       "titel": "Bond Yields Rise After Strong March Jobs Report",
