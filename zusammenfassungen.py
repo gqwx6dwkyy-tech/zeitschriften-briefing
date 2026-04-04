@@ -99,13 +99,23 @@ Keine Zeilenumbrüche innerhalb der Zusammenfassungen. Beispiel:
 Artikel:
 {chr(10).join(artikel_texte)}"""
 
-        try:
-            antwort = client.models.generate_content(model=GEMINI_MODELL, contents=prompt)
-            ergebnis = _parse_json_antwort(antwort.text)
-            alle_zusammenfassungen.update(ergebnis)
-            print(f"  Batch {i // BATCH_GROESSE + 1}: {len(ergebnis)} Zusammenfassungen erstellt.")
-        except Exception as e:
-            print(f"  Batch {i // BATCH_GROESSE + 1} fehlgeschlagen: {e}")
+        batch_nr = i // BATCH_GROESSE + 1
+        for versuch in range(3):
+            try:
+                antwort = client.models.generate_content(model=GEMINI_MODELL, contents=prompt)
+                ergebnis = _parse_json_antwort(antwort.text)
+                alle_zusammenfassungen.update(ergebnis)
+                print(f"  Batch {batch_nr}: {len(ergebnis)} Zusammenfassungen erstellt.")
+                break
+            except Exception as e:
+                if versuch < 2 and ("503" in str(e) or "UNAVAILABLE" in str(e) or "429" in str(e)):
+                    import time
+                    wartezeit = 10 * (versuch + 1)
+                    print(f"  Batch {batch_nr}: Retry in {wartezeit}s ({e})")
+                    time.sleep(wartezeit)
+                else:
+                    print(f"  Batch {batch_nr} fehlgeschlagen: {e}")
+                    break
 
     return alle_zusammenfassungen
 
