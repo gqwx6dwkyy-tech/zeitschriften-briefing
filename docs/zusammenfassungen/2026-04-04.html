@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing — Samstag, 04. April 2026</title>
+    <style>
+        body { margin:0; padding:0; background:#f5f0e8; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#2c3e50; }
+        .container { max-width:680px; margin:0 auto; padding:0 16px 24px; }
+        .header { background:#1a6b6a; color:#fff; padding:28px 28px 24px; border-radius:0 0 6px 6px; margin-bottom:16px; }
+        .header h1 { margin:0; font-size:22px; font-weight:600; color:#fff; letter-spacing:-0.3px; }
+        .header .datum { color:#b8d8d6; font-size:13px; margin-top:6px; }
+        .header .nav-links { margin-top:10px; }
+        .header .nav-links a { color:#b8d8d6; font-size:12px; text-decoration:none; margin-right:16px; }
+        .header .nav-links a:hover { color:#fff; }
+        .uebersicht { background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:1px solid #e8dcc8; }
+        .trennlinie { border:0; border-top:1px solid #e8dcc8; margin:24px 0; }
+        .footer { text-align:center; padding:28px; font-size:11px; color:#7f8c8d; letter-spacing:0.3px; }
+        a:hover { opacity:0.85; }
+        .artikel { margin:16px 0; padding:24px; background:#faf7f2; border-radius:6px; border:1px solid #e8dcc8; }
+        .artikel:target { box-shadow:0 0 0 2px #1a6b6a; }
+        .artikel.gepinnt { border-color:#1a6b6a; }
+        .btn-lesen, .btn-hub { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:16px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; }
+        .btn-lesen:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-hub:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-lesen.aktiv { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-hub-klein { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:13px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; flex-shrink:0; margin-left:8px; }
+        .btn-hub-klein:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .leseliste { background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:2px solid #1a6b6a; display:none; }
+        .leseliste h2 { margin:0 0 12px 0; font-size:15px; color:#1a6b6a; font-weight:600; }
+        .leseliste-item { padding:8px 0; border-bottom:1px solid #e8dcc8; display:flex; justify-content:space-between; align-items:center; }
+        .leseliste-item:last-child { border-bottom:none; }
+        .leseliste-item a { font-size:14px; color:#2c3e50; text-decoration:none; font-weight:500; }
+        .leseliste-item .entfernen { cursor:pointer; color:#c0392b; font-size:12px; border:none; background:none; }
+        .hub-toast { position:fixed; bottom:24px; right:24px; background:#1a6b6a; color:#fff; padding:12px 20px; border-radius:6px; font-size:13px; opacity:0; transition:opacity 0.3s; pointer-events:none; z-index:100; }
+        .hub-toast.sichtbar { opacity:1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header" id="top">
+        <h1>Tages-Briefing</h1>
+        <div class="datum">Samstag, 04. April 2026 &middot; 8 Artikel</div>
+        <div class="nav-links"><a href="../leseliste.html">Leseliste &rarr;</a></div>
+    </div>
+
+    <div class="leseliste" id="leseliste">
+        <h2>&#9733; Später lesen</h2>
+        <div id="leseliste-inhalt"></div>
+    </div>
+
+    <div class="uebersicht">
+        
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#1a6b6a; font-weight:600;">Börse</span>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#afec8044" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Dax-Discountzertifikat: 4,7 Prozent dank Börsenhektik</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 04.04. 11:26</div>
+        </div>
+        <button onclick="inHubKopieren('afec8044')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#c7c0b6ba" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">The WSJ Dollar Index Falls 0.15% This Week to 96.90</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 03.04. 21:22</div>
+        </div>
+        <button onclick="inHubKopieren('c7c0b6ba')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#7a6855; font-weight:600;">Internationale Politik</span>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b76133f9" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Ukraine-Krieg +++: Ukraine und Türkei bauen Sicherheitskooperation aus</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 04.04. 17:04</div>
+        </div>
+        <button onclick="inHubKopieren('b76133f9')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#418980d4" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Starökonom Zucman: „Das jetzige System ist unhaltbar“</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 04.04. 11:42</div>
+        </div>
+        <button onclick="inHubKopieren('418980d4')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#88a4e872" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Geopolitik und Tourismus: Der Irankrieg lenkt Osterurlauber um – und was geschieht zur Hochsaison im Sommer?</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 04.04. 09:14</div>
+        </div>
+        <button onclick="inHubKopieren('88a4e872')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#98fd1f29" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Oracle-Gebäude in Dubai von Drohnentrümmern beschädigt</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 04.04. 07:51</div>
+        </div>
+        <button onclick="inHubKopieren('98fd1f29')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1a390d1d" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Bundespolitik +++: Wadephul dringt auf Ende des EU-Einstimmigkeitsprinzips</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 04.04. 01:10</div>
+        </div>
+        <button onclick="inHubKopieren('1a390d1d')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#de77d100" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran–Krieg: Iran reklamiert Abschuss von zwei US-Kampfflugzeugen für sich</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 03.04. 21:49</div>
+        </div>
+        <button onclick="inHubKopieren('de77d100')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    </div>
+    <hr class="trennlinie">
+    
+    <article id="afec8044" class="artikel" data-id="afec8044" data-titel="Dax-Discountzertifikat: 4,7 Prozent dank Börsenhektik" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/finanzen/boerse/dax-discountzertifikat-47-prozent-dank-boersenhektik/100213452.html" data-zusammenfassung="Wer künstliche Finanzinstrumente wie Discounts defensiv einsetzt, erschließt sich dadurch interessante Renditemöglichkeiten." data-datum="04.04.2026 11:26">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 04.04.2026 11:26</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Dax-Discountzertifikat: 4,7 Prozent dank Börsenhektik</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('afec8044')" class="btn-lesen" id="btn-lesen-afec8044" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('afec8044')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Wer künstliche Finanzinstrumente wie Discounts defensiv einsetzt, erschließt sich dadurch interessante Renditemöglichkeiten.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/finanzen/boerse/dax-discountzertifikat-47-prozent-dank-boersenhektik/100213452.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="c7c0b6ba" class="artikel" data-id="c7c0b6ba" data-titel="The WSJ Dollar Index Falls 0.15% This Week to 96.90" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-eye-middle-east-developments-d8f98279?mod=rss_markets_main" data-zusammenfassung="The WSJ Dollar Index rose 0.1% — up for two consecutive trading days." data-datum="03.04.2026 21:22">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 03.04.2026 21:22</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">The WSJ Dollar Index Falls 0.15% This Week to 96.90</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('c7c0b6ba')" class="btn-lesen" id="btn-lesen-c7c0b6ba" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('c7c0b6ba')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">The WSJ Dollar Index rose 0.1% — up for two consecutive trading days.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/finance/currencies/asian-currencies-consolidate-as-traders-eye-middle-east-developments-d8f98279?mod=rss_markets_main" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="b76133f9" class="artikel" data-id="b76133f9" data-titel="+++ Ukraine-Krieg +++: Ukraine und Türkei bauen Sicherheitskooperation aus" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/ukraine-ukraine-und-tuerkei-bauen-sicherheitskooperation-aus/27982126.html" data-zusammenfassung="Russland greift Anlagen des ukrainischen Öl- und Gaskonzerns Naftogaz an +++ Mindestens fünf Tote bei Drohnenangriff in Südostukraine +++ Der Newsblog." data-datum="04.04.2026 17:04">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 04.04.2026 17:04</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">+++ Ukraine-Krieg +++: Ukraine und Türkei bauen Sicherheitskooperation aus</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('b76133f9')" class="btn-lesen" id="btn-lesen-b76133f9" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('b76133f9')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Russland greift Anlagen des ukrainischen Öl- und Gaskonzerns Naftogaz an +++ Mindestens fünf Tote bei Drohnenangriff in Südostukraine +++ Der Newsblog.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/ukraine-ukraine-und-tuerkei-bauen-sicherheitskooperation-aus/27982126.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="418980d4" class="artikel" data-id="418980d4" data-titel="Starökonom Zucman: „Das jetzige System ist unhaltbar“" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/konjunktur/umverteilung-oekonom-gabriel-zucman-ueber-europaeische-investitionen-und-vermoegenssteuern/100197401.html" data-zusammenfassung="Der Ökonom Gabriel Zucman fordert massive Investitionen, um die europäische Wirtschaft gegenüber den USA zu stärken. Bezahlen sollen die Superreichen." data-datum="04.04.2026 11:42">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 04.04.2026 11:42</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Starökonom Zucman: „Das jetzige System ist unhaltbar“</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('418980d4')" class="btn-lesen" id="btn-lesen-418980d4" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('418980d4')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Ökonom Gabriel Zucman fordert massive Investitionen, um die europäische Wirtschaft gegenüber den USA zu stärken. Bezahlen sollen die Superreichen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/konjunktur/umverteilung-oekonom-gabriel-zucman-ueber-europaeische-investitionen-und-vermoegenssteuern/100197401.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="88a4e872" class="artikel" data-id="88a4e872" data-titel="Geopolitik und Tourismus: Der Irankrieg lenkt Osterurlauber um – und was geschieht zur Hochsaison im Sommer?" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/geopolitik-und-tourismus-der-irankrieg-lenkt-osterurlauber-um-und-was-ist-im-sommer/100213544.html" data-zusammenfassung="Der Krieg am Golf lenkt die Touristenströme verstärkt ans Mittelmeer. Hält er länger an, stoßen beliebte Ziele wie Spanien an ihre Kapazitätsgrenzen mit allen Konsequenzen." data-datum="04.04.2026 09:14">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 04.04.2026 09:14</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Geopolitik und Tourismus: Der Irankrieg lenkt Osterurlauber um – und was geschieht zur Hochsaison im Sommer?</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('88a4e872')" class="btn-lesen" id="btn-lesen-88a4e872" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('88a4e872')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Krieg am Golf lenkt die Touristenströme verstärkt ans Mittelmeer. Hält er länger an, stoßen beliebte Ziele wie Spanien an ihre Kapazitätsgrenzen mit allen Konsequenzen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/geopolitik-und-tourismus-der-irankrieg-lenkt-osterurlauber-um-und-was-ist-im-sommer/100213544.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="98fd1f29" class="artikel" data-id="98fd1f29" data-titel="Iran-Krieg: Oracle-Gebäude in Dubai von Drohnentrümmern beschädigt" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/ausland/iran-krieg-oracle-gebaeude-in-dubai-von-drohnentruemmern-beschaedigt/100214432.html" data-zusammenfassung="Trümmer einer abgefangenen Drohne treffen ein Oracle-Gebäude in Dubai. Die iranische Revolutionsgarde droht US-Techfirmen erneut." data-datum="04.04.2026 07:51">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 04.04.2026 07:51</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Oracle-Gebäude in Dubai von Drohnentrümmern beschädigt</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('98fd1f29')" class="btn-lesen" id="btn-lesen-98fd1f29" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('98fd1f29')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Trümmer einer abgefangenen Drohne treffen ein Oracle-Gebäude in Dubai. Die iranische Revolutionsgarde droht US-Techfirmen erneut.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/ausland/iran-krieg-oracle-gebaeude-in-dubai-von-drohnentruemmern-beschaedigt/100214432.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="1a390d1d" class="artikel" data-id="1a390d1d" data-titel="+++ Bundespolitik +++: Wadephul dringt auf Ende des EU-Einstimmigkeitsprinzips" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/deutschland/bundesregierung-signifikante-zahl-von-syrern-soll-in-heimat-zurueckkehren/100137034.html" data-zusammenfassung="Wadephul besorgt über Trumps Nato-Austrittsdrohung +++ Regierungssprecher – „Signifikante Zahl“ soll zurück nach Syrien +++ Dobrindt für KI-Kameras an Bahnhöfen +++ Der Newsblog." data-datum="04.04.2026 01:10">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 04.04.2026 01:10</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">+++ Bundespolitik +++: Wadephul dringt auf Ende des EU-Einstimmigkeitsprinzips</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('1a390d1d')" class="btn-lesen" id="btn-lesen-1a390d1d" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('1a390d1d')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Wadephul besorgt über Trumps Nato-Austrittsdrohung +++ Regierungssprecher – „Signifikante Zahl“ soll zurück nach Syrien +++ Dobrindt für KI-Kameras an Bahnhöfen +++ Der Newsblog.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/deutschland/bundesregierung-signifikante-zahl-von-syrern-soll-in-heimat-zurueckkehren/100137034.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="de77d100" class="artikel" data-id="de77d100" data-titel="Iran–Krieg: Iran reklamiert Abschuss von zwei US-Kampfflugzeugen für sich" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/irankrieg-iran-reklamiert-abschuss-von-zwei-us-kampfflugzeugen-fuer-sich/100214376.html" data-zusammenfassung="Nach dem Abschuss eines US-Kampfjets im Südwesten des Irans meldet Teheran einen weiteren Abschuss über dem Persischen Golf. Ein Besatzungsmitglied des ersten Jets wurde gerettet." data-datum="03.04.2026 21:49">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 03.04.2026 21:49</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran–Krieg: Iran reklamiert Abschuss von zwei US-Kampfflugzeugen für sich</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('de77d100')" class="btn-lesen" id="btn-lesen-de77d100" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('de77d100')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Nach dem Abschuss eines US-Kampfjets im Südwesten des Irans meldet Teheran einen weiteren Abschuss über dem Persischen Golf. Ein Besatzungsmitglied des ersten Jets wurde gerettet.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/irankrieg-iran-reklamiert-abschuss-von-zwei-us-kampfflugzeugen-fuer-sich/100214376.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <div class="footer">Zeitschriften-Briefing</div>
+</div>
+
+<div class="hub-toast" id="toast"></div>
+
+<script src="../github-sync.js"></script>
+<script>
+(function() {
+    let _daten = null;
+
+    function showToast(msg, fehler) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.style.background = fehler ? '#c0392b' : '#1a6b6a';
+        t.classList.add('sichtbar');
+        setTimeout(() => t.classList.remove('sichtbar'), 2500);
+    }
+
+    function renderLeseliste() {
+        if (!_daten) return;
+        const items = _daten.spaeter_lesen || [];
+        const container = document.getElementById('leseliste-inhalt');
+        const wrapper = document.getElementById('leseliste');
+        if (!items.length) {
+            wrapper.style.display = 'none';
+            return;
+        }
+        wrapper.style.display = 'block';
+        container.innerHTML = items.map(item => `
+            <div class="leseliste-item">
+                <a href="#${item.id}">${item.titel}</a>
+                <button class="entfernen" onclick="toggleLesen('${item.id}')" title="Entfernen">&times;</button>
+            </div>
+        `).join('');
+
+        // Gepinnte Artikel visuell nach oben sortieren
+        const artikelContainer = document.querySelector('.trennlinie').parentNode;
+        const ids = items.map(i => i.id);
+        const alleArtikel = [...artikelContainer.querySelectorAll('.artikel')];
+        const trennlinie = artikelContainer.querySelector('.trennlinie');
+        const gepinnte = alleArtikel.filter(a => ids.includes(a.dataset.id));
+        const rest = alleArtikel.filter(a => !ids.includes(a.dataset.id));
+        const insertPoint = trennlinie.nextSibling;
+        gepinnte.forEach(a => { a.classList.add('gepinnt'); artikelContainer.insertBefore(a, insertPoint); });
+        const footer = artikelContainer.querySelector('.footer');
+        rest.forEach(a => artikelContainer.insertBefore(a, footer));
+
+        document.querySelectorAll('.btn-lesen').forEach(btn => {
+            const aid = btn.id.replace('btn-lesen-', '');
+            btn.classList.toggle('aktiv', ids.includes(aid));
+        });
+    }
+
+    window.toggleLesen = async function(aid) {
+        if (!_daten) return;
+        const items = _daten.spaeter_lesen || [];
+        const idx = items.findIndex(i => i.id === aid);
+        if (idx >= 0) {
+            items.splice(idx, 1);
+        } else {
+            const el = document.querySelector(`[data-id="${aid}"]`);
+            if (el) {
+                items.unshift({
+                    id: aid,
+                    titel: el.dataset.titel,
+                    quelle: el.dataset.quelle,
+                    link: el.dataset.link
+                });
+            }
+        }
+        _daten.spaeter_lesen = items;
+        renderLeseliste();
+        try {
+            await GH_SYNC.speichern(_daten);
+        } catch (e) {
+            showToast('Sync-Fehler: ' + e.message, true);
+        }
+    };
+
+    window.inHubKopieren = async function(aid) {
+        if (!_daten) return;
+        const el = document.querySelector(`[data-id="${aid}"]`);
+        if (!el) return;
+        const items = _daten.leseliste || [];
+        if (items.some(i => i.id === aid)) {
+            showToast('Bereits in der Leseliste');
+            return;
+        }
+        items.unshift({
+            id: aid,
+            titel: el.dataset.titel,
+            quelle: el.dataset.quelle,
+            link: el.dataset.link,
+            zusammenfassung: el.dataset.zusammenfassung,
+            datum: el.dataset.datum,
+            gespeichert: new Date().toISOString()
+        });
+        _daten.leseliste = items;
+        showToast('In Leseliste gespeichert');
+        try {
+            await GH_SYNC.speichern(_daten);
+        } catch (e) {
+            showToast('Sync-Fehler: ' + e.message, true);
+        }
+    };
+
+    // Init — Daten von GitHub laden
+    GH_SYNC.laden()
+        .then(daten => {
+            _daten = daten;
+            renderLeseliste();
+        })
+        .catch(e => {
+            showToast('Laden fehlgeschlagen: ' + e.message, true);
+            _daten = { spaeter_lesen: [], leseliste: [] };
+        });
+})();
+</script>
+</body>
+</html>
