@@ -19,5 +19,15 @@
       "link": "https://www.wiwo.de/finanzen/boerse/nakiki-se-das-seltsame-zweitleben-von-windeln.de/100213358.html"
     }
   ],
-  "leseliste": []
+  "leseliste": [
+    {
+      "id": "e816394e",
+      "titel": "Bond Yields Rise After Strong March Jobs Report",
+      "quelle": "Wall Street Journal",
+      "link": "https://www.wsj.com/finance/stocks/bond-yields-rise-after-strong-march-jobs-report-e7c4c29a?mod=rss_markets_main",
+      "zusammenfassung": "Stock futures ticked lower while investors await more data on the Iran war’s impact.",
+      "datum": "03.04.2026 16:08",
+      "gespeichert": "2026-04-04T16:50:15.286Z"
+    }
+  ]
 }
