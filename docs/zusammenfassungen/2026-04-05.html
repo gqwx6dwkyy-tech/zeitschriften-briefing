@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefing — Sonntag, 05. April 2026</title>
+    <style>
+        body { margin:0; padding:0; background:#f5f0e8; font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:#2c3e50; }
+        .container { max-width:680px; margin:0 auto; padding:0 16px 24px; }
+        .header { background:#1a6b6a; color:#fff; padding:28px 28px 24px; border-radius:0 0 6px 6px; margin-bottom:16px; }
+        .header h1 { margin:0; font-size:22px; font-weight:600; color:#fff; letter-spacing:-0.3px; }
+        .header .datum { color:#b8d8d6; font-size:13px; margin-top:6px; }
+        .header .nav-links { margin-top:10px; }
+        .header .nav-links a { color:#b8d8d6; font-size:12px; text-decoration:none; margin-right:16px; }
+        .header .nav-links a:hover { color:#fff; }
+        .uebersicht { background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:1px solid #e8dcc8; }
+        .trennlinie { border:0; border-top:1px solid #e8dcc8; margin:24px 0; }
+        .footer { text-align:center; padding:28px; font-size:11px; color:#7f8c8d; letter-spacing:0.3px; }
+        a:hover { opacity:0.85; }
+        .artikel { margin:16px 0; padding:24px; background:#faf7f2; border-radius:6px; border:1px solid #e8dcc8; }
+        .artikel:target { box-shadow:0 0 0 2px #1a6b6a; }
+        .artikel.gepinnt { border-color:#1a6b6a; }
+        .btn-lesen, .btn-hub { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:16px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; }
+        .btn-lesen:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-hub:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-lesen.aktiv { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .btn-hub-klein { border:1px solid #e8dcc8; background:#faf7f2; border-radius:4px; cursor:pointer; font-size:13px; width:26px; height:26px; display:flex; align-items:center; justify-content:center; color:#7f8c8d; transition:all 0.15s; flex-shrink:0; margin-left:8px; }
+        .btn-hub-klein:hover { background:#1a6b6a; color:#fff; border-color:#1a6b6a; }
+        .leseliste { background:#faf7f2; border-radius:6px; padding:20px 24px; margin-bottom:16px; border:2px solid #1a6b6a; display:none; }
+        .leseliste h2 { margin:0 0 12px 0; font-size:15px; color:#1a6b6a; font-weight:600; }
+        .leseliste-item { padding:8px 0; border-bottom:1px solid #e8dcc8; display:flex; justify-content:space-between; align-items:center; }
+        .leseliste-item:last-child { border-bottom:none; }
+        .leseliste-item a { font-size:14px; color:#2c3e50; text-decoration:none; font-weight:500; }
+        .leseliste-item .entfernen { cursor:pointer; color:#c0392b; font-size:12px; border:none; background:none; }
+        .hub-toast { position:fixed; bottom:24px; right:24px; background:#1a6b6a; color:#fff; padding:12px 20px; border-radius:6px; font-size:13px; opacity:0; transition:opacity 0.3s; pointer-events:none; z-index:100; }
+        .hub-toast.sichtbar { opacity:1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header" id="top">
+        <h1>Tages-Briefing</h1>
+        <div class="datum">Sonntag, 05. April 2026 &middot; 25 Artikel</div>
+        <div class="nav-links"><a href="../leseliste.html">Leseliste &rarr;</a></div>
+    </div>
+
+    <div class="leseliste" id="leseliste">
+        <h2>&#9733; Später lesen</h2>
+        <div id="leseliste-inhalt"></div>
+    </div>
+
+    <div class="uebersicht">
+        
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#1a6b6a; font-weight:600;">Börse</span>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#082bb0f3" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Vermögen: Immobilie in der Familiengesellschaft – diese  Fallstricke sollten Sie kennen</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 14:06</div>
+        </div>
+        <button onclick="inHubKopieren('082bb0f3')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#42cf50aa" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">WisdomTree Tech Megatrends ETF: Setzt dieser ETF auf die richtigen Trends?</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 13:15</div>
+        </div>
+        <button onclick="inHubKopieren('42cf50aa')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#fb1dcdb1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">The U.S. Plastics Industry Was in the Doldrums. Then the Iran War Began.</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 12:00</div>
+        </div>
+        <button onclick="inHubKopieren('fb1dcdb1')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1d4cb40f" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg: Spritpreise steigen weiter – Diesel erreicht neues Rekordhoch</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 11:21</div>
+        </div>
+        <button onclick="inHubKopieren('1d4cb40f')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#642cc54e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">One of the Stock Market’s Last Havens Is Now at Risk</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 09:30</div>
+        </div>
+        <button onclick="inHubKopieren('642cc54e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#b2c2fc39" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Geldanlage: Wo soll ich jetzt 10.000 Euro anlegen?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 08:36</div>
+        </div>
+        <button onclick="inHubKopieren('b2c2fc39')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#854c4195" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Börse: Dax-Konzerne zahlen so viel Dividende wie nie – Allianz vorne</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 08:04</div>
+        </div>
+        <button onclick="inHubKopieren('854c4195')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#9166b5c0" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">These Stocks Are Today’s Movers: Nvidia, Palo Alto, Alcoa, Boston Scientific, Sysco, CrowdStrike, Micron, and More - Barron's</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 04.04. 22:22</div>
+        </div>
+        <button onclick="inHubKopieren('9166b5c0')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#6b5c73; font-weight:600;">Künstliche Intelligenz</span>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#e4fd6887" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Geldanlage: KI soll die Rendite steigern – was schaffen die neuen Quant-Fonds wirklich?</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 11:58</div>
+        </div>
+        <button onclick="inHubKopieren('e4fd6887')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#9f4ec1f7" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Microsoft Is on a New AI Journey After Reworked OpenAI Deal - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 04.04. 20:07</div>
+        </div>
+        <button onclick="inHubKopieren('9f4ec1f7')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#1490116b" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">This Engineer Wants to Make Computer Chips on the Moon</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 04.04. 15:50</div>
+        </div>
+        <button onclick="inHubKopieren('1490116b')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="margin-top:28px; margin-bottom:10px;">
+        <span style="font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:#7a6855; font-weight:600;">Internationale Politik</span>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#8c345c76" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Energiekrise: Warum Deutschland diesmal besser gerüstet ist</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 14:06</div>
+        </div>
+        <button onclick="inHubKopieren('8c345c76')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#3bafd43e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Ukraine-Krieg +++: Ukraine setzt russische Ölanlagen in Brand</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 13:40</div>
+        </div>
+        <button onclick="inHubKopieren('3bafd43e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#8bad68b9" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">China Creates New Aviation Mystery With Offshore Warning Zones</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 12:16</div>
+        </div>
+        <button onclick="inHubKopieren('8bad68b9')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#22881f50" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">+++ Iran-Krieg +++: Öltanker mit irakischem Rohöl passiert Straße von Hormus</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 11:36</div>
+        </div>
+        <button onclick="inHubKopieren('22881f50')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#a1f5080e" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg – Die Lage: Trump verkündet Rettung von zweitem Besatzungsmitglied</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 09:39</div>
+        </div>
+        <button onclick="inHubKopieren('a1f5080e')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#9c714a10" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Konjunktur: Industrie fordert von Regierung umfassendes Reformpaket vor Sommer</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 07:43</div>
+        </div>
+        <button onclick="inHubKopieren('9c714a10')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#90597ec2" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Tauchsieder: Politische Karfreitags-Ostern</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wirtschaftswoche &middot; 05.04. 06:27</div>
+        </div>
+        <button onclick="inHubKopieren('90597ec2')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#28a19fe8" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Crashes, Ejections and a Frantic Search for a Missing Airman in Iran</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 05:00</div>
+        </div>
+        <button onclick="inHubKopieren('28a19fe8')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#65d10664" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">U.S. Forces Rescue Second American Aviator in Iran</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 04:41</div>
+        </div>
+        <button onclick="inHubKopieren('65d10664')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#085dca10" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump’s Claims of Victory Clash With Iran War’s Gritty Reality</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 05.04. 01:00</div>
+        </div>
+        <button onclick="inHubKopieren('085dca10')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#db2ac7c1" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Iran-Krieg und die Folgen: CDU-Politiker für Mehrwertsteuer-Senkung auf Grundnahrungsmittel</a>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Handelsblatt &middot; 05.04. 00:54</div>
+        </div>
+        <button onclick="inHubKopieren('db2ac7c1')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#e0793b01" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">The U.S.-Europe Alliance Is Reaching a Breaking Point Over the Iran War</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 04.04. 22:47</div>
+        </div>
+        <button onclick="inHubKopieren('e0793b01')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#c5825c32" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Top Aides Advise Trump Blasting Iran’s Infrastructure Is Fair Game</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Wall Street Journal &middot; 04.04. 19:28</div>
+        </div>
+        <button onclick="inHubKopieren('c5825c32')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    <div style="padding:9px 0; border-bottom:1px solid #edecea; display:flex; justify-content:space-between; align-items:center;">
+        <div style="flex:1;">
+            <a href="#46fd22bd" style="font-size:14px; color:#1a1a1a; text-decoration:none; font-weight:500; line-height:1.4;">Trump Threatens ‘Hell’ for Iran If It Doesn’t Open Up the Strait of Hormuz - Barron's</a><span style="color:#b8a07a; margin-left:4px;" title="Hohe Relevanz">&#9679;</span>
+            <div style="font-size:11px; color:#a09a93; margin-top:2px;">Barron's &middot; 04.04. 17:18</div>
+        </div>
+        <button onclick="inHubKopieren('46fd22bd')" class="btn-hub-klein" title="In Leseliste">&#10149;</button>
+    </div>
+    </div>
+    <hr class="trennlinie">
+    
+    <article id="082bb0f3" class="artikel" data-id="082bb0f3" data-titel="Vermögen: Immobilie in der Familiengesellschaft – diese  Fallstricke sollten Sie kennen" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/finanzen/steuern-recht/recht/vermoegen-immobilie-in-der-familiengesellschaft-das-sind-die-fallstricke/100211171.html" data-zusammenfassung="Die Einbringung einer vermieteten Immobilie in eine Familiengesellschaft kann für Investoren erhebliche steuerliche und rechtliche Fallstricke bergen, insbesondere wenn die Absicht besteht, später selbst wieder in die Immobilie einzuziehen. Ein zentrales Problem ist die potenzielle Entwertung der Immobilie durch eine entgeltliche Einbringung in die Gesellschaft, was steuerliche Nachteile nach sich ziehen kann. Wenn die Immobilie unentgeltlich eingebracht wird, können spätere Veräußerungen oder Änderungen an der Gesellschaftsstruktur zu komplexen steuerlichen Konsequenzen führen. Ein weiterer kritischer Punkt ist die Vermeidung einer verdeckten Gewinnausschüttung oder einer verdeckten Einlage, was durch eine sorgfältige Gestaltung der Verträge und eine angemessene Bewertung der Immobilie gewährleistet werden muss. Die steuerliche Behandlung von Mieteinnahmen und Gewinnausschüttungen innerhalb der Familiengesellschaft erfordert ebenfalls genaue Planung, um unerwartete Steuerlasten zu vermeiden. Nicht zuletzt ist die rechtliche Trennung zwischen privatem Vermögen und Gesellschaftsvermögen entscheidend, um Haftungsrisiken zu minimieren und die Vermögensnachfolge klar zu regeln. Die Hinzuziehung von spezialisierten Rechts- und Steuerberatern ist daher unerlässlich, um diese Komplexitäten erfolgreich zu meistern." data-datum="05.04.2026 14:06">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 14:06</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Vermögen: Immobilie in der Familiengesellschaft – diese  Fallstricke sollten Sie kennen</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('082bb0f3')" class="btn-lesen" id="btn-lesen-082bb0f3" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('082bb0f3')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die Einbringung einer vermieteten Immobilie in eine Familiengesellschaft kann für Investoren erhebliche steuerliche und rechtliche Fallstricke bergen, insbesondere wenn die Absicht besteht, später selbst wieder in die Immobilie einzuziehen. Ein zentrales Problem ist die potenzielle Entwertung der Immobilie durch eine entgeltliche Einbringung in die Gesellschaft, was steuerliche Nachteile nach sich ziehen kann. Wenn die Immobilie unentgeltlich eingebracht wird, können spätere Veräußerungen oder Änderungen an der Gesellschaftsstruktur zu komplexen steuerlichen Konsequenzen führen. Ein weiterer kritischer Punkt ist die Vermeidung einer verdeckten Gewinnausschüttung oder einer verdeckten Einlage, was durch eine sorgfältige Gestaltung der Verträge und eine angemessene Bewertung der Immobilie gewährleistet werden muss. Die steuerliche Behandlung von Mieteinnahmen und Gewinnausschüttungen innerhalb der Familiengesellschaft erfordert ebenfalls genaue Planung, um unerwartete Steuerlasten zu vermeiden. Nicht zuletzt ist die rechtliche Trennung zwischen privatem Vermögen und Gesellschaftsvermögen entscheidend, um Haftungsrisiken zu minimieren und die Vermögensnachfolge klar zu regeln. Die Hinzuziehung von spezialisierten Rechts- und Steuerberatern ist daher unerlässlich, um diese Komplexitäten erfolgreich zu meistern.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/finanzen/steuern-recht/recht/vermoegen-immobilie-in-der-familiengesellschaft-das-sind-die-fallstricke/100211171.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="42cf50aa" class="artikel" data-id="42cf50aa" data-titel="WisdomTree Tech Megatrends ETF: Setzt dieser ETF auf die richtigen Trends?" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/finanzen/geldanlage/wisdomtree-tech-megatrends-etf-setzt-dieser-etf-auf-die-richtigen-trends/100213840.html" data-zusammenfassung="WisdomTree hat einen neuen ETF aufgelegt, der sich auf den Megatrend Technologie konzentriert und Anlegern Zugang zu einem diversifizierten Portfolio zukunftsträchtiger Technologieunternehmen ermöglichen soll. Der ETF zielt darauf ab, von den rasanten Entwicklungen in Bereichen wie künstliche Intelligenz, Digitalisierung, Cloud Computing, Cybersicherheit und altersgerechte Technologien zu profitieren, die das Potenzial haben, die globale Wirtschaft maßgeblich zu verändern. Anleger, die in diesen ETF investieren möchten, sollten sich über die spezifischen Kriterien zur Auswahl der Unternehmen im Portfolio bewusst sein und prüfen, ob diese den langfristigen Wachstumsaussichten der jeweiligen Technologiemärkte gerecht werden. Die Diversifizierung über verschiedene technologische Sektoren und geografische Regionen soll dabei helfen, spezifische Risiken einzelner Unternehmen oder Märkte zu streuen. Es ist jedoch zu beachten, dass Technologie-ETFs, insbesondere solche, die auf Wachstumsbereiche abzielen, naturgemäß höheren Schwankungen unterliegen können als breiter diversifizierte Fonds. Eine gründliche Due-Diligence-Prüfung der Zusammensetzung des ETFs, der Verwaltungsgebühren und der historischen Performance ist für eine informierte Anlageentscheidung unerlässlich." data-datum="05.04.2026 13:15">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 13:15</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">WisdomTree Tech Megatrends ETF: Setzt dieser ETF auf die richtigen Trends?</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('42cf50aa')" class="btn-lesen" id="btn-lesen-42cf50aa" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('42cf50aa')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">WisdomTree hat einen neuen ETF aufgelegt, der sich auf den Megatrend Technologie konzentriert und Anlegern Zugang zu einem diversifizierten Portfolio zukunftsträchtiger Technologieunternehmen ermöglichen soll. Der ETF zielt darauf ab, von den rasanten Entwicklungen in Bereichen wie künstliche Intelligenz, Digitalisierung, Cloud Computing, Cybersicherheit und altersgerechte Technologien zu profitieren, die das Potenzial haben, die globale Wirtschaft maßgeblich zu verändern. Anleger, die in diesen ETF investieren möchten, sollten sich über die spezifischen Kriterien zur Auswahl der Unternehmen im Portfolio bewusst sein und prüfen, ob diese den langfristigen Wachstumsaussichten der jeweiligen Technologiemärkte gerecht werden. Die Diversifizierung über verschiedene technologische Sektoren und geografische Regionen soll dabei helfen, spezifische Risiken einzelner Unternehmen oder Märkte zu streuen. Es ist jedoch zu beachten, dass Technologie-ETFs, insbesondere solche, die auf Wachstumsbereiche abzielen, naturgemäß höheren Schwankungen unterliegen können als breiter diversifizierte Fonds. Eine gründliche Due-Diligence-Prüfung der Zusammensetzung des ETFs, der Verwaltungsgebühren und der historischen Performance ist für eine informierte Anlageentscheidung unerlässlich.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/finanzen/geldanlage/wisdomtree-tech-megatrends-etf-setzt-dieser-etf-auf-die-richtigen-trends/100213840.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="fb1dcdb1" class="artikel" data-id="fb1dcdb1" data-titel="The U.S. Plastics Industry Was in the Doldrums. Then the Iran War Began." data-quelle="Wall Street Journal" data-link="https://www.wsj.com/business/the-u-s-plastics-industry-was-in-the-doldrums-then-the-iran-war-began-ab12a99a?mod=rss_markets_main" data-zusammenfassung="Die US-amerikanische Kunststoffindustrie, die sich zuvor in einer schwierigen Phase befand, erfährt durch den Iran-Krieg eine unerwartete Erholung und Aufschwung. Die militärischen Konflikte im Nahen Osten haben zu einer Beeinträchtigung von Lieferrouten für Rohstoffe und Fertigprodukte geführt, wodurch Wettbewerber der US-Unternehmen unter Druck geraten. Dies hat zu einer signifikanten Steigerung der Aktienkurse von bedeutenden Chemieunternehmen wie Dow und LyondellBasell geführt, die von der eingeschränkten Verfügbarkeit und den steigenden Preisen von Kunststoffen weltweit profitieren. Die globalen Lieferketten werden durch die geopolitische Instabilität stark beeinträchtigt, was zu einer erhöhten Nachfrage nach Produkten aus den Vereinigten Staaten führt, da andere Produktionsstandorte weniger zuverlässig beliefern können. Diese Entwicklung stellt eine kurzfristige, aber bedeutende Chance für die US-Kunststoffhersteller dar, ihre Marktposition zu stärken und ihre Umsätze zu steigern, auch wenn die zugrundeliegende Ursache eine negative globale Ereigniskette ist. Investoren beobachten diese Sektor-spezifische Entwicklung aufmerksam, da sie die Dynamik globaler Handelsströme und die Auswirkungen geopolitischer Risiken auf Unternehmensgewinne illustriert." data-datum="05.04.2026 12:00">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 12:00</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">The U.S. Plastics Industry Was in the Doldrums. Then the Iran War Began.</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('fb1dcdb1')" class="btn-lesen" id="btn-lesen-fb1dcdb1" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('fb1dcdb1')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die US-amerikanische Kunststoffindustrie, die sich zuvor in einer schwierigen Phase befand, erfährt durch den Iran-Krieg eine unerwartete Erholung und Aufschwung. Die militärischen Konflikte im Nahen Osten haben zu einer Beeinträchtigung von Lieferrouten für Rohstoffe und Fertigprodukte geführt, wodurch Wettbewerber der US-Unternehmen unter Druck geraten. Dies hat zu einer signifikanten Steigerung der Aktienkurse von bedeutenden Chemieunternehmen wie Dow und LyondellBasell geführt, die von der eingeschränkten Verfügbarkeit und den steigenden Preisen von Kunststoffen weltweit profitieren. Die globalen Lieferketten werden durch die geopolitische Instabilität stark beeinträchtigt, was zu einer erhöhten Nachfrage nach Produkten aus den Vereinigten Staaten führt, da andere Produktionsstandorte weniger zuverlässig beliefern können. Diese Entwicklung stellt eine kurzfristige, aber bedeutende Chance für die US-Kunststoffhersteller dar, ihre Marktposition zu stärken und ihre Umsätze zu steigern, auch wenn die zugrundeliegende Ursache eine negative globale Ereigniskette ist. Investoren beobachten diese Sektor-spezifische Entwicklung aufmerksam, da sie die Dynamik globaler Handelsströme und die Auswirkungen geopolitischer Risiken auf Unternehmensgewinne illustriert.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/business/the-u-s-plastics-industry-was-in-the-doldrums-then-the-iran-war-began-ab12a99a?mod=rss_markets_main" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="1d4cb40f" class="artikel" data-id="1d4cb40f" data-titel="Iran-Krieg: Spritpreise steigen weiter – Diesel erreicht neues Rekordhoch" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/deutschland/iran-krieg-spritpreise-steigen-weiter-diesel-erreicht-neues-rekordhoch/100214584.html" data-zusammenfassung="Trotz verschiedener Maßnahmen der Bundesregierung zur Eindämmung des Anstiegs der Spritpreise hat Diesel in Deutschland ein Rekordhoch erreicht und wird kontinuierlich teurer. Die Preise für Dieselkraftstoff jagten in den letzten Wochen und Monaten einen Rekord nach dem anderen, was für Verbraucher und die Transportwirtschaft erhebliche Belastungen mit sich bringt. Die genauen Ursachen für diese anhaltende Preissteigerung sind vielfältig und umfassen neben globalen Faktoren wie der Energiekrise und Lieferkettenproblemen auch spezifische nationale Entwicklungen. Diese preisliche Entwicklung hat weitreichende Auswirkungen auf die Inflation, die Kosten für Logistik und Transport sowie auf das tägliche Leben der Bürger. Die bisherigen staatlichen Interventionen scheinen nicht ausreichend zu sein, um diesen negativen Trend umzukehren, und die Aussichten auf eine baldige Entspannung der Dieselpreise sind derzeit gering. Die weitere Entwicklung bleibt abzuwarten, dürfte aber weiterhin ein wichtiger Indikator für die wirtschaftliche Lage sein." data-datum="05.04.2026 11:21">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 11:21</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg: Spritpreise steigen weiter – Diesel erreicht neues Rekordhoch</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('1d4cb40f')" class="btn-lesen" id="btn-lesen-1d4cb40f" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('1d4cb40f')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Trotz verschiedener Maßnahmen der Bundesregierung zur Eindämmung des Anstiegs der Spritpreise hat Diesel in Deutschland ein Rekordhoch erreicht und wird kontinuierlich teurer. Die Preise für Dieselkraftstoff jagten in den letzten Wochen und Monaten einen Rekord nach dem anderen, was für Verbraucher und die Transportwirtschaft erhebliche Belastungen mit sich bringt. Die genauen Ursachen für diese anhaltende Preissteigerung sind vielfältig und umfassen neben globalen Faktoren wie der Energiekrise und Lieferkettenproblemen auch spezifische nationale Entwicklungen. Diese preisliche Entwicklung hat weitreichende Auswirkungen auf die Inflation, die Kosten für Logistik und Transport sowie auf das tägliche Leben der Bürger. Die bisherigen staatlichen Interventionen scheinen nicht ausreichend zu sein, um diesen negativen Trend umzukehren, und die Aussichten auf eine baldige Entspannung der Dieselpreise sind derzeit gering. Die weitere Entwicklung bleibt abzuwarten, dürfte aber weiterhin ein wichtiger Indikator für die wirtschaftliche Lage sein.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/deutschland/iran-krieg-spritpreise-steigen-weiter-diesel-erreicht-neues-rekordhoch/100214584.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="642cc54e" class="artikel" data-id="642cc54e" data-titel="One of the Stock Market’s Last Havens Is Now at Risk" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/finance/stocks/one-of-the-stock-markets-last-havens-is-now-at-risk-7aa84e5d?mod=rss_markets_main" data-zusammenfassung="Der Artikel des Wall Street Journal beleuchtet die Bedrohung eines einstigen sicheren Hafens im Aktienmarkt: Value-Aktien. Traditionell galten Value-Aktien als vergleichsweise stabile Anlagen, die bei Unsicherheit an den Märkten oft besser abschnitten als Wachstumsaktien. Aktuell erleben Value-Aktien jedoch die größte Outperformance gegenüber Wachstumsaktien seit Jahren, was auf eine breitere Marktveränderung hindeutet. Diese Verschiebung könnte Investoren, die auf eine fortgesetzte Dominanz von Wachstumsaktien gesetzt haben, vor Herausforderungen stellen.  Die Ursachen hierfür sind vielfältig und umfassen makroökonomische Faktoren wie steigende Zinsen und Inflationsängste, die die Attraktivität von Wachstumsaktien schmälern, während Value-Aktien mit ihren oft soliden Gewinnen und Dividendenzahlungen an Attraktivität gewinnen.  Für Investoren bedeutet dies eine Neubewertung ihrer Portfolios und eine mögliche Diversifizierung hin zu Sektoren, die von dieser Entwicklung profitieren.  Die Tatsache, dass ein ehemals sicherer Hafen nun unter Druck gerät, unterstreicht die Volatilität und die sich ständig ändernden Bedingungen an den Finanzmärkten.  Langfristig könnte diese Verschiebung zu einer stärkeren Gewichtung von Value-Aktien in Indizes und Portfolios führen.  Investoren sollten die Entwicklung genau beobachten und ihre Anlagestrategien entsprechend anpassen, um Risiken zu minimieren und Chancen zu nutzen." data-datum="05.04.2026 09:30">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 09:30</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">One of the Stock Market’s Last Havens Is Now at Risk</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('642cc54e')" class="btn-lesen" id="btn-lesen-642cc54e" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('642cc54e')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Artikel des Wall Street Journal beleuchtet die Bedrohung eines einstigen sicheren Hafens im Aktienmarkt: Value-Aktien. Traditionell galten Value-Aktien als vergleichsweise stabile Anlagen, die bei Unsicherheit an den Märkten oft besser abschnitten als Wachstumsaktien. Aktuell erleben Value-Aktien jedoch die größte Outperformance gegenüber Wachstumsaktien seit Jahren, was auf eine breitere Marktveränderung hindeutet. Diese Verschiebung könnte Investoren, die auf eine fortgesetzte Dominanz von Wachstumsaktien gesetzt haben, vor Herausforderungen stellen.  Die Ursachen hierfür sind vielfältig und umfassen makroökonomische Faktoren wie steigende Zinsen und Inflationsängste, die die Attraktivität von Wachstumsaktien schmälern, während Value-Aktien mit ihren oft soliden Gewinnen und Dividendenzahlungen an Attraktivität gewinnen.  Für Investoren bedeutet dies eine Neubewertung ihrer Portfolios und eine mögliche Diversifizierung hin zu Sektoren, die von dieser Entwicklung profitieren.  Die Tatsache, dass ein ehemals sicherer Hafen nun unter Druck gerät, unterstreicht die Volatilität und die sich ständig ändernden Bedingungen an den Finanzmärkten.  Langfristig könnte diese Verschiebung zu einer stärkeren Gewichtung von Value-Aktien in Indizes und Portfolios führen.  Investoren sollten die Entwicklung genau beobachten und ihre Anlagestrategien entsprechend anpassen, um Risiken zu minimieren und Chancen zu nutzen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/finance/stocks/one-of-the-stock-markets-last-havens-is-now-at-risk-7aa84e5d?mod=rss_markets_main" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="b2c2fc39" class="artikel" data-id="b2c2fc39" data-titel="Geldanlage: Wo soll ich jetzt 10.000 Euro anlegen?" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/finanzen/geldanlage/geldanlage-2026-wo-soll-ich-jetzt-10.000-euro-anlegen/100213527.html" data-zusammenfassung="Die Wirtschaftswoche thematisiert die Herausforderung der Geldanlage von 10.000 Euro in einem volatilen Marktumfeld, das seit Ausbruch des Iran-Kriegs von starken Schwankungen geprägt ist. Anleger stehen vor der Entscheidung, ob sie kurzfristige Trends an der Börse nutzen oder sich bewusst zurückhalten sollen, um größere Verluste zu vermeiden. Das volatile Umfeld, ausgelöst durch geopolitische Spannungen, führt zu Achterbahnfahrten an den Märkten, was die Planung von Investitionen erschwert. Für Anleger, die nach Anlagechancen suchen, wird die Notwendigkeit einer sorgfältigen Risikoanalyse betont. Kurzfristige Spekulationen können zwar Gewinne erzielen, bergen aber auch ein erhebliches Verlustrisiko. Eine zurückhaltende Strategie hingegen mag kurzfristig keine hohen Renditen bringen, schützt aber das Kapital. Die Experten raten dazu, die individuelle Risikobereitschaft zu berücksichtigen und möglicherweise auf defensive Anlageklassen oder breit gestreute Fonds zu setzen, um die Unsicherheiten zu bewältigen. Die genaue strategische Ausrichtung hängt stark von den individuellen Anlagezielen und dem Zeithorizont ab, wobei die aktuelle geopolitische Lage eine übergeordnete Rolle spielt. Eine eingehende Marktanalyse und eine konservative Herangehensweise werden als Schlüssel zum Schutz des investierten Kapitals empfohlen." data-datum="05.04.2026 08:36">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 08:36</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Geldanlage: Wo soll ich jetzt 10.000 Euro anlegen?</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('b2c2fc39')" class="btn-lesen" id="btn-lesen-b2c2fc39" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('b2c2fc39')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die Wirtschaftswoche thematisiert die Herausforderung der Geldanlage von 10.000 Euro in einem volatilen Marktumfeld, das seit Ausbruch des Iran-Kriegs von starken Schwankungen geprägt ist. Anleger stehen vor der Entscheidung, ob sie kurzfristige Trends an der Börse nutzen oder sich bewusst zurückhalten sollen, um größere Verluste zu vermeiden. Das volatile Umfeld, ausgelöst durch geopolitische Spannungen, führt zu Achterbahnfahrten an den Märkten, was die Planung von Investitionen erschwert. Für Anleger, die nach Anlagechancen suchen, wird die Notwendigkeit einer sorgfältigen Risikoanalyse betont. Kurzfristige Spekulationen können zwar Gewinne erzielen, bergen aber auch ein erhebliches Verlustrisiko. Eine zurückhaltende Strategie hingegen mag kurzfristig keine hohen Renditen bringen, schützt aber das Kapital. Die Experten raten dazu, die individuelle Risikobereitschaft zu berücksichtigen und möglicherweise auf defensive Anlageklassen oder breit gestreute Fonds zu setzen, um die Unsicherheiten zu bewältigen. Die genaue strategische Ausrichtung hängt stark von den individuellen Anlagezielen und dem Zeithorizont ab, wobei die aktuelle geopolitische Lage eine übergeordnete Rolle spielt. Eine eingehende Marktanalyse und eine konservative Herangehensweise werden als Schlüssel zum Schutz des investierten Kapitals empfohlen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/finanzen/geldanlage/geldanlage-2026-wo-soll-ich-jetzt-10.000-euro-anlegen/100213527.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="854c4195" class="artikel" data-id="854c4195" data-titel="Börse: Dax-Konzerne zahlen so viel Dividende wie nie – Allianz vorne" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/finanzen/boerse/boerse-dax-konzerne-zahlen-so-viel-dividende-wie-nie-allianz-vorne/100214559.html" data-zusammenfassung="Die Wirtschaftswoche berichtet über ein Rekordniveau bei den Dividendenausschüttungen deutscher Dax-Konzerne, wobei die Allianz an der Spitze steht.  Diese Entwicklung ist für Aktionäre zunächst positiv, da sie hohe Erträge aus ihren Investments erwarten können.  Die Rekorddividenden spiegeln möglicherweise die starke Ertragslage vieler Unternehmen im vergangenen Geschäftsjahr wider.  Allerdings warnen Experten davor, dass diese hohen Ausschüttungen nicht unbedingt von Dauer sein werden.  Für die kommenden Jahre wird eher mit sinkenden Dividenden gerechnet, was auf eine mögliche Eintrübung der wirtschaftlichen Aussichten oder gestiegene Investitionsbedürfnisse der Unternehmen hindeuten könnte.  Diese Prognose ist für Investoren relevant, die auf stabile und wachsende Dividendeneinnahmen angewiesen sind.  Die Entscheidung, Dividenden zu kürzen oder zu erhöhen, hängt von verschiedenen Faktoren ab, darunter die finanzielle Gesundheit des Unternehmens, zukünftige Wachstumsperspektiven und strategische Entscheidungen wie Übernahmen oder Investitionen in neue Technologien.  Für Anleger bedeutet dies, dass sie ihre Erwartungen an die Dividendenrendite möglicherweise anpassen und die zukünftigen Aussichten der einzelnen Unternehmen kritisch prüfen sollten.  Eine Diversifizierung der Einkommensströme aus Dividenden könnte ratsam sein, um von potenziellen Schwankungen abzuschwächen." data-datum="05.04.2026 08:04">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 08:04</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Börse: Dax-Konzerne zahlen so viel Dividende wie nie – Allianz vorne</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('854c4195')" class="btn-lesen" id="btn-lesen-854c4195" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('854c4195')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die Wirtschaftswoche berichtet über ein Rekordniveau bei den Dividendenausschüttungen deutscher Dax-Konzerne, wobei die Allianz an der Spitze steht.  Diese Entwicklung ist für Aktionäre zunächst positiv, da sie hohe Erträge aus ihren Investments erwarten können.  Die Rekorddividenden spiegeln möglicherweise die starke Ertragslage vieler Unternehmen im vergangenen Geschäftsjahr wider.  Allerdings warnen Experten davor, dass diese hohen Ausschüttungen nicht unbedingt von Dauer sein werden.  Für die kommenden Jahre wird eher mit sinkenden Dividenden gerechnet, was auf eine mögliche Eintrübung der wirtschaftlichen Aussichten oder gestiegene Investitionsbedürfnisse der Unternehmen hindeuten könnte.  Diese Prognose ist für Investoren relevant, die auf stabile und wachsende Dividendeneinnahmen angewiesen sind.  Die Entscheidung, Dividenden zu kürzen oder zu erhöhen, hängt von verschiedenen Faktoren ab, darunter die finanzielle Gesundheit des Unternehmens, zukünftige Wachstumsperspektiven und strategische Entscheidungen wie Übernahmen oder Investitionen in neue Technologien.  Für Anleger bedeutet dies, dass sie ihre Erwartungen an die Dividendenrendite möglicherweise anpassen und die zukünftigen Aussichten der einzelnen Unternehmen kritisch prüfen sollten.  Eine Diversifizierung der Einkommensströme aus Dividenden könnte ratsam sein, um von potenziellen Schwankungen abzuschwächen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/finanzen/boerse/boerse-dax-konzerne-zahlen-so-viel-dividende-wie-nie-allianz-vorne/100214559.html" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="9166b5c0" class="artikel" data-id="9166b5c0" data-titel="These Stocks Are Today’s Movers: Nvidia, Palo Alto, Alcoa, Boston Scientific, Sysco, CrowdStrike, Micron, and More - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi6gJBVV95cUxNS1lONktqRXFxR0p2Rm5tY1RKZElVOW1HeHdHemRwSm5RNXhfZENoenlNVlFHUWphRW9DSDAybnk5RjZvdkg2NTJJbnNTWU96WFUxa3E5NndxQzNQLTNZck5KczlDdVdWYXpCR2pBUUlBc25KUTgyV1lyUzBJVlBtR2gxZHo0ckVSbUh5bEtTdjYtaTI5eFk1YWNnLWNtaGZaOURQWDNSalR2Mzc2NHZ6dTJGUDBIcHRYZTZpSndaa3Y5RUVaYjg5cW5VdGt1WmtBS3pNazE3c0d2UXZJQl9UMmpreGc0cmQ4VHZpeW92N09EZWI1V3IzX0txekdGV0p1S1hDVEYwMHV0X2pQV3hRZ080RkhFeF9Mc3VPaEZvWU9wN2gyWGRUbDZlZmdVWW9feDVMd1FFaEZURVFoUkY2UElBbDFDUzBTcnJiUUF2Mlppd0lOd2lIaUZNaHUybTA3RmJsZHpBUnczQQ?oc=5" data-zusammenfassung="Dieser Barron's-Artikel beleuchtet eine Auswahl von Aktien, die an einem bestimmten Handelstag besondere Aufmerksamkeit verdienen, basierend auf spezifischen Nachrichten und Entwicklungen.  Nvidia wird hervorgehoben, da das Unternehmen weiterhin eine dominante Rolle im KI-Sektor spielt und die Nachfrage nach seinen fortschrittlichen Chips hoch bleibt. Palo Alto Networks profitiert von der steigenden Bedeutung der Cybersicherheit und der fortlaufenden Bedrohungslage, was das Unternehmen als führenden Anbieter in diesem Bereich positioniert. Alcoa zeigt Reaktionen auf die Rohstoffpreise und globale Nachfrage nach Aluminium, was für zyklische Investoren relevant ist. Boston Scientific profitiert von Innovationen im Medizintechniksektor und einer wachsenden Nachfrage nach seinen Produkten in einem alternden demografischen Umfeld. Sysco, ein wichtiger Akteur im Lebensmittelgroßhandel, wird von den Konsumausgaben und der Erholung der Gastronomiebranche beeinflusst. CrowdStrike wird als wichtiger Anbieter von Cloud-basierten Cybersicherheitslösungen gefeiert, dessen Wachstum durch die zunehmende Digitalisierung und Cyberrisiken angetrieben wird. Micron Technology, ein führender Speicherchiphersteller, wird von der Nachfrage nach Speicherlösungen in Rechenzentren, KI und Endgeräten beeinflusst, was die Volatilität des Halbleitersektors widerspiegelt.  Investoren sollten diese Aktien im Kontext ihrer jeweiligen Branchenentwicklungen und der makroökonomischen Rahmenbedingungen bewerten, wobei technologische Fortschritte und Nachfragetrends entscheidende Treiber darstellen." data-datum="04.04.2026 22:22">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 04.04.2026 22:22</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">These Stocks Are Today’s Movers: Nvidia, Palo Alto, Alcoa, Boston Scientific, Sysco, CrowdStrike, Micron, and More - Barron's</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('9166b5c0')" class="btn-lesen" id="btn-lesen-9166b5c0" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('9166b5c0')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Dieser Barron's-Artikel beleuchtet eine Auswahl von Aktien, die an einem bestimmten Handelstag besondere Aufmerksamkeit verdienen, basierend auf spezifischen Nachrichten und Entwicklungen.  Nvidia wird hervorgehoben, da das Unternehmen weiterhin eine dominante Rolle im KI-Sektor spielt und die Nachfrage nach seinen fortschrittlichen Chips hoch bleibt. Palo Alto Networks profitiert von der steigenden Bedeutung der Cybersicherheit und der fortlaufenden Bedrohungslage, was das Unternehmen als führenden Anbieter in diesem Bereich positioniert. Alcoa zeigt Reaktionen auf die Rohstoffpreise und globale Nachfrage nach Aluminium, was für zyklische Investoren relevant ist. Boston Scientific profitiert von Innovationen im Medizintechniksektor und einer wachsenden Nachfrage nach seinen Produkten in einem alternden demografischen Umfeld. Sysco, ein wichtiger Akteur im Lebensmittelgroßhandel, wird von den Konsumausgaben und der Erholung der Gastronomiebranche beeinflusst. CrowdStrike wird als wichtiger Anbieter von Cloud-basierten Cybersicherheitslösungen gefeiert, dessen Wachstum durch die zunehmende Digitalisierung und Cyberrisiken angetrieben wird. Micron Technology, ein führender Speicherchiphersteller, wird von der Nachfrage nach Speicherlösungen in Rechenzentren, KI und Endgeräten beeinflusst, was die Volatilität des Halbleitersektors widerspiegelt.  Investoren sollten diese Aktien im Kontext ihrer jeweiligen Branchenentwicklungen und der makroökonomischen Rahmenbedingungen bewerten, wobei technologische Fortschritte und Nachfragetrends entscheidende Treiber darstellen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://news.google.com/rss/articles/CBMi6gJBVV95cUxNS1lONktqRXFxR0p2Rm5tY1RKZElVOW1HeHdHemRwSm5RNXhfZENoenlNVlFHUWphRW9DSDAybnk5RjZvdkg2NTJJbnNTWU96WFUxa3E5NndxQzNQLTNZck5KczlDdVdWYXpCR2pBUUlBc25KUTgyV1lyUzBJVlBtR2gxZHo0ckVSbUh5bEtTdjYtaTI5eFk1YWNnLWNtaGZaOURQWDNSalR2Mzc2NHZ6dTJGUDBIcHRYZTZpSndaa3Y5RUVaYjg5cW5VdGt1WmtBS3pNazE3c0d2UXZJQl9UMmpreGc0cmQ4VHZpeW92N09EZWI1V3IzX0txekdGV0p1S1hDVEYwMHV0X2pQV3hRZ080RkhFeF9Mc3VPaEZvWU9wN2gyWGRUbDZlZmdVWW9feDVMd1FFaEZURVFoUkY2UElBbDFDUzBTcnJiUUF2Mlppd0lOd2lIaUZNaHUybTA3RmJsZHpBUnczQQ?oc=5" style="font-size:12px; color:#1a6b6a; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="e4fd6887" class="artikel" data-id="e4fd6887" data-titel="Geldanlage: KI soll die Rendite steigern – was schaffen die neuen Quant-Fonds wirklich?" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/finanzen/anlagestrategie/fonds-etf/geldanlage-steigert-ki-die-rendite-von-investmentfonds/100211136.html" data-zusammenfassung="Immer mehr Investmentfonds und ETFs setzen auf Künstliche Intelligenz (KI), um die Renditen zu steigern und den Markt zu übertreffen. Diese Fonds versprechen, durch den Einsatz von Algorithmen und maschinellem Lernen Anlageentscheidungen zu optimieren, Marktineffizienzen zu erkennen und präzisere Vorhersagen zu treffen. Die Idee ist, dass KI-Systeme Daten schneller und umfassender analysieren können als menschliche Manager, was zu potenziell besseren Anlageergebnissen führen soll. Viele Anbieter setzen jedoch weiterhin auf einen hybriden Ansatz, bei dem die KI als unterstützendes Werkzeug für menschliche Portfolio-Manager fungiert, anstatt einen vollständig automatisierten Handel zu implementieren. Dieses Vorgehen reflektiert die Skepsis gegenüber einer vollständigen Autonomie von KI-Systemen im komplexen Finanzmarkt und die Notwendigkeit menschlicher Überwachung und strategischer Entscheidungen. Anleger sollten sich der Funktionsweise dieser KI-gesteuerten Produkte bewusst sein und prüfen, ob die Strategie auf ihre Anlageziele und Risikobereitschaft abgestimmt ist. Die tatsächliche Outperformance solcher Fonds ist oft schwer vorherzusagen und kann von der Qualität der eingesetzten KI-Modelle sowie den Marktbedingungen abhängen." data-datum="05.04.2026 11:58">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 11:58</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Geldanlage: KI soll die Rendite steigern – was schaffen die neuen Quant-Fonds wirklich?</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('e4fd6887')" class="btn-lesen" id="btn-lesen-e4fd6887" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('e4fd6887')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Immer mehr Investmentfonds und ETFs setzen auf Künstliche Intelligenz (KI), um die Renditen zu steigern und den Markt zu übertreffen. Diese Fonds versprechen, durch den Einsatz von Algorithmen und maschinellem Lernen Anlageentscheidungen zu optimieren, Marktineffizienzen zu erkennen und präzisere Vorhersagen zu treffen. Die Idee ist, dass KI-Systeme Daten schneller und umfassender analysieren können als menschliche Manager, was zu potenziell besseren Anlageergebnissen führen soll. Viele Anbieter setzen jedoch weiterhin auf einen hybriden Ansatz, bei dem die KI als unterstützendes Werkzeug für menschliche Portfolio-Manager fungiert, anstatt einen vollständig automatisierten Handel zu implementieren. Dieses Vorgehen reflektiert die Skepsis gegenüber einer vollständigen Autonomie von KI-Systemen im komplexen Finanzmarkt und die Notwendigkeit menschlicher Überwachung und strategischer Entscheidungen. Anleger sollten sich der Funktionsweise dieser KI-gesteuerten Produkte bewusst sein und prüfen, ob die Strategie auf ihre Anlageziele und Risikobereitschaft abgestimmt ist. Die tatsächliche Outperformance solcher Fonds ist oft schwer vorherzusagen und kann von der Qualität der eingesetzten KI-Modelle sowie den Marktbedingungen abhängen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/finanzen/anlagestrategie/fonds-etf/geldanlage-steigert-ki-die-rendite-von-investmentfonds/100211136.html" style="font-size:12px; color:#6b5c73; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="9f4ec1f7" class="artikel" data-id="9f4ec1f7" data-titel="Microsoft Is on a New AI Journey After Reworked OpenAI Deal - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMi8wJBVV95cUxPTEJCVVQzYXR0bUxVbVdOa0VDNzVnMkljdXZuSXRNVFV2Y3pGMTE4alVsQ2ZTd1p1NEgyNXRoV19Ec0ZsdFR1Z2tkMmNNdW05T290Zk9nS1d2a25XcWRuTDNMTnhaSTg4ejFIVFRjLTRqUkE3Vm9XWk9YWmtENGVpVU11TTN1c21NVEl1MkN6NE1vQUJWSlpvMUdmdWVuMEpMY09ra2pESjlwN25yMXBpU0pkMlRhVUdlTF9WZjR5WjdjdkxVaHNIa2hKSW9UTVZMRkNEU0x2RkJCVnNxSGUwUVc0eFlhYlhwV1dpaV9JU2duWlMxZWQ1Zm5JS2pIOHI0bkdqRlZZRk9kWjdBeFBZdFlPMkpVQk03Mktxa0sxdGlJSXRxQ2kxSFV1QjdRVVEwU200YWpJQVVHXzdnb3lIOVFGdmxRSkVfWXZKSk90UHU2amZsczVtSi16ekwxdHBBblBBZGZJYnRINDdFVlJNdlJHUQ?oc=5" data-zusammenfassung="Microsoft hat nach einer Neuausrichtung seines Deals mit OpenAI eine neue Ära in der künstlichen Intelligenz eingeläutet, was für Investoren von großer Bedeutung ist.  Die Partnerschaft mit OpenAI, die durch eine erneute Strukturierung der Vereinbarungen geprägt ist, soll die Entwicklung und Kommerzialisierung fortschrittlicher KI-Technologien beschleunigen.  Diese strategische Neuausrichtung positioniert Microsoft an der Spitze des KI-Rennens und ermöglicht dem Unternehmen, seine eigenen Produkte und Dienstleistungen mit den neuesten KI-Fortschritten zu integrieren.  Der verstärkte Fokus auf KI ist ein Schlüsselfaktor für das zukünftige Wachstum von Microsoft und könnte neue Umsatzströme erschließen.  Die Investition in und die enge Zusammenarbeit mit OpenAI unterstreichen Microsofts Engagement für Innovation im KI-Bereich.  Dies hat potenziell weitreichende Auswirkungen auf verschiedene Sektoren, von der Cloud-Infrastruktur bis hin zu Endanwender-Anwendungen.  Investoren beobachten aufmerksam die Umsetzung dieser Strategie und die Fähigkeit von Microsoft, die technologischen Vorteile in nachhaltigen Geschäftserfolg umzuwandeln.  Die neue KI-Strategie könnte Microsofts Wettbewerbsposition im Technologiesektor weiter stärken und neue Möglichkeiten für Partnerschaften und Akquisitionen eröffnen, während sie gleichzeitig die Risiken im Zusammenhang mit der KI-Entwicklung managt." data-datum="04.04.2026 20:07">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 04.04.2026 20:07</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Microsoft Is on a New AI Journey After Reworked OpenAI Deal - Barron's</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('9f4ec1f7')" class="btn-lesen" id="btn-lesen-9f4ec1f7" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('9f4ec1f7')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Microsoft hat nach einer Neuausrichtung seines Deals mit OpenAI eine neue Ära in der künstlichen Intelligenz eingeläutet, was für Investoren von großer Bedeutung ist.  Die Partnerschaft mit OpenAI, die durch eine erneute Strukturierung der Vereinbarungen geprägt ist, soll die Entwicklung und Kommerzialisierung fortschrittlicher KI-Technologien beschleunigen.  Diese strategische Neuausrichtung positioniert Microsoft an der Spitze des KI-Rennens und ermöglicht dem Unternehmen, seine eigenen Produkte und Dienstleistungen mit den neuesten KI-Fortschritten zu integrieren.  Der verstärkte Fokus auf KI ist ein Schlüsselfaktor für das zukünftige Wachstum von Microsoft und könnte neue Umsatzströme erschließen.  Die Investition in und die enge Zusammenarbeit mit OpenAI unterstreichen Microsofts Engagement für Innovation im KI-Bereich.  Dies hat potenziell weitreichende Auswirkungen auf verschiedene Sektoren, von der Cloud-Infrastruktur bis hin zu Endanwender-Anwendungen.  Investoren beobachten aufmerksam die Umsetzung dieser Strategie und die Fähigkeit von Microsoft, die technologischen Vorteile in nachhaltigen Geschäftserfolg umzuwandeln.  Die neue KI-Strategie könnte Microsofts Wettbewerbsposition im Technologiesektor weiter stärken und neue Möglichkeiten für Partnerschaften und Akquisitionen eröffnen, während sie gleichzeitig die Risiken im Zusammenhang mit der KI-Entwicklung managt.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://news.google.com/rss/articles/CBMi8wJBVV95cUxPTEJCVVQzYXR0bUxVbVdOa0VDNzVnMkljdXZuSXRNVFV2Y3pGMTE4alVsQ2ZTd1p1NEgyNXRoV19Ec0ZsdFR1Z2tkMmNNdW05T290Zk9nS1d2a25XcWRuTDNMTnhaSTg4ejFIVFRjLTRqUkE3Vm9XWk9YWmtENGVpVU11TTN1c21NVEl1MkN6NE1vQUJWSlpvMUdmdWVuMEpMY09ra2pESjlwN25yMXBpU0pkMlRhVUdlTF9WZjR5WjdjdkxVaHNIa2hKSW9UTVZMRkNEU0x2RkJCVnNxSGUwUVc0eFlhYlhwV1dpaV9JU2duWlMxZWQ1Zm5JS2pIOHI0bkdqRlZZRk9kWjdBeFBZdFlPMkpVQk03Mktxa0sxdGlJSXRxQ2kxSFV1QjdRVVEwU200YWpJQVVHXzdnb3lIOVFGdmxRSkVfWXZKSk90UHU2amZsczVtSi16ekwxdHBBblBBZGZJYnRINDdFVlJNdlJHUQ?oc=5" style="font-size:12px; color:#6b5c73; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="1490116b" class="artikel" data-id="1490116b" data-titel="This Engineer Wants to Make Computer Chips on the Moon" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/tech/this-engineer-wants-to-make-computer-chips-on-the-moon-ee8693f8" data-zusammenfassung="Ein japanischer Ingenieur namens Atsuyoshi Koike verfolgt die ambitionierte Vision, Computerchips auf dem Mond herzustellen, um Japans Rückkehr in die einst dominierende Halbleiterindustrie zu untermauern.  Bevor er diesen extraterrestrischen Plan umsetzen kann, muss Koike jedoch zunächst beweisen, dass er in der Lage ist, Computerchips erfolgreich auf der Erde zu produzieren.  Diese Zielsetzung unterstreicht die strategische Bedeutung, die Japan der Wiederbelebung seiner Halbleiterfertigung beimisst, nachdem das Land in den letzten Jahrzehnten Marktanteile an andere Nationen verloren hat.  Die Mond-Initiative ist Teil einer größeren Anstrengung Japans, seine technologische Souveränität und Wettbewerbsfähigkeit im globalen Chipsektor wiederherzustellen.  Die Herausforderungen bei der Herstellung von Halbleitern auf dem Mond sind immens und beinhalten extreme Temperaturen, Strahlung und die Notwendigkeit autarker Produktionssysteme.  Investoren, die den Halbleitersektor verfolgen, werden diese Entwicklung mit Interesse beobachten, da sie die langfristige Innovationskraft und die strategischen Ambitionen Japans im Bereich der Hochtechnologie widerspiegelt.  Der Erfolg dieses Projekts, beginnend mit den irdischen Machbarkeitsstudien, könnte neue technologische Durchbrüche und die Erschließung neuer Ressourcen für die Chipindustrie bedeuten." data-datum="04.04.2026 15:50">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 04.04.2026 15:50</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">This Engineer Wants to Make Computer Chips on the Moon</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('1490116b')" class="btn-lesen" id="btn-lesen-1490116b" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('1490116b')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Ein japanischer Ingenieur namens Atsuyoshi Koike verfolgt die ambitionierte Vision, Computerchips auf dem Mond herzustellen, um Japans Rückkehr in die einst dominierende Halbleiterindustrie zu untermauern.  Bevor er diesen extraterrestrischen Plan umsetzen kann, muss Koike jedoch zunächst beweisen, dass er in der Lage ist, Computerchips erfolgreich auf der Erde zu produzieren.  Diese Zielsetzung unterstreicht die strategische Bedeutung, die Japan der Wiederbelebung seiner Halbleiterfertigung beimisst, nachdem das Land in den letzten Jahrzehnten Marktanteile an andere Nationen verloren hat.  Die Mond-Initiative ist Teil einer größeren Anstrengung Japans, seine technologische Souveränität und Wettbewerbsfähigkeit im globalen Chipsektor wiederherzustellen.  Die Herausforderungen bei der Herstellung von Halbleitern auf dem Mond sind immens und beinhalten extreme Temperaturen, Strahlung und die Notwendigkeit autarker Produktionssysteme.  Investoren, die den Halbleitersektor verfolgen, werden diese Entwicklung mit Interesse beobachten, da sie die langfristige Innovationskraft und die strategischen Ambitionen Japans im Bereich der Hochtechnologie widerspiegelt.  Der Erfolg dieses Projekts, beginnend mit den irdischen Machbarkeitsstudien, könnte neue technologische Durchbrüche und die Erschließung neuer Ressourcen für die Chipindustrie bedeuten.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/tech/this-engineer-wants-to-make-computer-chips-on-the-moon-ee8693f8" style="font-size:12px; color:#6b5c73; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="8c345c76" class="artikel" data-id="8c345c76" data-titel="Energiekrise: Warum Deutschland diesmal besser gerüstet ist" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/konjunktur/iran-krieg-warum-deutschland-diesmal-besser-gegen-eine-energiekrise-wie-2022-geruestet-ist/100213784.html" data-zusammenfassung="Trotz der aktuellen Spannungen im Nahen Osten und möglicher Parallelen zum Jahr 2022, als eine Energiekrise Deutschland traf, ist die aktuelle Situation für die deutsche Wirtschaft besser zu bewältigen. Experten warnen vor übermäßiger Hysterie, räumen jedoch ein, dass die ökonomische Gefährlichkeit hoch ist. Die Gründe für die verbesserte Resilienz liegen in einer Diversifizierung der Energiequellen und einer gesteigerten Unabhängigkeit von russischen Energielieferungen. Deutschland hat in den letzten Jahren stark in den Ausbau erneuerbarer Energien investiert und seine Infrastruktur für den Import von Flüssigerdgas (LNG) ausgebaut, was die Abhängigkeit von einzelnen Lieferländern reduziert. Zudem sind die Gasspeicher gut gefüllt und die Nachfrage nach Energie ist angesichts der wirtschaftlichen Lage und der Energiepreise tendenziell gedämpft. Dennoch bleibt die globale Energieversorgung volatil und anfällig für geopolitische Ereignisse, was sich weiterhin auf die Preise und die Versorgungssicherheit auswirken kann. Die Bundesregierung hat zudem bereits in der Vergangenheit Krisenmanagement-Pläne entwickelt, die im Notfall aktiviert werden können, um die Auswirkungen auf Verbraucher und Unternehmen zu minimieren." data-datum="05.04.2026 14:06">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 14:06</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Energiekrise: Warum Deutschland diesmal besser gerüstet ist</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('8c345c76')" class="btn-lesen" id="btn-lesen-8c345c76" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('8c345c76')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Trotz der aktuellen Spannungen im Nahen Osten und möglicher Parallelen zum Jahr 2022, als eine Energiekrise Deutschland traf, ist die aktuelle Situation für die deutsche Wirtschaft besser zu bewältigen. Experten warnen vor übermäßiger Hysterie, räumen jedoch ein, dass die ökonomische Gefährlichkeit hoch ist. Die Gründe für die verbesserte Resilienz liegen in einer Diversifizierung der Energiequellen und einer gesteigerten Unabhängigkeit von russischen Energielieferungen. Deutschland hat in den letzten Jahren stark in den Ausbau erneuerbarer Energien investiert und seine Infrastruktur für den Import von Flüssigerdgas (LNG) ausgebaut, was die Abhängigkeit von einzelnen Lieferländern reduziert. Zudem sind die Gasspeicher gut gefüllt und die Nachfrage nach Energie ist angesichts der wirtschaftlichen Lage und der Energiepreise tendenziell gedämpft. Dennoch bleibt die globale Energieversorgung volatil und anfällig für geopolitische Ereignisse, was sich weiterhin auf die Preise und die Versorgungssicherheit auswirken kann. Die Bundesregierung hat zudem bereits in der Vergangenheit Krisenmanagement-Pläne entwickelt, die im Notfall aktiviert werden können, um die Auswirkungen auf Verbraucher und Unternehmen zu minimieren.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/konjunktur/iran-krieg-warum-deutschland-diesmal-besser-gegen-eine-energiekrise-wie-2022-geruestet-ist/100213784.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="3bafd43e" class="artikel" data-id="3bafd43e" data-titel="+++ Ukraine-Krieg +++: Ukraine setzt russische Ölanlagen in Brand" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/ukraine-ukraine-und-tuerkei-bauen-sicherheitskooperation-aus/27982126.html" data-zusammenfassung="Der Ukraine-Krieg hat eine Eskalation der militärischen Auseinandersetzungen zur Folge, bei der die Ukraine russische Ölanlagen in Brand gesetzt hat. Diese Angriffe sind Teil einer umfassenderen Strategie, um die russische Kriegswirtschaft zu schwächen und die Energieinfrastruktur des Aggressors zu beeinträchtigen. Gleichzeitig wird berichtet, dass Russland gezielt Anlagen des ukrainischen Öl- und Gaskonzerns Naftogaz angegriffen hat, was die Energieversorgung der Ukraine weiter unter Druck setzt und potenzielle Auswirkungen auf die globale Energieversorgung hat. In diesem Kontext bauen die Ukraine und die Türkei ihre Sicherheitskooperation aus, was auf eine strategische Partnerschaft zur Bewältigung der anhaltenden Bedrohungen hindeutet. Die Berichte über mindestens fünf Tote bei einem Drohnenangriff in Südostukraine unterstreichen die anhaltende Brutalität und die humanitären Kosten des Konflikts. Diese Entwicklungen im Energie- und Sicherheitssektor sind für Investoren von Bedeutung, da sie volatile Märkte, potenzielle Versorgungsunterbrechungen und erhöhte geopolitische Risiken bedeuten." data-datum="05.04.2026 13:40">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 13:40</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">+++ Ukraine-Krieg +++: Ukraine setzt russische Ölanlagen in Brand</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('3bafd43e')" class="btn-lesen" id="btn-lesen-3bafd43e" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('3bafd43e')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Ukraine-Krieg hat eine Eskalation der militärischen Auseinandersetzungen zur Folge, bei der die Ukraine russische Ölanlagen in Brand gesetzt hat. Diese Angriffe sind Teil einer umfassenderen Strategie, um die russische Kriegswirtschaft zu schwächen und die Energieinfrastruktur des Aggressors zu beeinträchtigen. Gleichzeitig wird berichtet, dass Russland gezielt Anlagen des ukrainischen Öl- und Gaskonzerns Naftogaz angegriffen hat, was die Energieversorgung der Ukraine weiter unter Druck setzt und potenzielle Auswirkungen auf die globale Energieversorgung hat. In diesem Kontext bauen die Ukraine und die Türkei ihre Sicherheitskooperation aus, was auf eine strategische Partnerschaft zur Bewältigung der anhaltenden Bedrohungen hindeutet. Die Berichte über mindestens fünf Tote bei einem Drohnenangriff in Südostukraine unterstreichen die anhaltende Brutalität und die humanitären Kosten des Konflikts. Diese Entwicklungen im Energie- und Sicherheitssektor sind für Investoren von Bedeutung, da sie volatile Märkte, potenzielle Versorgungsunterbrechungen und erhöhte geopolitische Risiken bedeuten.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/ukraine-ukraine-und-tuerkei-bauen-sicherheitskooperation-aus/27982126.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="8bad68b9" class="artikel" data-id="8bad68b9" data-titel="China Creates New Aviation Mystery With Offshore Warning Zones" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/china/china-creates-new-aviation-mystery-with-offshore-warning-zones-128b1ce5" data-zusammenfassung="China hat mysteriöse Warnzonen über Seegebieten ausgewiesen und damit Spekulationen über mögliche militärische Aktivitäten ausgelöst. Die Sperrung von Lufträumen für einen Zeitraum von 40 Tagen deutet auf bevorstehende Operationen hin, deren Natur derzeit unklar ist. Diese ungewöhnliche Maßnahme wirft Fragen hinsichtlich der strategischen Absichten Pekings auf und könnte mit maritimen Übungen, der Installation neuer Infrastruktur oder der Vorbereitung auf andere militärische Aktionen zusammenhängen. Die mangelnde Transparenz seitens Chinas verschärft die Unsicherheit und die Besorgnis in der Region und auf internationaler Ebene. Beobachter interpretieren diese Entwicklung als potenzielles Signal für eine erhöhte militärische Präsenz oder eine Vorbereitung auf Eskalationen in einem strategisch wichtigen Seegebiet. Die genauen Gründe für die Einrichtung dieser Flugverbotszonen sind bislang nicht öffentlich bekannt gegeben worden, was die Spekulationen weiter anfacht und die Aufmerksamkeit von Militäranalysten und geopolitischen Beobachtern auf sich zieht." data-datum="05.04.2026 12:16">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 12:16</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">China Creates New Aviation Mystery With Offshore Warning Zones</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('8bad68b9')" class="btn-lesen" id="btn-lesen-8bad68b9" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('8bad68b9')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">China hat mysteriöse Warnzonen über Seegebieten ausgewiesen und damit Spekulationen über mögliche militärische Aktivitäten ausgelöst. Die Sperrung von Lufträumen für einen Zeitraum von 40 Tagen deutet auf bevorstehende Operationen hin, deren Natur derzeit unklar ist. Diese ungewöhnliche Maßnahme wirft Fragen hinsichtlich der strategischen Absichten Pekings auf und könnte mit maritimen Übungen, der Installation neuer Infrastruktur oder der Vorbereitung auf andere militärische Aktionen zusammenhängen. Die mangelnde Transparenz seitens Chinas verschärft die Unsicherheit und die Besorgnis in der Region und auf internationaler Ebene. Beobachter interpretieren diese Entwicklung als potenzielles Signal für eine erhöhte militärische Präsenz oder eine Vorbereitung auf Eskalationen in einem strategisch wichtigen Seegebiet. Die genauen Gründe für die Einrichtung dieser Flugverbotszonen sind bislang nicht öffentlich bekannt gegeben worden, was die Spekulationen weiter anfacht und die Aufmerksamkeit von Militäranalysten und geopolitischen Beobachtern auf sich zieht.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/china/china-creates-new-aviation-mystery-with-offshore-warning-zones-128b1ce5" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="22881f50" class="artikel" data-id="22881f50" data-titel="+++ Iran-Krieg +++: Öltanker mit irakischem Rohöl passiert Straße von Hormus" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/oeltanker-mit-irakischem-rohoel-passiert-strasse-von-hormus/100136895.html" data-zusammenfassung="Ein Öltanker mit irakischem Rohöl hat die strategisch wichtige Straße von Hormus passiert, was in der angespannten geopolitischen Lage im Iran von Bedeutung ist. Diese Passage könnte auf eine fortlaufende Versorgung der globalen Märkte hinweisen, auch wenn die Region durch Konflikte und Spannungen belastet ist. Die OPEC+ trifft sich, um eine mögliche Erhöhung der Ölförderung zu beraten, allerdings wird erwartet, dass diese Gespräche eher auf dem Papier stattfinden und keine substanziellen Entscheidungen zur Produktionssteigerung zur Folge haben, was auf eine Beibehaltung der aktuellen Fördermengen hindeutet. Ex-Präsident Trump erhöht den Druck auf den Iran und pocht auf ein von ihm gesetztes Ultimatum, was die diplomatischen Bemühungen und die regionale Stabilität weiter erschwert. Gleichzeitig wirft Kuwait dem Iran einen Drohnenangriff auf einen Regierungskomplex vor, was die bereits bestehenden Spannungen zwischen den beiden Ländern verschärft und die Sorge vor einer weiteren Eskalation schürt. Dieser Newsblog liefert eine Momentaufnahme der komplexen und sich ständig verändernden Lage im Iran und dessen Auswirkungen auf die globale Energieversorgung und regionale Sicherheit." data-datum="05.04.2026 11:36">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 11:36</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">+++ Iran-Krieg +++: Öltanker mit irakischem Rohöl passiert Straße von Hormus</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('22881f50')" class="btn-lesen" id="btn-lesen-22881f50" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('22881f50')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Ein Öltanker mit irakischem Rohöl hat die strategisch wichtige Straße von Hormus passiert, was in der angespannten geopolitischen Lage im Iran von Bedeutung ist. Diese Passage könnte auf eine fortlaufende Versorgung der globalen Märkte hinweisen, auch wenn die Region durch Konflikte und Spannungen belastet ist. Die OPEC+ trifft sich, um eine mögliche Erhöhung der Ölförderung zu beraten, allerdings wird erwartet, dass diese Gespräche eher auf dem Papier stattfinden und keine substanziellen Entscheidungen zur Produktionssteigerung zur Folge haben, was auf eine Beibehaltung der aktuellen Fördermengen hindeutet. Ex-Präsident Trump erhöht den Druck auf den Iran und pocht auf ein von ihm gesetztes Ultimatum, was die diplomatischen Bemühungen und die regionale Stabilität weiter erschwert. Gleichzeitig wirft Kuwait dem Iran einen Drohnenangriff auf einen Regierungskomplex vor, was die bereits bestehenden Spannungen zwischen den beiden Ländern verschärft und die Sorge vor einer weiteren Eskalation schürt. Dieser Newsblog liefert eine Momentaufnahme der komplexen und sich ständig verändernden Lage im Iran und dessen Auswirkungen auf die globale Energieversorgung und regionale Sicherheit.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/oeltanker-mit-irakischem-rohoel-passiert-strasse-von-hormus/100136895.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="a1f5080e" class="artikel" data-id="a1f5080e" data-titel="Iran-Krieg – Die Lage: Trump verkündet Rettung von zweitem Besatzungsmitglied" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/international/iran-krieg-trump-verkuendet-rettung-von-zweitem-besatzungsmitglied/100214428.html" data-zusammenfassung="US-Präsident Trump hat die erfolgreiche Rettung eines zweiten Besatzungsmitglieds bekannt gegeben, nachdem eine intensive Suchaktion durchgeführt worden war. Diese Mission wird von Trump als „kühn“ bezeichnet und stellt einen weiteren Erfolg für die US-Streitkräfte dar. Die genauen Umstände der Rettung und die Identität des zweiten geretteten Mitglieds werden in dem Bericht nicht näher erläutert. Diese positive Nachricht könnte innenpolitisch von Bedeutung sein und das Vertrauen in die militärischen Fähigkeiten der USA stärken. Die Rettungsaktion unterstreicht die Entschlossenheit der US-Administration, ihre Bürger in Gefahr zu schützen, und zeugt von einer gut organisierten und durchgeführten militärischen Operation. Die näheren Details der „kühnen“ Mission werden wahrscheinlich in den kommenden Tagen weiter bekannt gegeben." data-datum="05.04.2026 09:39">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 09:39</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg – Die Lage: Trump verkündet Rettung von zweitem Besatzungsmitglied</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('a1f5080e')" class="btn-lesen" id="btn-lesen-a1f5080e" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('a1f5080e')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">US-Präsident Trump hat die erfolgreiche Rettung eines zweiten Besatzungsmitglieds bekannt gegeben, nachdem eine intensive Suchaktion durchgeführt worden war. Diese Mission wird von Trump als „kühn“ bezeichnet und stellt einen weiteren Erfolg für die US-Streitkräfte dar. Die genauen Umstände der Rettung und die Identität des zweiten geretteten Mitglieds werden in dem Bericht nicht näher erläutert. Diese positive Nachricht könnte innenpolitisch von Bedeutung sein und das Vertrauen in die militärischen Fähigkeiten der USA stärken. Die Rettungsaktion unterstreicht die Entschlossenheit der US-Administration, ihre Bürger in Gefahr zu schützen, und zeugt von einer gut organisierten und durchgeführten militärischen Operation. Die näheren Details der „kühnen“ Mission werden wahrscheinlich in den kommenden Tagen weiter bekannt gegeben.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/international/iran-krieg-trump-verkuendet-rettung-von-zweitem-besatzungsmitglied/100214428.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="9c714a10" class="artikel" data-id="9c714a10" data-titel="Konjunktur: Industrie fordert von Regierung umfassendes Reformpaket vor Sommer" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/deutschland/konjunktur-industrie-fordert-von-regierung-umfassendes-reformpaket-vor-sommer/100214556.html" data-zusammenfassung="Der Artikel der Wirtschaftswoche thematisiert die Forderung der deutschen Industrie nach einem umfassenden Reformpaket von der Regierung vor dem Sommer, da der Iran-Krieg das Wirtschaftswachstum des Landes bremst. Die Industrieverbände sehen die Wettbewerbsfähigkeit des Standorts Deutschland gefährdet und drängen auf Maßnahmen zur Senkung der Lohnzusatzkosten, die als eine wesentliche Belastung für Unternehmen gelten. Diese Kosten, die über das Bruttogehalt hinausgehen und beispielsweise Sozialabgaben umfassen, sind in Deutschland im internationalen Vergleich hoch und beeinträchtigen die Produktionskosten. Die aktuelle geopolitische Situation, insbesondere der Konflikt im Iran, verschärft die wirtschaftlichen Herausforderungen durch unsichere Lieferketten und steigende Energiepreise zusätzlich. Die geforderten Reformen zielen darauf ab, die Attraktivität des Standorts zu erhöhen und die Unternehmen zu entlasten, um Arbeitsplätze zu sichern und Investitionen zu fördern. Die Lohnnebenkosten sind ein zentraler Punkt, da ihre Reduzierung direkt die Kostenstruktur der Unternehmen verbessert und somit ihre internationale Wettbewerbsfähigkeit stärkt. Die Politik steht unter Druck, auf diese Forderungen zu reagieren, um die deutsche Wirtschaft in diesen unsicheren Zeiten zu stabilisieren und zu stärken. Die kurzfristige Umsetzung von Reformen wird als entscheidend für die Abwendung einer stärkeren wirtschaftlichen Abschwächung angesehen." data-datum="05.04.2026 07:43">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 07:43</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Konjunktur: Industrie fordert von Regierung umfassendes Reformpaket vor Sommer</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('9c714a10')" class="btn-lesen" id="btn-lesen-9c714a10" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('9c714a10')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Artikel der Wirtschaftswoche thematisiert die Forderung der deutschen Industrie nach einem umfassenden Reformpaket von der Regierung vor dem Sommer, da der Iran-Krieg das Wirtschaftswachstum des Landes bremst. Die Industrieverbände sehen die Wettbewerbsfähigkeit des Standorts Deutschland gefährdet und drängen auf Maßnahmen zur Senkung der Lohnzusatzkosten, die als eine wesentliche Belastung für Unternehmen gelten. Diese Kosten, die über das Bruttogehalt hinausgehen und beispielsweise Sozialabgaben umfassen, sind in Deutschland im internationalen Vergleich hoch und beeinträchtigen die Produktionskosten. Die aktuelle geopolitische Situation, insbesondere der Konflikt im Iran, verschärft die wirtschaftlichen Herausforderungen durch unsichere Lieferketten und steigende Energiepreise zusätzlich. Die geforderten Reformen zielen darauf ab, die Attraktivität des Standorts zu erhöhen und die Unternehmen zu entlasten, um Arbeitsplätze zu sichern und Investitionen zu fördern. Die Lohnnebenkosten sind ein zentraler Punkt, da ihre Reduzierung direkt die Kostenstruktur der Unternehmen verbessert und somit ihre internationale Wettbewerbsfähigkeit stärkt. Die Politik steht unter Druck, auf diese Forderungen zu reagieren, um die deutsche Wirtschaft in diesen unsicheren Zeiten zu stabilisieren und zu stärken. Die kurzfristige Umsetzung von Reformen wird als entscheidend für die Abwendung einer stärkeren wirtschaftlichen Abschwächung angesehen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/deutschland/konjunktur-industrie-fordert-von-regierung-umfassendes-reformpaket-vor-sommer/100214556.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="90597ec2" class="artikel" data-id="90597ec2" data-titel="Tauchsieder: Politische Karfreitags-Ostern" data-quelle="Wirtschaftswoche" data-link="https://www.wiwo.de/politik/deutschland/dieses-ostern-ist-ein-andauernder-karfreitag-viel-bangen-und-wenig-hoffnung/100213999.html" data-zusammenfassung="Die Kolumne &quot;Tauchsieder&quot; der Wirtschaftswoche reflektiert mit satirischem Unterton die pessimistischen Aussichten für die Zukunft des Handels, der NATO und des allgemeinen Wohlstands, besonders im Kontext der aktuellen politischen Unsicherheiten, die mit dem &quot;politischen Karfreitags-Ostern&quot; umschrieben werden. Der Autor, der sich auf Goethe's &quot;Allein mir fehlt der Glaube&quot; bezieht, drückt eine tiefe Skepsis gegenüber einer positiven Entwicklung aus und appelliert an einen &quot;Realismus&quot;, der die aktuellen Herausforderungen nüchtern betrachtet.  Die Aussage &quot;Bitte anschnallen!&quot; unterstreicht die Erwartung einer turbulenteren Zukunft, in der schnelle und drastische Maßnahmen oder Anpassungen notwendig sein werden.  Die geopolitischen Spannungen, die in der Überschrift angedeutet werden, und die daraus resultierende Unsicherheit über die Zukunft etablierter Institutionen und wirtschaftlicher Wohlfahrt zeichnen ein düsteres Bild.  Die Kolumne ist weniger eine analytische Darstellung als vielmehr eine pointierte Meinungsäußerung, die auf die Ängste und die wahrgenommene Bedrohung der Stabilität abzielt.  Für Investoren und politische Entscheidungsträger bedeutet dies eine Aufforderung, sich auf erhebliche Umwälzungen vorzubereiten und defensive Strategien zu entwickeln.  Die Skepsis gegenüber der Zukunft deutet auf ein Umfeld hin, in dem Vorsicht und eine kritische Bewertung von Risiken unerlässlich sind, um durch die erwarteten Turbulenzen zu navigieren." data-datum="05.04.2026 06:27">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wirtschaftswoche &middot; 05.04.2026 06:27</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Tauchsieder: Politische Karfreitags-Ostern</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('90597ec2')" class="btn-lesen" id="btn-lesen-90597ec2" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('90597ec2')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Die Kolumne "Tauchsieder" der Wirtschaftswoche reflektiert mit satirischem Unterton die pessimistischen Aussichten für die Zukunft des Handels, der NATO und des allgemeinen Wohlstands, besonders im Kontext der aktuellen politischen Unsicherheiten, die mit dem "politischen Karfreitags-Ostern" umschrieben werden. Der Autor, der sich auf Goethe's "Allein mir fehlt der Glaube" bezieht, drückt eine tiefe Skepsis gegenüber einer positiven Entwicklung aus und appelliert an einen "Realismus", der die aktuellen Herausforderungen nüchtern betrachtet.  Die Aussage "Bitte anschnallen!" unterstreicht die Erwartung einer turbulenteren Zukunft, in der schnelle und drastische Maßnahmen oder Anpassungen notwendig sein werden.  Die geopolitischen Spannungen, die in der Überschrift angedeutet werden, und die daraus resultierende Unsicherheit über die Zukunft etablierter Institutionen und wirtschaftlicher Wohlfahrt zeichnen ein düsteres Bild.  Die Kolumne ist weniger eine analytische Darstellung als vielmehr eine pointierte Meinungsäußerung, die auf die Ängste und die wahrgenommene Bedrohung der Stabilität abzielt.  Für Investoren und politische Entscheidungsträger bedeutet dies eine Aufforderung, sich auf erhebliche Umwälzungen vorzubereiten und defensive Strategien zu entwickeln.  Die Skepsis gegenüber der Zukunft deutet auf ein Umfeld hin, in dem Vorsicht und eine kritische Bewertung von Risiken unerlässlich sind, um durch die erwarteten Turbulenzen zu navigieren.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wiwo.de/politik/deutschland/dieses-ostern-ist-ein-andauernder-karfreitag-viel-bangen-und-wenig-hoffnung/100213999.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="28a19fe8" class="artikel" data-id="28a19fe8" data-titel="Crashes, Ejections and a Frantic Search for a Missing Airman in Iran" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/middle-east/crashes-ejections-and-a-frantic-search-for-a-missing-airman-in-iran-36968492" data-zusammenfassung="Der Artikel des Wall Street Journal beschreibt einen der komplexesten Such- und Rettungseinsätze der US-Luftwaffe in den letzten Jahrzehnten, der sich am vergangenen Freitag in oder um den Iran ereignete.  Der Einsatz umfasste eine Notlage, bei der ein amerikanischer Soldat vermisst wurde, was zu einer dringenden und anspruchsvollen Rettungsaktion führte.  Die genauen Umstände, die zu diesem Vorfall führten, sind nicht vollständig detailliert, aber die Beschreibung deutet auf eine gefährliche und riskante Situation hin.  Die Komplexität des Einsatzes wird durch Faktoren wie die geografische Lage, das potenzielle feindliche Umfeld und die Notwendigkeit, schnell und effizient zu handeln, unterstrichen.  Die beteiligten Kräfte standen vor erheblichen logistischen und operativen Herausforderungen, um den vermissten Airman zu lokalisieren und zu bergen.  Solche Einsätze sind mit hohen Risiken für die beteiligten Rettungsteams verbunden und erfordern eine präzise Koordination und fortgeschrittene militärische Fähigkeiten.  Die Tatsache, dass dies als einer der komplexesten Einsätze seit Jahrzehnten bezeichnet wird, unterstreicht die Ernsthaftigkeit der Situation und die herausragenden Bemühungen, die unternommen wurden.  Für die US-Luftwaffe stellen solche Missionen eine bedeutende operative und personelle Belastung dar, deren Ausgang immer mit Unsicherheiten behaftet ist." data-datum="05.04.2026 05:00">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 05:00</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Crashes, Ejections and a Frantic Search for a Missing Airman in Iran</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('28a19fe8')" class="btn-lesen" id="btn-lesen-28a19fe8" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('28a19fe8')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Artikel des Wall Street Journal beschreibt einen der komplexesten Such- und Rettungseinsätze der US-Luftwaffe in den letzten Jahrzehnten, der sich am vergangenen Freitag in oder um den Iran ereignete.  Der Einsatz umfasste eine Notlage, bei der ein amerikanischer Soldat vermisst wurde, was zu einer dringenden und anspruchsvollen Rettungsaktion führte.  Die genauen Umstände, die zu diesem Vorfall führten, sind nicht vollständig detailliert, aber die Beschreibung deutet auf eine gefährliche und riskante Situation hin.  Die Komplexität des Einsatzes wird durch Faktoren wie die geografische Lage, das potenzielle feindliche Umfeld und die Notwendigkeit, schnell und effizient zu handeln, unterstrichen.  Die beteiligten Kräfte standen vor erheblichen logistischen und operativen Herausforderungen, um den vermissten Airman zu lokalisieren und zu bergen.  Solche Einsätze sind mit hohen Risiken für die beteiligten Rettungsteams verbunden und erfordern eine präzise Koordination und fortgeschrittene militärische Fähigkeiten.  Die Tatsache, dass dies als einer der komplexesten Einsätze seit Jahrzehnten bezeichnet wird, unterstreicht die Ernsthaftigkeit der Situation und die herausragenden Bemühungen, die unternommen wurden.  Für die US-Luftwaffe stellen solche Missionen eine bedeutende operative und personelle Belastung dar, deren Ausgang immer mit Unsicherheiten behaftet ist.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/middle-east/crashes-ejections-and-a-frantic-search-for-a-missing-airman-in-iran-36968492" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="65d10664" class="artikel" data-id="65d10664" data-titel="U.S. Forces Rescue Second American Aviator in Iran" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/middle-east/u-s-forces-rescue-second-american-aviator-in-iran-7f5195ca" data-zusammenfassung="Das Wall Street Journal berichtet, dass die US-Streitkräfte erfolgreich einen zweiten amerikanischen Aviator im Iran gerettet haben und alle beteiligten Kräfte sicher den iranischen Luftraum verlassen haben. Dieser Erfolg stellt eine wichtige Entwicklung dar, da er die erfolgreiche Beendigung einer kritischen Rettungsoperation markiert. Die Tatsache, dass alle beteiligten Einheiten und das gerettete Personal sicher zurückgekehrt sind, ist ein positives Ergebnis angesichts der potenziellen Gefahren, die mit solchen Einsätzen in einem feindlichen oder angespannten Umfeld verbunden sind. Diese Meldung folgt auf frühere Berichte über komplexe Such- und Rettungsaktionen, was darauf hindeutet, dass mehrere Incidents oder eine anhaltende Krise vorliegen könnten. Die sichere Rückkehr der Kräfte betont die Effektivität und die sorgfältige Planung, die in solchen Operationen notwendig sind. Für die amerikanische Regierung und Militärführung ist dies ein wichtiger Erfolg, der die Fähigkeit unter Beweis stellt, eigene Kräfte in extremen Situationen zu sichern. Die Erwähnung des Verlassens des iranischen Luftraums unterstreicht die sensible geopolitische Natur der Operation und die Notwendigkeit, Eskalationen zu vermeiden. Insgesamt stellt dies einen positiven Abschluss für eine potenziell gefährliche Mission dar und signalisiert eine vorläufige Entspannung in Bezug auf die Sicherheit der beteiligten US-Personal." data-datum="05.04.2026 04:41">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 04:41</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">U.S. Forces Rescue Second American Aviator in Iran</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('65d10664')" class="btn-lesen" id="btn-lesen-65d10664" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('65d10664')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Das Wall Street Journal berichtet, dass die US-Streitkräfte erfolgreich einen zweiten amerikanischen Aviator im Iran gerettet haben und alle beteiligten Kräfte sicher den iranischen Luftraum verlassen haben. Dieser Erfolg stellt eine wichtige Entwicklung dar, da er die erfolgreiche Beendigung einer kritischen Rettungsoperation markiert. Die Tatsache, dass alle beteiligten Einheiten und das gerettete Personal sicher zurückgekehrt sind, ist ein positives Ergebnis angesichts der potenziellen Gefahren, die mit solchen Einsätzen in einem feindlichen oder angespannten Umfeld verbunden sind. Diese Meldung folgt auf frühere Berichte über komplexe Such- und Rettungsaktionen, was darauf hindeutet, dass mehrere Incidents oder eine anhaltende Krise vorliegen könnten. Die sichere Rückkehr der Kräfte betont die Effektivität und die sorgfältige Planung, die in solchen Operationen notwendig sind. Für die amerikanische Regierung und Militärführung ist dies ein wichtiger Erfolg, der die Fähigkeit unter Beweis stellt, eigene Kräfte in extremen Situationen zu sichern. Die Erwähnung des Verlassens des iranischen Luftraums unterstreicht die sensible geopolitische Natur der Operation und die Notwendigkeit, Eskalationen zu vermeiden. Insgesamt stellt dies einen positiven Abschluss für eine potenziell gefährliche Mission dar und signalisiert eine vorläufige Entspannung in Bezug auf die Sicherheit der beteiligten US-Personal.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/middle-east/u-s-forces-rescue-second-american-aviator-in-iran-7f5195ca" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="085dca10" class="artikel" data-id="085dca10" data-titel="Trump’s Claims of Victory Clash With Iran War’s Gritty Reality" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/politics/national-security/trumps-claims-of-victory-clash-with-iran-wars-gritty-reality-8579bd28" data-zusammenfassung="Der Artikel des Wall Street Journal kontrastiert die Siegermeldungen von Präsident Trump mit der rauen Realität des Iran-Krieges, da der Iran weiterhin Widerstand leistet. Während das Pentagon darauf hinweist, dass die USA ihre Ziele erreichen, zeigt die Situation vor Ort, dass der Konflikt noch lange nicht vorbei ist und der Iran aktiv kämpft. Diese Diskrepanz zwischen politischer Rhetorik und militärischer Realität ist für die Einschätzung der Lage von entscheidender Bedeutung. Trump verkündet Erfolge, doch die anhaltenden Auseinandersetzungen im Iran deuten darauf hin, dass die strategischen Ziele der USA möglicherweise nicht so leicht oder schnell erreicht werden, wie dargestellt. Dies wirft Fragen bezüglich der Effektivität der US-Strategie auf und ob diese den anhaltenden iranischen Widerstand ausreichend berücksichtigt. Die Aussagen des Pentagons, dass Ziele erreicht werden, könnten sich auf spezifische operative Erfolge beziehen, während die tatsächliche strategische Überlegenheit oder Kontrolle über die Situation noch nicht gesichert ist. Die fortgesetzte Kampfbereitschaft des Irans deutet auf eine Widerstandsfähigkeit hin, die die US-Bemühungen potenziell verkomplizieren könnte. Investoren sollten diese widersprüchlichen Informationen analysieren, um die tatsächliche Risikolage und die möglichen Auswirkungen auf die Region und globalen Märkte besser einzuschätzen. Die anhaltenden militärischen Auseinandersetzungen können zu erhöhter Volatilität und Unsicherheit führen." data-datum="05.04.2026 01:00">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 05.04.2026 01:00</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Trump’s Claims of Victory Clash With Iran War’s Gritty Reality</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('085dca10')" class="btn-lesen" id="btn-lesen-085dca10" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('085dca10')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Artikel des Wall Street Journal kontrastiert die Siegermeldungen von Präsident Trump mit der rauen Realität des Iran-Krieges, da der Iran weiterhin Widerstand leistet. Während das Pentagon darauf hinweist, dass die USA ihre Ziele erreichen, zeigt die Situation vor Ort, dass der Konflikt noch lange nicht vorbei ist und der Iran aktiv kämpft. Diese Diskrepanz zwischen politischer Rhetorik und militärischer Realität ist für die Einschätzung der Lage von entscheidender Bedeutung. Trump verkündet Erfolge, doch die anhaltenden Auseinandersetzungen im Iran deuten darauf hin, dass die strategischen Ziele der USA möglicherweise nicht so leicht oder schnell erreicht werden, wie dargestellt. Dies wirft Fragen bezüglich der Effektivität der US-Strategie auf und ob diese den anhaltenden iranischen Widerstand ausreichend berücksichtigt. Die Aussagen des Pentagons, dass Ziele erreicht werden, könnten sich auf spezifische operative Erfolge beziehen, während die tatsächliche strategische Überlegenheit oder Kontrolle über die Situation noch nicht gesichert ist. Die fortgesetzte Kampfbereitschaft des Irans deutet auf eine Widerstandsfähigkeit hin, die die US-Bemühungen potenziell verkomplizieren könnte. Investoren sollten diese widersprüchlichen Informationen analysieren, um die tatsächliche Risikolage und die möglichen Auswirkungen auf die Region und globalen Märkte besser einzuschätzen. Die anhaltenden militärischen Auseinandersetzungen können zu erhöhter Volatilität und Unsicherheit führen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/politics/national-security/trumps-claims-of-victory-clash-with-iran-wars-gritty-reality-8579bd28" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="db2ac7c1" class="artikel" data-id="db2ac7c1" data-titel="Iran-Krieg und die Folgen: CDU-Politiker für Mehrwertsteuer-Senkung auf Grundnahrungsmittel" data-quelle="Handelsblatt" data-link="https://www.handelsblatt.com/politik/deutschland/iran-krieg-und-die-folgen-cdu-politiker-fuer-mehrwertsteuer-senkung-auf-grundnahrungsmittel/100214487.html" data-zusammenfassung="Der Handelsblatt-Artikel thematisiert die gewonnene Dynamik in der Debatte über eine Mehrwertsteuersenkung auf Grundnahrungsmittel in Deutschland, insbesondere im Kontext des Iran-Kriegs und dessen wirtschaftlicher Folgen.  Ein prominenter CDU-Politiker signalisiert nun Unterstützung für einen solchen Vorstoß, der ursprünglich aus der SPD kam.  Diese breitere Zustimmung innerhalb der Regierungsparteien deutet auf eine wachsende Erkenntnis der Notwendigkeit hin, die Verbraucher angesichts steigender Preise zu entlasten.  Die aktuelle wirtschaftliche Lage, verschärft durch den Iran-Krieg, führt zu erhöhter Inflation, die sich besonders auf die Preise für lebensnotwendige Güter auswirkt.  Eine Senkung der Mehrwertsteuer auf Grundnahrungsmittel würde die Ausgaben der Haushalte für diese Produkte direkt reduzieren und könnte somit eine spürbare Erleichterung für viele Bürger bedeuten.  Der Arbeitsflügel der CDU, der nun seine Unterstützung signalisiert, vertritt oft die Interessen von Arbeitnehmern und sozial schwächeren Bevölkerungsschichten, für die die Belastung durch gestiegene Lebensmittelpreise besonders gravierend ist.  Diese Entwicklung könnte den Weg für eine Umsetzung der Maßnahme ebnen, da eine breite politische Mehrheit wahrscheinlich ist.  Die Debatte dreht sich um die Frage, ob eine solche Steuersenkung die gewünschte Entlastung bringt und ob sie die Inflation dämpfen kann, ohne die Staatseinnahmen übermäßig zu beeinträchtigen.  Ökonomisch gesehen könnten solche Maßnahmen sowohl positive soziale Effekte als auch potenzielle Auswirkungen auf die Staatsfinanzen haben, die sorgfältig abgewogen werden müssen." data-datum="05.04.2026 00:54">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Handelsblatt &middot; 05.04.2026 00:54</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Iran-Krieg und die Folgen: CDU-Politiker für Mehrwertsteuer-Senkung auf Grundnahrungsmittel</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('db2ac7c1')" class="btn-lesen" id="btn-lesen-db2ac7c1" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('db2ac7c1')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Handelsblatt-Artikel thematisiert die gewonnene Dynamik in der Debatte über eine Mehrwertsteuersenkung auf Grundnahrungsmittel in Deutschland, insbesondere im Kontext des Iran-Kriegs und dessen wirtschaftlicher Folgen.  Ein prominenter CDU-Politiker signalisiert nun Unterstützung für einen solchen Vorstoß, der ursprünglich aus der SPD kam.  Diese breitere Zustimmung innerhalb der Regierungsparteien deutet auf eine wachsende Erkenntnis der Notwendigkeit hin, die Verbraucher angesichts steigender Preise zu entlasten.  Die aktuelle wirtschaftliche Lage, verschärft durch den Iran-Krieg, führt zu erhöhter Inflation, die sich besonders auf die Preise für lebensnotwendige Güter auswirkt.  Eine Senkung der Mehrwertsteuer auf Grundnahrungsmittel würde die Ausgaben der Haushalte für diese Produkte direkt reduzieren und könnte somit eine spürbare Erleichterung für viele Bürger bedeuten.  Der Arbeitsflügel der CDU, der nun seine Unterstützung signalisiert, vertritt oft die Interessen von Arbeitnehmern und sozial schwächeren Bevölkerungsschichten, für die die Belastung durch gestiegene Lebensmittelpreise besonders gravierend ist.  Diese Entwicklung könnte den Weg für eine Umsetzung der Maßnahme ebnen, da eine breite politische Mehrheit wahrscheinlich ist.  Die Debatte dreht sich um die Frage, ob eine solche Steuersenkung die gewünschte Entlastung bringt und ob sie die Inflation dämpfen kann, ohne die Staatseinnahmen übermäßig zu beeinträchtigen.  Ökonomisch gesehen könnten solche Maßnahmen sowohl positive soziale Effekte als auch potenzielle Auswirkungen auf die Staatsfinanzen haben, die sorgfältig abgewogen werden müssen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.handelsblatt.com/politik/deutschland/iran-krieg-und-die-folgen-cdu-politiker-fuer-mehrwertsteuer-senkung-auf-grundnahrungsmittel/100214487.html" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="e0793b01" class="artikel" data-id="e0793b01" data-titel="The U.S.-Europe Alliance Is Reaching a Breaking Point Over the Iran War" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/europe/the-u-s-europe-alliance-is-reaching-a-breaking-point-over-the-iran-war-19c23a67" data-zusammenfassung="Der Artikel des Wall Street Journal beleuchtet die zunehmende Belastung und potenzielle Bruchpunkte in der transatlantischen Allianz, insbesondere aufgrund des Iran-Krieges. Präsident Trump hat seine Verärgerung über europäische Verbündete geäußert, die sich nicht an der Seite der USA und Israels im Krieg gegen den Iran beteiligt haben. Darüber hinaus hat er mit seinen Beratern über die Möglichkeit eines Rückzugs aus der NATO nachgedacht, was die Fundamente der Allianz ernsthaft in Frage stellen würde. Diese Entwicklung deutet auf eine tiefe Kluft in der Außen- und Sicherheitspolitik zwischen den USA und vielen europäischen Staaten hin, insbesondere in Bezug auf die Reaktion auf die iranische Bedrohung. Die Weigerung einiger europäischer Länder, sich militärisch zu engagieren, wird von Trump als mangelnde Solidarität und als Last für die USA interpretiert. Sein Denken über einen NATO-Austritt ist ein drastischer Schritt, der die sicherheitspolitische Landschaft Europas und Nordamerikas grundlegend verändern würde. Solch eine Aktion könnte die kollektive Verteidigungsfähigkeit schwächen und regionale Unsicherheiten verstärken. Für Investoren ist dies von Bedeutung, da eine schwächere NATO und eine angespannte transatlantische Beziehung zu erhöhter geopolitischer Volatilität und wirtschaftlicher Instabilität führen können. Die Stabilität der globalen Ordnung, die durch die NATO über Jahrzehnte mitgeprägt wurde, steht auf dem Spiel, was sich auf globale Märkte und Handelsbeziehungen auswirken könnte." data-datum="04.04.2026 22:47">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 04.04.2026 22:47</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">The U.S.-Europe Alliance Is Reaching a Breaking Point Over the Iran War</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('e0793b01')" class="btn-lesen" id="btn-lesen-e0793b01" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('e0793b01')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Der Artikel des Wall Street Journal beleuchtet die zunehmende Belastung und potenzielle Bruchpunkte in der transatlantischen Allianz, insbesondere aufgrund des Iran-Krieges. Präsident Trump hat seine Verärgerung über europäische Verbündete geäußert, die sich nicht an der Seite der USA und Israels im Krieg gegen den Iran beteiligt haben. Darüber hinaus hat er mit seinen Beratern über die Möglichkeit eines Rückzugs aus der NATO nachgedacht, was die Fundamente der Allianz ernsthaft in Frage stellen würde. Diese Entwicklung deutet auf eine tiefe Kluft in der Außen- und Sicherheitspolitik zwischen den USA und vielen europäischen Staaten hin, insbesondere in Bezug auf die Reaktion auf die iranische Bedrohung. Die Weigerung einiger europäischer Länder, sich militärisch zu engagieren, wird von Trump als mangelnde Solidarität und als Last für die USA interpretiert. Sein Denken über einen NATO-Austritt ist ein drastischer Schritt, der die sicherheitspolitische Landschaft Europas und Nordamerikas grundlegend verändern würde. Solch eine Aktion könnte die kollektive Verteidigungsfähigkeit schwächen und regionale Unsicherheiten verstärken. Für Investoren ist dies von Bedeutung, da eine schwächere NATO und eine angespannte transatlantische Beziehung zu erhöhter geopolitischer Volatilität und wirtschaftlicher Instabilität führen können. Die Stabilität der globalen Ordnung, die durch die NATO über Jahrzehnte mitgeprägt wurde, steht auf dem Spiel, was sich auf globale Märkte und Handelsbeziehungen auswirken könnte.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/europe/the-u-s-europe-alliance-is-reaching-a-breaking-point-over-the-iran-war-19c23a67" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="c5825c32" class="artikel" data-id="c5825c32" data-titel="Top Aides Advise Trump Blasting Iran’s Infrastructure Is Fair Game" data-quelle="Wall Street Journal" data-link="https://www.wsj.com/world/middle-east/top-aides-advise-trump-blasting-irans-infrastructure-is-fair-game-8b6aec90" data-zusammenfassung="Top-Berater von Donald Trump empfehlen, Angriffe auf die Infrastruktur Irans, wie Kraftwerke und Straßen, als legitimes Mittel zur Beeinträchtigung des iranischen Raketen- und Atomprogramms zu betrachten.  Diese Strategie, die als 'fair game' bezeichnet wird, zielt darauf ab, die logistischen und operativen Fähigkeiten des Irans erheblich zu schwächen.  Die Begründung lautet, dass die Zerstörung der Infrastruktur die Fähigkeit des Irans, seine militärischen Kapazitäten zu entwickeln und einzusetzen, direkt behindert.  Dies schließt die Fähigkeit zur Herstellung und zum Transport von ballistischen Raketen sowie zur Fortsetzung von Aktivitäten im Zusammenhang mit der Urananreicherung ein.  Die Berater argumentieren, dass solche Maßnahmen notwendig sind, um die Sicherheitsinteressen der USA und ihrer Verbündeten zu schützen und eine Eskalation durch einen entschlosseneren Abschreckungsansatz zu verhindern.  Die potenzielle Umsetzung dieser Empfehlungen birgt erhebliche geopolitische Risiken und könnte zu einer weiteren Verschärfung der Spannungen in der Region führen.  Für Investoren ist dies relevant, da eine solche Politik die Ölpreise beeinflussen, die globale Stabilität beeinträchtigen und zu erhöhten Verteidigungsausgaben führen könnte.  Die Meinungsverschiedenheiten innerhalb der politischen Elite über die Angemessenheit solcher Maßnahmen sind erheblich und die langfristigen Konsequenzen sind schwer abzuschätzen." data-datum="04.04.2026 19:28">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Wall Street Journal &middot; 04.04.2026 19:28</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Top Aides Advise Trump Blasting Iran’s Infrastructure Is Fair Game</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('c5825c32')" class="btn-lesen" id="btn-lesen-c5825c32" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('c5825c32')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Top-Berater von Donald Trump empfehlen, Angriffe auf die Infrastruktur Irans, wie Kraftwerke und Straßen, als legitimes Mittel zur Beeinträchtigung des iranischen Raketen- und Atomprogramms zu betrachten.  Diese Strategie, die als 'fair game' bezeichnet wird, zielt darauf ab, die logistischen und operativen Fähigkeiten des Irans erheblich zu schwächen.  Die Begründung lautet, dass die Zerstörung der Infrastruktur die Fähigkeit des Irans, seine militärischen Kapazitäten zu entwickeln und einzusetzen, direkt behindert.  Dies schließt die Fähigkeit zur Herstellung und zum Transport von ballistischen Raketen sowie zur Fortsetzung von Aktivitäten im Zusammenhang mit der Urananreicherung ein.  Die Berater argumentieren, dass solche Maßnahmen notwendig sind, um die Sicherheitsinteressen der USA und ihrer Verbündeten zu schützen und eine Eskalation durch einen entschlosseneren Abschreckungsansatz zu verhindern.  Die potenzielle Umsetzung dieser Empfehlungen birgt erhebliche geopolitische Risiken und könnte zu einer weiteren Verschärfung der Spannungen in der Region führen.  Für Investoren ist dies relevant, da eine solche Politik die Ölpreise beeinflussen, die globale Stabilität beeinträchtigen und zu erhöhten Verteidigungsausgaben führen könnte.  Die Meinungsverschiedenheiten innerhalb der politischen Elite über die Angemessenheit solcher Maßnahmen sind erheblich und die langfristigen Konsequenzen sind schwer abzuschätzen.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://www.wsj.com/world/middle-east/top-aides-advise-trump-blasting-irans-infrastructure-is-fair-game-8b6aec90" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <article id="46fd22bd" class="artikel" data-id="46fd22bd" data-titel="Trump Threatens ‘Hell’ for Iran If It Doesn’t Open Up the Strait of Hormuz - Barron's" data-quelle="Barron's" data-link="https://news.google.com/rss/articles/CBMigwNBVV95cUxPaXJ6OHF1dkl0ZjZRbnRnT3JiXzVzQzR0SDZXUDJqTUNTQUYtUUJVX2c1M3lKX1R4ZW1yUkhIYmVxWWFWaURkSld0eUZOYm1QcjZaSW1BS3FNTWJFWXkxcWxvNnBmX3lZb080M2cyS3pCRTRiMEVxMWpuaGFDb2JCY0tZdkduTmpmZmkySXVXYjBUdEs2WWlDNXM0blctM2pEcFRaQXdiUFF2SHl6THFzSkk3cVBQSXlKNmhNSDB1ejBMbXJJUlJ5NEwtajVzUTJNNHhUZExBOE9uVEZPdm1Jd0ZndVQyTEdOb0tGWDBkS25XNklERU42Z29wdk4zWkEwalc1YkdlWjhVU0llR2Rybjl0WldWZVFvTjFHTmM5ZG1ULXJDVUN4cEpzN2ExZ2tTUXMxSVpZaXdKNmRVWUJoLVBRc2x5cUg2ektlVTl1V25KS3hBN2tWM0dWMkVWR1VPSXJZVHNIaTAzLXpMWTJ5OTVyenpMcVhiOG53Z0FMR1FRVWc?oc=5" data-zusammenfassung="Donald Trump hat eine drastische Drohung gegen den Iran ausgesprochen und verkündet, dass das Land die „Hölle“ erleben werde, falls es die Straße von Hormuz nicht für den Schiffsverkehr öffne.  Diese aggressive Haltung unterstreicht die anhaltende Spannung im Persischen Golf und die strategische Bedeutung dieser Seestraße für den globalen Handel, insbesondere für den Öltransport.  Die Straße von Hormuz ist eine der wichtigsten Engstellen für den weltweiten Ölfluss, und eine Blockade hätte gravierende Auswirkungen auf die globalen Energiemärkte und Preise.  Trumps Drohung ist eine direkte Reaktion auf angebliche iranische Bedrohungen oder Behinderungen der Schifffahrt in der Straße von Hormuz.  Diese Rhetorik deutet auf eine potenzielle Eskalation der diplomatischen und militärischen Spannungen zwischen den USA und dem Iran hin.  Für Investoren bedeutet dies ein erhöhtes Risiko für die Energieversorgungssicherheit und damit verbundene Preisschwankungen bei Öl und anderen Rohstoffen.  Die wirtschaftlichen Auswirkungen einer solchen Eskalation könnten weitreichend sein und die globalen Lieferketten sowie die allgemeine Marktstabilität beeinträchtigen.  Die Ankündigung dient als deutliches Signal für die Notwendigkeit einer sorgfältigen Beobachtung der geopolitischen Entwicklungen im Nahen Osten." data-datum="04.04.2026 17:18">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+            <div style="flex:1;">
+                <div style="font-size:11px; color:#7f8c8d; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px;">Barron's &middot; 04.04.2026 17:18</div>
+                <h3 style="margin:0 0 16px 0; font-size:17px; color:#2c3e50; font-weight:600; line-height:1.3;">Trump Threatens ‘Hell’ for Iran If It Doesn’t Open Up the Strait of Hormuz - Barron's</h3>
+            </div>
+            <div style="display:flex; gap:6px; margin-left:12px; flex-shrink:0; padding-top:4px;">
+                <button onclick="toggleLesen('46fd22bd')" class="btn-lesen" id="btn-lesen-46fd22bd" title="Später lesen">&#9733;</button>
+                <button onclick="inHubKopieren('46fd22bd')" class="btn-hub" title="In Leseliste kopieren">&#10149;</button>
+            </div>
+        </div>
+        <p style="margin:0 0 20px 0; font-size:14px; color:#2c3e50; line-height:1.75;">Donald Trump hat eine drastische Drohung gegen den Iran ausgesprochen und verkündet, dass das Land die „Hölle“ erleben werde, falls es die Straße von Hormuz nicht für den Schiffsverkehr öffne.  Diese aggressive Haltung unterstreicht die anhaltende Spannung im Persischen Golf und die strategische Bedeutung dieser Seestraße für den globalen Handel, insbesondere für den Öltransport.  Die Straße von Hormuz ist eine der wichtigsten Engstellen für den weltweiten Ölfluss, und eine Blockade hätte gravierende Auswirkungen auf die globalen Energiemärkte und Preise.  Trumps Drohung ist eine direkte Reaktion auf angebliche iranische Bedrohungen oder Behinderungen der Schifffahrt in der Straße von Hormuz.  Diese Rhetorik deutet auf eine potenzielle Eskalation der diplomatischen und militärischen Spannungen zwischen den USA und dem Iran hin.  Für Investoren bedeutet dies ein erhöhtes Risiko für die Energieversorgungssicherheit und damit verbundene Preisschwankungen bei Öl und anderen Rohstoffen.  Die wirtschaftlichen Auswirkungen einer solchen Eskalation könnten weitreichend sein und die globalen Lieferketten sowie die allgemeine Marktstabilität beeinträchtigen.  Die Ankündigung dient als deutliches Signal für die Notwendigkeit einer sorgfältigen Beobachtung der geopolitischen Entwicklungen im Nahen Osten.</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:16px; border-top:1px solid #e8dcc8;">
+            <a href="https://news.google.com/rss/articles/CBMigwNBVV95cUxPaXJ6OHF1dkl0ZjZRbnRnT3JiXzVzQzR0SDZXUDJqTUNTQUYtUUJVX2c1M3lKX1R4ZW1yUkhIYmVxWWFWaURkSld0eUZOYm1QcjZaSW1BS3FNTWJFWXkxcWxvNnBmX3lZb080M2cyS3pCRTRiMEVxMWpuaGFDb2JCY0tZdkduTmpmZmkySXVXYjBUdEs2WWlDNXM0blctM2pEcFRaQXdiUFF2SHl6THFzSkk3cVBQSXlKNmhNSDB1ejBMbXJJUlJ5NEwtajVzUTJNNHhUZExBOE9uVEZPdm1Jd0ZndVQyTEdOb0tGWDBkS25XNklERU42Z29wdk4zWkEwalc1YkdlWjhVU0llR2Rybjl0WldWZVFvTjFHTmM5ZG1ULXJDVUN4cEpzN2ExZ2tTUXMxSVpZaXdKNmRVWUJoLVBRc2x5cUg2ektlVTl1V25KS3hBN2tWM0dWMkVWR1VPSXJZVHNIaTAzLXpMWTJ5OTVyenpMcVhiOG53Z0FMR1FRVWc?oc=5" style="font-size:12px; color:#7a6855; text-decoration:none; font-weight:500; letter-spacing:0.3px;">Originalartikel &rarr;</a>
+            <a href="#top" style="font-size:11px; color:#7f8c8d; text-decoration:none;">&uarr; Übersicht</a>
+        </div>
+    </article>
+    <div class="footer">Zeitschriften-Briefing</div>
+</div>
+
+<div class="hub-toast" id="toast"></div>
+
+<script src="../github-sync.js"></script>
+<script>
+(function() {
+    let _daten = null;
+
+    function showToast(msg, fehler) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.style.background = fehler ? '#c0392b' : '#1a6b6a';
+        t.classList.add('sichtbar');
+        setTimeout(() => t.classList.remove('sichtbar'), 2500);
+    }
+
+    function renderLeseliste() {
+        if (!_daten) return;
+        const items = _daten.spaeter_lesen || [];
+        const container = document.getElementById('leseliste-inhalt');
+        const wrapper = document.getElementById('leseliste');
+        if (!items.length) {
+            wrapper.style.display = 'none';
+            return;
+        }
+        wrapper.style.display = 'block';
+        container.innerHTML = items.map(item => `
+            <div class="leseliste-item">
+                <a href="#${item.id}">${item.titel}</a>
+                <button class="entfernen" onclick="toggleLesen('${item.id}')" title="Entfernen">&times;</button>
+            </div>
+        `).join('');
+
+        // Gepinnte Artikel visuell nach oben sortieren
+        const artikelContainer = document.querySelector('.trennlinie').parentNode;
+        const ids = items.map(i => i.id);
+        const alleArtikel = [...artikelContainer.querySelectorAll('.artikel')];
+        const trennlinie = artikelContainer.querySelector('.trennlinie');
+        const gepinnte = alleArtikel.filter(a => ids.includes(a.dataset.id));
+        const rest = alleArtikel.filter(a => !ids.includes(a.dataset.id));
+        const insertPoint = trennlinie.nextSibling;
+        gepinnte.forEach(a => { a.classList.add('gepinnt'); artikelContainer.insertBefore(a, insertPoint); });
+        const footer = artikelContainer.querySelector('.footer');
+        rest.forEach(a => artikelContainer.insertBefore(a, footer));
+
+        document.querySelectorAll('.btn-lesen').forEach(btn => {
+            const aid = btn.id.replace('btn-lesen-', '');
+            btn.classList.toggle('aktiv', ids.includes(aid));
+        });
+    }
+
+    window.toggleLesen = async function(aid) {
+        if (!_daten) return;
+        const items = _daten.spaeter_lesen || [];
+        const idx = items.findIndex(i => i.id === aid);
+        if (idx >= 0) {
+            items.splice(idx, 1);
+        } else {
+            const el = document.querySelector(`[data-id="${aid}"]`);
+            if (el) {
+                items.unshift({
+                    id: aid,
+                    titel: el.dataset.titel,
+                    quelle: el.dataset.quelle,
+                    link: el.dataset.link
+                });
+            }
+        }
+        _daten.spaeter_lesen = items;
+        renderLeseliste();
+        try {
+            await GH_SYNC.speichern(_daten);
+        } catch (e) {
+            showToast('Sync-Fehler: ' + e.message, true);
+        }
+    };
+
+    window.inHubKopieren = async function(aid) {
+        if (!_daten) return;
+        const el = document.querySelector(`[data-id="${aid}"]`);
+        if (!el) return;
+        const items = _daten.leseliste || [];
+        if (items.some(i => i.id === aid)) {
+            showToast('Bereits in der Leseliste');
+            return;
+        }
+        items.unshift({
+            id: aid,
+            titel: el.dataset.titel,
+            quelle: el.dataset.quelle,
+            link: el.dataset.link,
+            zusammenfassung: el.dataset.zusammenfassung,
+            datum: el.dataset.datum,
+            gespeichert: new Date().toISOString()
+        });
+        _daten.leseliste = items;
+        showToast('In Leseliste gespeichert');
+        try {
+            await GH_SYNC.speichern(_daten);
+        } catch (e) {
+            showToast('Sync-Fehler: ' + e.message, true);
+        }
+    };
+
+    // Init — Daten von GitHub laden
+    GH_SYNC.laden()
+        .then(daten => {
+            _daten = daten;
+            renderLeseliste();
+        })
+        .catch(e => {
+            showToast('Laden fehlgeschlagen: ' + e.message, true);
+            _daten = { spaeter_lesen: [], leseliste: [] };
+        });
+})();
+</script>
+</body>
+</html>
